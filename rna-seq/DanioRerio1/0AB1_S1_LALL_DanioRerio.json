@@ -22,8 +22,8 @@
       "class": "Directory",
       "location": "/data/transformed/RSEM-v1.3.0/ensembl-93/danio_rerio-genome/"
   },
-  //"bamtools_reverse_filter_file": {"class": "File", "path": "/Users/abarrera/data/reverse_filter.txt"},
-  //"bamtools_forward_filter_file": {"class": "File", "path": "/Users/abarrera/data/forward_filter.txt"},
+  "bamtools_reverse_filter_file": {"class": "File", "path": "/opt/software/external/ggr-cwl/GGR-cwl/v1.0/quant/reverse_filter.duke_sequencing_core.txt"},
+  "bamtools_forward_filter_file": {"class": "File", "path": "/opt/software/external/ggr-cwl/GGR-cwl/v1.0/quant/forward_filter.duke_sequencing_core.txt"},
   "nthreads_qc": 8,
   "nthreads_trimm": 8,
   "nthreads_map": 8,
