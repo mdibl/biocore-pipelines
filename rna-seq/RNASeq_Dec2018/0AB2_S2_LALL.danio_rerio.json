@@ -1,6 +1,9 @@
 {
   "input_fastq_read1_files": [
-    { "class": "File","path": "/data/scratch/rna_seq_test/F1-0_GT17-14854_ATCACG_S11_R1_001.fastq" }
+    { "class": "File","path": "/data/scratch/rna-seq/RNASeq_Dec2018/0AB2_S2_LALL_R1_001.fastq" }
+  ],
+  "input_fastq_read2_files": [
+    { "class": "File", "path": "/data/scratch/rna-seq/RNASeq_Dec2018/0AB2_S2_LALL_R2_001.fastq" }
   ],
   "default_adapters_file": { "class": "File", "path": "/opt/software/external/ggr-cwl/GGR-cwl-v1.0.0/v1.0/default_adapters_fromfastqc_30aug2018.fa" },
   "trimmomatic_java_opts": "-Xms1000m -Xmx1000m",
@@ -19,8 +22,11 @@
       "class": "Directory",
       "location": "/data/transformed/RSEM-v1.3.0/ensembl-93/danio_rerio-genome/"
   },
-  "nthreads_qc": 16,
-  "nthreads_trimm": 16,
-  "nthreads_map": 16,
-  "nthreads_quant": 16
+  "bamtools_reverse_filter_file": {"class": "File", "path": "/opt/software/external/ggr-cwl/GGR-cwl/v1.0/quant/reverse_filter.duke_sequencing_core.txt"},
+  "bamtools_forward_filter_file": {"class": "File", "path": "/opt/software/external/ggr-cwl/GGR-cwl/v1.0/quant/forward_filter.duke_sequencing_core.txt"},
+
+  "nthreads_qc": 8,
+  "nthreads_trimm": 8,
+  "nthreads_map": 8,
+  "nthreads_quant": 8
 }
