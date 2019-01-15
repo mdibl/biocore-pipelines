@@ -12,6 +12,7 @@ import os
 path = '/Users/nmaki/Documents/GitHub/biocore-pipelines/rna-seq/RNASeq_Dec2018/*.json'
 files = glob.glob(path)
 
+# loads json files into an array and displays content
 for name in files: 
     try:
         with open(name) as f:
@@ -19,3 +20,4 @@ for name in files:
     except IOError as exc:
         if exc.errno != errno.EISDIR:
             raise
+            
