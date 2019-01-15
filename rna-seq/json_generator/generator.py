@@ -21,10 +21,15 @@ for name in files:
         if exc.errno != errno.EISDIR:
             raise
 
+template_array = []
+with open('template.json') as my_file:
+        for line in my_file:
+                template_array.append(line)
+
 # read_path = '/data/scratch/rna-seq/RNASeq_Dec2018/*.fastq'
 # read_files = glob.glob(read_path)
 
-# for name in read_files:
+# for name in read_files: 
 #     try:
 #         with open(name) as f:
 #             sys.stdout.write(f.read())
