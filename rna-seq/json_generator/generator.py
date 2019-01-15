@@ -12,7 +12,7 @@ for file  in os.listdir('/data/scratch/rna-seq/RNASeq_Dec2018/'):
 path = '/data/projects/Biocore/biocore-pipelines/rna-seq/json_generator/*.json'
 files = glob.glob(path)
 
-# loads json template and displays content
+# loads json files into an array and displays content
 for name in files: 
     try:
         with open(name) as f:
@@ -20,11 +20,6 @@ for name in files:
     except IOError as exc:
         if exc.errno != errno.EISDIR:
             raise
-
-json_array = []
-with open('template.json') as json_file:
-        for line in json_file:
-                json_array.append(line)
 
 # read_path = '/data/scratch/rna-seq/RNASeq_Dec2018/*.fastq'
 # read_files = glob.glob(read_path)
