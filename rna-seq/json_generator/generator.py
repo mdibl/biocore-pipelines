@@ -6,9 +6,9 @@ import os
 import pprint
 
 # lists all files with .fastq filetype in given directory
-for file  in os.listdir('/data/scratch/rna-seq/RNASeq_Dec2018/'):
+for file  in os.listdir('/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018/'):
     if file.endswith(".fastq"):
-        print(os.path.join("/data/scratch/rna-seq/RNASeq_Dec2018", file))
+        print(os.path.join("/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018", file))
 
 path = '/data/projects/Biocore/biocore-pipelines/rna-seq/json_generator/*.json'
 files = glob.glob(path)
