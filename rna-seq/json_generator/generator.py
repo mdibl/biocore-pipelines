@@ -35,15 +35,17 @@ with open('template.json') as f:
 
 pprint(template)
 
-def updateTemplate():
-        template = open("template.json", "r") # opens JSON template file for reading
-        data = json.load(template) # reads template into buffer
-        template.close() # closes template file
+template 
 
-        rd1_tmp = data["input_fastq_read1_files"]
-        rd2_tmp = data["input_fastq_read2_files"]
-        data["input_fastq_read1_files"] = rd1_path
-        data["input_fastq_read2_files"] = rd2_path
+# def updateTemplate():
+#         template = open("template.json", "r") # opens JSON template file for reading
+#         data = json.load(template) # reads template into buffer
+#         template.close() # closes template file
+
+#         rd1_tmp = data["input_fastq_read1_files"]
+#         rd2_tmp = data["input_fastq_read2_files"]
+#         data["input_fastq_read1_files"] = rd1_path
+#         data["input_fastq_read2_files"] = rd2_path
 
 # read_path = '/data/scratch/rna-seq/RNASeq_Dec2018/*.fastq'
 # read_files = glob.glob(read_path)
