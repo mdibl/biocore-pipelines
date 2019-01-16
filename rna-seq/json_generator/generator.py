@@ -35,7 +35,8 @@ with open('template.json') as f:
 
 pprint(template)
 
-template 
+template["input_fastq_read1_files"] ["class"] ["path"]
+ 
 
 # def updateTemplate():
 #         template = open("template.json", "r") # opens JSON template file for reading
