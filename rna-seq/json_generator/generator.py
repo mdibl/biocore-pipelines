@@ -13,7 +13,6 @@ for file  in os.listdir('/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018/'):
 path = '/data/projects/Biocore/biocore-pipelines/rna-seq/json_generator/*.json'
 files = glob.glob(path)
 
-
 for name in files: 
     try:
         with open(name) as f:
@@ -21,6 +20,17 @@ for name in files:
     except IOError as exc:
         if exc.errno != errno.EISDIR:
             raise
+
+# open design file and displays contents
+
+design_file = open('Sample_DF_JR08-18.txt','r')
+
+contents = design_file.read()
+
+print (contents)
+
+design_file.close()
+
 
 # loads json files into an array and displays content
 template_array = []
