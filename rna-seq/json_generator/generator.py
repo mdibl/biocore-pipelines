@@ -13,6 +13,7 @@ for file  in os.listdir('/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018/'):
 path = '/data/projects/Biocore/biocore-pipelines/rna-seq/json_generator/*.json'
 files = glob.glob(path)
 
+
 for name in files: 
     try:
         with open(name) as f:
