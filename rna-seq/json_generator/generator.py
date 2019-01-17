@@ -31,11 +31,11 @@ with open('template.json') as my_file:
 from pprint import pprint
 
 with open('template.json') as f:
-        template = json.load(f)
+        template = json.loads(f)
 
 pprint(template)
 
-# template["input_fastq_read1_files"] ["class"] ["path"]
+template["input_fastq_read1_files"] [0]
  
 
 # def updateTemplate():
