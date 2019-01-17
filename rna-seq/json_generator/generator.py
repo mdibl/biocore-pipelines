@@ -25,12 +25,10 @@ for name in files:
 # open design file and displays contents
 
 design_file = open('Sample_DF_JR08-18.txt','r')
-
 contents = design_file.read()
-
 print (contents)
-
 design_file.close()
+
 
 
 # loads json files into an array and displays content
