@@ -31,6 +31,7 @@ design_file.close()
 
 
 
+
 # loads json files into an array and displays content
 template_array = []
 with open('template.json') as my_file:
