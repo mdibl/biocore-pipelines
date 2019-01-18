@@ -1,3 +1,4 @@
+[
 {
   "input_fastq_read1_files": [ { "class": "File", "path": "/data/scratch/rna-seq/RNASeq_Dec2018/" } ],
   "input_fastq_read2_files": [ { "class": "File", "path": "/data/scratch/rna-seq/RNASeq_Dec2018/" } ],
@@ -27,3 +28,4 @@
   "nthreads_map": 8,
   "nthreads_quant": 8
 }
+]
