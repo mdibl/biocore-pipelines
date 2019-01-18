@@ -25,19 +25,15 @@ for name in files:
 # open design file and displays contents
 
 design_file = open('Sample_DF_JR08-18.txt','r')
-
 contents = design_file.read()
-
 print (contents)
-
 design_file.close()
 
-
 # loads json files into an array and displays content
-template_array = []
-with open('template.json') as my_file:
-        for line in my_file:
-                template_array.append(line)
+# template_array = []
+# with open('template.json') as my_file:
+#         for line in my_file:
+#                 template_array.append(line)
 
 from pprint import pprint
 
@@ -46,7 +42,7 @@ with open('template.json') as f:
 
 pprint(template)
 
-template["input_fastq_read1_files"] [0]
+template["input_fastq_read1_files"]["class"]
  
 
 # def updateTemplate():
