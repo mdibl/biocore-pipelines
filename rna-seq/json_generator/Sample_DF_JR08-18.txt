@@ -1,0 +1,25 @@
+Sample ID	RNAi_Treatment	Fraction	Polysome_Profile_Date	Polysome_Profile_Group	RNA_Extracton_date	RNA_Extraction_Group
+L4_TO_01	L4440_control_vector	Total 	7/7/2018	A	9/4/2018	C
+L4_TO_02	L4440_control_vector	Total 	7/13/2018	B	9/4/2018	C
+L4_TO_03	L4440_control_vector	Total 	7/20/2018	C	9/5/2018	D
+L4_TO_04	L4440_control_vector	Total 	7/27/2018	D	9/5/2018	D
+7A_TO_01	rpl-7A	Total 	7/7/2018	A	9/4/2018	C
+7A_TO_02	rpl-7A	Total 	7/13/2018	B	9/4/2018	C
+7A_TO_03	rpl-7A	Total 	7/20/2018	C	9/5/2018	D
+7A_TO_04	rpl-7A	Total 	7/27/2018	D	9/5/2018	D
+22_TO_01	rpl-22	Total 	7/7/2018	A	9/4/2018	C
+22_TO_02	rpl-22	Total 	7/13/2018	B	9/4/2018	C
+22_TO_03	rpl-22	Total 	7/20/2018	C	9/5/2018	D
+22_TO_04	rpl-22	Total 	7/27/2018	D	9/5/2018	D
+L4_TR_01	L4440_control_vector	Translated	7/7/2018	A	8/29/2018	B
+L4_TR_02	L4440_control_vector	Translated	7/13/2018	B	8/29/2018	B
+L4_TR_03	L4440_control_vector	Translated	7/20/2018	C	8/28/2018	A
+L4_TR_04	L4440_control_vector	Translated	7/27/2018	D	8/28/2018	A
+7A_TR_01	rpl-7A	Translated	7/7/2018	A	8/29/2018	B
+7A_TR_02	rpl-7A	Translated	7/13/2018	B	8/29/2018	B
+7A_TR_03	rpl-7A	Translated	7/20/2018	C	8/28/2018	A
+7A_TR_04	rpl-7A	Translated	7/27/2018	D	8/28/2018	A
+22_TR_01	rpl-22	Translated	7/7/2018	A	8/29/2018	B
+22_TR_02	rpl-22	Translated	7/13/2018	B	8/29/2018	B
+22_TR_03	rpl-22	Translated	7/20/2018	C	8/28/2018	A
+22_TR_04	rpl-22	Translated	7/27/2018	D	8/28/2018	A
