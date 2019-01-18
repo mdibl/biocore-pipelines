@@ -42,7 +42,7 @@ with open('template.json') as f:
 
 pprint(template)
 
-template["input_fastq_read1_files"][0]["class"][0]
+template[0]["input_fastq_read1_files"][0]["class"]
  
 
 # def updateTemplate():
