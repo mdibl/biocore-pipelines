@@ -33,19 +33,24 @@ design_file.close()
 
 
 # loads json files into an array and displays content
-template_array = []
-with open('template.json') as my_file:
-        for line in my_file:
-                template_array.append(line)
+# template_array = []
+# with open('template.json') as my_file:
+#         for line in my_file:
+#                 template_array.append(line)
 
-from pprint import pprint
+# from pprint import pprint
 
-with open('template.json') as f:
-        template = json.loads(f)
+# with open('template.json') as f:
+#         template = json.loads(f)
 
-pprint(template)
+# pprint(template)
 
-template["input_fastq_read1_files"] [0]
+# template["input_fastq_read1_files"] [0]
+
+# reads json file
+
+with open('template.json', encoding='utf-8') as template_file:
+        data = json.loads(template_file.read())
  
 
 # def updateTemplate():
