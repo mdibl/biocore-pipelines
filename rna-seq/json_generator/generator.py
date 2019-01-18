@@ -43,7 +43,49 @@ with open('template.json') as f:
 pprint(template)
 
 template[0]["input_fastq_read1_files"][0]["class"]
- 
+
+
+ # function to traverse deeply nested structures in json
+
+def traverse(obj, path=None, callback=None):
+    if path is None:
+        path = []
+
+    if isinstance(obj, dict):
+        value = {k: traverse(v, path + [k], callback)
+                 for k, v in obj.items()}
+    elif isinstance(obj, list):
+        value = [traverse(elem, path + [[]], callback)
+                 for elem in obj]
+    else:
+        value = obj
+
+    if callback is None:  # if a callback is provided, call it to get the new value
+        return value
+    else:
+        return callback(path, value)
+
+# traversal modification function
+
+def traverse_modify(obj, target_path, action):
+        target_path = to_path(target_path)
+
+        # below component will get called every path/value in structure
+        def transformer(path, value):
+                if path == target_path:
+                        return action(value)
+                else:
+                        return value
+
+        return traverse(obj, callback=transformer)
+
+from operator import itemgetter
+
+def sort_points(points):
+        return sorted(points, reverse=True, key=itemgetter('stop'))
+
+traverse_modify(doc, 'res[].catlist[].points', sort_points)
+
 
 # def updateTemplate():
 #         template = open("template.json", "r") # opens JSON template file for reading
