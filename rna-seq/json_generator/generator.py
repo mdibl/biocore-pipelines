@@ -6,15 +6,16 @@ import os
 import pprint
 
 # lists all files with .fastq filetype in given directory
-for file  in os.listdir('/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018/'):
+for file in os.listdir('/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018/'):
     if file.endswith(".fastq"):
-        print(os.path.join("/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018", file))
+        print(
+            os.path.join("/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018",
+                         file))
 
 path = '/data/projects/Biocore/biocore-pipelines/rna-seq/json_generator/*.json'
 files = glob.glob(path)
 
-
-for name in files: 
+for name in files:
     try:
         with open(name) as f:
             sys.stdout.write(f.read())
@@ -24,9 +25,9 @@ for name in files:
 
 # open design file and displays contents
 
-design_file = open('Sample_DF_JR08-18.txt','r')
+design_file = open('Sample_DF_JR08-18.txt', 'r')
 contents = design_file.read()
-print (contents)
+print(contents)
 design_file.close()
 
 # loads json files into an array and displays content
@@ -38,25 +39,23 @@ design_file.close()
 from pprint import pprint
 
 with open('template.json') as f:
-        template = json.loads(f)
+    template = json.loads(f)
 
 pprint(template)
 
 template[0]["input_fastq_read1_files"][0]["class"]
 
+# function to traverse deeply nested structures in json
 
- # function to traverse deeply nested structures in json
 
 def traverse(obj, path=None, callback=None):
     if path is None:
         path = []
 
     if isinstance(obj, dict):
-        value = {k: traverse(v, path + [k], callback)
-                 for k, v in obj.items()}
+        value = {k: traverse(v, path + [k], callback) for k, v in obj.items()}
     elif isinstance(obj, list):
-        value = [traverse(elem, path + [[]], callback)
-                 for elem in obj]
+        value = [traverse(elem, path + [[]], callback) for elem in obj]
     else:
         value = obj
 
@@ -65,25 +64,30 @@ def traverse(obj, path=None, callback=None):
     else:
         return callback(path, value)
 
+
 # traversal modification function
 
+
 def traverse_modify(obj, target_path, action):
-        # fix me pls, give me a use
-        target_path = to_path(target_path)
+    # fix me pls, give me a
+    target_path = to_path(target_path)
 
-        # below component will get called every path/value in structure
-        def transformer(path, value):
-                if path == target_path:
-                        return action(value)
-                else:
-                        return value
+    # below component will get called every path/value in structure
+    def transformer(path, value):
+        if path == target_path:
+            return action(value)
+        else:
+            return value
 
-        return traverse(obj, callback=transformer)
+    return traverse(obj, callback=transformer)
+
 
 from operator import itemgetter
 
+
 def sort_points(points):
-        return sorted(points, reverse=True, key=itemgetter('stop'))
+    return sorted(points, reverse=True, key=itemgetter('stop'))
+
 
 # fix me pls
 traverse_modify(doc, 'res[].catlist[].points', sort_points)
@@ -93,7 +97,6 @@ traverse_modify(doc, 'res[].catlist[].points', sort_points)
 ## TODO dev a json generator with integrated template
 
 ####
-
 
 # def updateTemplate():
 #         template = open("template.json", "r") # opens JSON template file for reading
@@ -108,7 +111,7 @@ traverse_modify(doc, 'res[].catlist[].points', sort_points)
 # read_path = '/data/scratch/rna-seq/RNASeq_Dec2018/*.fastq'
 # read_files = glob.glob(read_path)
 
-# for name in read_files: 
+# for name in read_files:
 #     try:
 #         with open(name) as f:
 #             sys.stdout.write(f.read())
