@@ -98,6 +98,15 @@ traverse_modify(doc, 'res[].catlist[].points', sort_points)
 
 ####
 
+# update json values 
+if os.path.exists('/data/projects/Biocore/biocore-pipelines/rna-seq/json_generator/template.json'):
+        with open('/data/projects/Biocore/biocore-pipelines/rna-seq/json_generator/template.json', 'r+') as tf:
+                jtemp = json.load(tf)
+                # update json
+                tf.seek(0)
+                tf.truncate()
+                json.dump(jtemp, tf)
+
 # def updateTemplate():
 #         template = open("template.json", "r") # opens JSON template file for reading
 #         data = json.load(template) # reads template into buffer
