@@ -66,8 +66,6 @@ def traverse(obj, path=None, callback=None):
 
 
 # traversal modification function
-
-
 def traverse_modify(obj, target_path, action):
     # fix me pls, give me a
     target_path = to_path(target_path)
