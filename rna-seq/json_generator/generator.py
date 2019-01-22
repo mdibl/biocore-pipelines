@@ -30,6 +30,16 @@ contents = design_file.read()
 print(contents)
 design_file.close()
 
+# load json file into a dict
+
+def js_r(filename):
+    with open(filename) as f_in:
+        return(json.load(f_in))
+
+if __name__ == "__maine__":
+    my_data = js_r('template.json')
+    print(my_data)
+
 # loads json files into an array and displays content
 # template_array = []
 # with open('template.json') as my_file:
