@@ -76,29 +76,29 @@ def traverse(obj, path=None, callback=None):
 
 
 # traversal modification function
-def traverse_modify(obj, target_path, action):
-    # fix me pls, give me a
-    target_path = to_path(target_path)
+# def traverse_modify(obj, target_path, action):
+#     # fix me pls, give me a
+#     target_path = to_path(target_path)
 
-    # below component will get called every path/value in structure
-    def transformer(path, value):
-        if path == target_path:
-            return action(value)
-        else:
-            return value
+#     # below component will get called every path/value in structure
+#     def transformer(path, value):
+#         if path == target_path:
+#             return action(value)
+#         else:
+#             return value
 
-    return traverse(obj, callback=transformer)
-
-
-from operator import itemgetter
+#     return traverse(obj, callback=transformer)
 
 
-def sort_points(points):
-    return sorted(points, reverse=True, key=itemgetter('stop'))
+# from operator import itemgetter
+
+
+# def sort_points(points):
+#     return sorted(points, reverse=True, key=itemgetter('stop'))
 
 
 # fix me pls
-traverse_modify(doc, 'res[].catlist[].points', sort_points)
+# traverse_modify(doc, 'res[].catlist[].points', sort_points)
 
 ####
 
