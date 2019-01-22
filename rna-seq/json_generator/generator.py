@@ -6,24 +6,25 @@ import os
 import pprint
 
 # lists all files with .fastq filetype in given directory
-for file in os.listdir('/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018/'):
-    if file.endswith(".fastq"):
-        print(
-            os.path.join("/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018",
-                         file))
+# for file in os.listdir('/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018/'):
+#     if file.endswith(".fastq"):
+#         print(
+#             os.path.join("/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018",
+#                          file))
 
-path = '/data/projects/Biocore/biocore-pipelines/rna-seq/json_generator/*.json'
-files = glob.glob(path)
+# path = '/data/projects/Biocore/biocore-pipelines/rna-seq/json_generator/*.json'
+# files = glob.glob(path)
 
-for name in files:
-    try:
-        with open(name) as f:
-            sys.stdout.write(f.read())
-    except IOError as exc:
-        if exc.errno != errno.EISDIR:
-            raise
+# for name in files:
+#     try:
+#         with open(name) as f:
+#             sys.stdout.write(f.read())
+#     except IOError as exc:
+#         if exc.errno != errno.EISDIR:
+#             raise
 
 # open design file and displays contents
+
 
 design_file = open('Sample_DF_JR08-18.txt', 'r')
 contents = design_file.read()
