@@ -39,7 +39,7 @@ design_file.close()
 from pprint import pprint
 
 with open('template.json') as f:
-    template = json.loads(f)
+    template = json.load(f)
 
 pprint(template)
 
@@ -106,6 +106,9 @@ if os.path.exists('/data/projects/Biocore/biocore-pipelines/rna-seq/json_generat
                 tf.seek(0)
                 tf.truncate()
                 json.dump(jtemp, tf)
+
+
+
 
 # def updateTemplate():
 #         template = open("template.json", "r") # opens JSON template file for reading
