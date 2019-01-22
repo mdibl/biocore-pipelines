@@ -4,6 +4,8 @@ import glob
 import errno
 import os
 import pprint
+import fileinput
+from collections import OrderedDict
 
 # lists all files with .fastq filetype in given directory
 # for file in os.listdir('/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018/'):
@@ -34,14 +36,14 @@ design_file.close()
 # load json file into a dict
 
 
-def js_r(filename):
-    with open(filename) as f_in:
-        return (json.load(f_in))
+# def js_r(filename):
+#     r = json.load(open('template.json'), object_pairs_hook=OrderedDict)
+#     print json.dumps(r, indent=2)
 
 
-if __name__ == "__main__":
-    my_data = js_r('template.json')
-    print(my_data)
+# if __name__ == "__main__":
+#     my_data = js_r('template.json')
+#     print(my_data)
 
 # loads json files into an array and displays content
 # template_array = []
@@ -52,7 +54,7 @@ if __name__ == "__main__":
 from pprint import pprint
 
 with open('template.json') as f:
-    template = json.load(f)
+    template = json.loads(f)
 
 pprint(template)
 
