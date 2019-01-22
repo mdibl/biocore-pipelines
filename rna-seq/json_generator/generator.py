@@ -32,11 +32,13 @@ design_file.close()
 
 # load json file into a dict
 
+
 def js_r(filename):
     with open(filename) as f_in:
-        return(json.load(f_in))
+        return (json.load(f_in))
 
-if __name__ == "__maine__":
+
+if __name__ == "__main__":
     my_data = js_r('template.json')
     print(my_data)
 
@@ -89,13 +91,10 @@ def traverse(obj, path=None, callback=None):
 
 #     return traverse(obj, callback=transformer)
 
-
 # from operator import itemgetter
-
 
 # def sort_points(points):
 #     return sorted(points, reverse=True, key=itemgetter('stop'))
-
 
 # fix me pls
 # traverse_modify(doc, 'res[].catlist[].points', sort_points)
@@ -106,17 +105,18 @@ def traverse(obj, path=None, callback=None):
 
 ####
 
-# update json values 
-if os.path.exists('/data/projects/Biocore/biocore-pipelines/rna-seq/json_generator/template.json'):
-        with open('/data/projects/Biocore/biocore-pipelines/rna-seq/json_generator/template.json', 'r+') as tf:
-                jtemp = json.load(tf)
-                # update json
-                tf.seek(0)
-                tf.truncate()
-                json.dump(jtemp, tf)
-
-
-
+# update json values
+if os.path.exists(
+        '/data/projects/Biocore/biocore-pipelines/rna-seq/json_generator/template.json'
+):
+    with open(
+            '/data/projects/Biocore/biocore-pipelines/rna-seq/json_generator/template.json',
+            'r+') as tf:
+        jtemp = json.load(tf)
+        # update json
+        tf.seek(0)
+        tf.truncate()
+        json.dump(jtemp, tf)
 
 # def updateTemplate():
 #         template = open("template.json", "r") # opens JSON template file for reading
