@@ -8,14 +8,14 @@ import fileinput
 from collections import OrderedDict
 
 # lists all files with .fastq filetype in given directory
-# for file in os.listdir('/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018/'):
-#     if file.endswith(".fastq"):
-#         print(
-#             os.path.join("/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018",
-#                          file))
+for file in os.listdir('/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018/'):
+    if file.endswith(".fastq"):
+        print(
+            os.path.join("/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018",
+                         file))
 
-# path = '/data/projects/Biocore/biocore-pipelines/rna-seq/json_generator/*.json'
-# files = glob.glob(path)
+path = '/data/projects/Biocore/biocore-pipelines/rna-seq/json_generator/*.json'
+files = glob.glob(path)
 
 # for name in files:
 #     try:
