@@ -54,7 +54,7 @@ with open('Sample_DF_JR08-18.txt', 'r') as design_file:
     for line in design_file:
         field = line.split("\t", 0)
         sample_id = field[0]
-        samples = [sample_id] = {}
+        samples[sample_id] = {}
         reads = glob.glob(sample_id + read_path)
 
 
