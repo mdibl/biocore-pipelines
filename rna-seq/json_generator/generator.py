@@ -10,23 +10,12 @@ import fileinput
 for file in os.listdir('/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018/'):
     if file.endswith(".fastq"):
         print(
-            os.path.join("/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018",
-                         file))
+            os.path.join("/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018", file))
 
 path = '/data/projects/Biocore/biocore-pipelines/rna-seq/json_generator/*.json'
 files = glob.glob(path)
 
-# for name in files:
-#     try:
-#         with open(name) as f:
-#             sys.stdout.write(f.read())
-#     except IOError as exc:
-#         if exc.errno != errno.EISDIR:
-#             raise
-
 # open design file and loads into memory
-
-
 design_file = open('Sample_DF_JR08-18.txt', 'r')
 contents = design_file.read()
 print(contents)
@@ -57,8 +46,6 @@ with open('Sample_DF_JR08-18.txt', 'r') as design_file:
         samples[sample_id] = {}
         reads = glob.glob(sample_id + read_path)
 
-
-
 # load json file into a dict
 
 # def js_r(filename):
@@ -79,11 +66,9 @@ with open('Sample_DF_JR08-18.txt', 'r') as design_file:
 from pprint import pprint
 
 with open('template.json') as f:
-    template = json.loads(f)
+    template = json.load(f)
 
 pprint(template)
-
-# template["input_fastq_read1_files"][0]["class"][0]["path"]
 
 # parse json content to an object
 
@@ -149,12 +134,6 @@ def traverse(obj, path=None, callback=None):
 
 # fix me pls
 # traverse_modify(doc, 'res[].catlist[].points', sort_points)
-
-####
-
-## TODO dev a json generator with integrated template
-
-####
 
 # update json values
 # if os.path.exists(
