@@ -49,7 +49,7 @@ design_file.close()
 samples = {}
 with open('Sample_DF_JR08-18.txt', 'r') as design_file:
     for line in design_file:
-        field = line.split("\t", line)
+        field = line.split("\t", line[0])
         sample_id = field[0]
         samples = [sample_id] = {}
         reads = glob.glob("/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018/")
