@@ -63,7 +63,7 @@ design_file.close()
 
 class JParse(object):
     def __init__(self, data):
-        self.__dict__ = json.loads(data)
+        self.__dict__ = json.loads('template.json')
 
 parse = JParse('template.json')
 print(parse)
