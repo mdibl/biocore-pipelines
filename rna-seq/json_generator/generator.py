@@ -97,16 +97,16 @@ pprint(template)
 
 # convert json to python object
 
-class Template:
-    def __init__(self, input_fastq_read1_files, input_fastq_read2_files):
-        self.input_fastq_read1_files = input_fastq_read1_files
-        self.input_fastq_read2_files = input_fastq_read2_files
+# class Template:
+#     def __init__(self, input_fastq_read1_files, input_fastq_read2_files):
+#         self.input_fastq_read1_files = input_fastq_read1_files
+#         self.input_fastq_read2_files = input_fastq_read2_files
 
-j = json.loads('{"input_fastq_read1_files":"/data/scratch/rna-seq/RNASeq_Dec2018/*.fastq"}')
-pythonObj = Template(**j)
+# j = json.loads('{"input_fastq_read1_files":"/data/scratch/rna-seq/RNASeq_Dec2018/*.fastq"}')
+# pythonObj = Template(**j)
 
-print(pythonObj.input_fastq_read1_files)
-print(pythonObj.input_fastq_read2_files)
+# print(pythonObj.input_fastq_read1_files)
+# print(pythonObj.input_fastq_read2_files)
 
 # function to traverse deeply nested structures in json
 
