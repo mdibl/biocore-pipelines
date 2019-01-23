@@ -57,7 +57,7 @@ with open('template.json') as f:
 
 pprint(template)
 
-template['input_fastq_read1_files'][0]['class'][0]['path']
+template["input_fastq_read1_files"][0]["class"][0]["path"]
 
 # function to traverse deeply nested structures in json
 
