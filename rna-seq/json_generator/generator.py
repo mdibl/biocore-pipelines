@@ -79,7 +79,7 @@ with open('Sample_DF_JR08-18.txt', 'r') as design_file:
 from pprint import pprint
 
 with open('template.json') as f:
-    template = json.load(f)
+    template = json.loads(f)
 
 pprint(template)
 
@@ -157,17 +157,17 @@ def traverse(obj, path=None, callback=None):
 ####
 
 # update json values
-if os.path.exists(
-        '/data/projects/Biocore/biocore-pipelines/rna-seq/json_generator/template.json'
-):
-    with open(
-            '/data/projects/Biocore/biocore-pipelines/rna-seq/json_generator/template.json',
-            'r+') as tf:
-        jtemp = json.load(tf)
-        # update json
-        tf.seek(0)
-        tf.truncate()
-        json.dump(jtemp, tf)
+# if os.path.exists(
+#         '/data/projects/Biocore/biocore-pipelines/rna-seq/json_generator/template.json'
+# ):
+#     with open(
+#             '/data/projects/Biocore/biocore-pipelines/rna-seq/json_generator/template.json',
+#             'r+') as tf:
+#         jtemp = json.load(tf)
+#         # update json
+#         tf.seek(0)
+#         tf.truncate()
+#         json.dump(jtemp, tf)
 
 # def updateTemplate():
 #         template = open("template.json", "r") # opens JSON template file for reading
