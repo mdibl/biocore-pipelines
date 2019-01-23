@@ -12,8 +12,8 @@ for file in os.listdir('/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018/'):
         print(
             os.path.join("/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018", file))
 
-path = '/data/projects/Biocore/biocore-pipelines/rna-seq/json_generator/*.json'
-files = glob.glob(path)
+template_path = '/data/projects/Biocore/biocore-pipelines/rna-seq/json_generator/*.json'
+jason_template = glob.glob(template_path)
 
 # open design file and loads into memory
 design_file = open('Sample_DF_JR08-18.txt', 'r')
@@ -45,7 +45,7 @@ with open('Sample_DF_JR08-18.txt', 'r') as design_file:
         sample_id = field[0]
         samples[sample_id] = {}
         reads = glob.glob(sample_id + read_path)
-
+        
 # load json file into a dict
 
 # def js_r(filename):
