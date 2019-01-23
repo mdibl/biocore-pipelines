@@ -53,7 +53,7 @@ design_file.close()
 from pprint import pprint
 
 with open('template.json') as f:
-    template = json.loads(f)
+    template = json.load(f)
 
 pprint(template)
 
