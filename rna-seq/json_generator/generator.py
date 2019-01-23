@@ -24,7 +24,7 @@ files = glob.glob(path)
 #         if exc.errno != errno.EISDIR:
 #             raise
 
-# open design file and displays contents
+# open design file and loads into memory
 
 
 design_file = open('Sample_DF_JR08-18.txt', 'r')
@@ -32,6 +32,20 @@ contents = design_file.read()
 print(contents)
 design_file.close()
 
+# load samples with corresponding read files into dictionary
+# samples={}
+# for each line in design file:
+#     fields=split("\t",line)
+#     sample_id=field[0]
+#     samples[sample_id]={}
+#     #get list of reads files for this sample_id from experiment_base
+#     reads=glob.glob("path2reads/sample_id*)
+#     #get read1_file
+#     #get read2_file
+#     #update json_template.read1_file=path2reads/read1_file
+#     #update json_template.read2_file=path2reads/read2_file
+#     #generate this sample_id.json file from json_template object
+#
 # load json file into a dict
 
 
