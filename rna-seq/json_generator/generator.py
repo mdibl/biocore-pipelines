@@ -61,12 +61,12 @@ pprint(template)
 
 # parse json content to an object
 
-class JParse(object):
-    def __init__(self, data):
-        self.__dict__ = json.loads('template.json')
+# class JParse(object):
+#     def __init__(self, data):
+#         self.__dict__ = json.loads('template.json')
 
-parse = JParse('template.json')
-print(parse)
+# parse = JParse('template.json')
+# print(parse)
 
 
 # convert json to python object
