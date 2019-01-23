@@ -45,6 +45,15 @@ design_file.close()
 #     #update json_template.read1_file=path2reads/read1_file
 #     #update json_template.read2_file=path2reads/read2_file
 #     #generate this sample_id.json file from json_template object
+
+samples = {}
+with open('Sample_DF_JR08-18.txt', 'r') as design_file:
+    for line in design_file:
+        field = line.split("\t", line)
+        sample_id = field[0]
+        samples = [sample_id] = {}
+        reads = glob.glob("/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018/")
+
 #
 # load json file into a dict
 
