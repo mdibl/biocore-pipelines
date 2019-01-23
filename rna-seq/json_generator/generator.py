@@ -47,12 +47,15 @@ design_file.close()
 #     #generate this sample_id.json file from json_template object
 
 samples = {}
+read_path = '/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018/*.fastq'
+read_files = glob.glob(read_path)
+
 with open('Sample_DF_JR08-18.txt', 'r') as design_file:
     for line in design_file:
         field = line.split("\t", 0)
         sample_id = field[0]
         samples = [sample_id] = {}
-        reads = glob.glob("/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018/")
+        reads = glob.glob(sample_id + read_path)
 
 
 
