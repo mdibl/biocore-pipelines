@@ -50,14 +50,23 @@ design_file.close()
 #         for line in my_file:
 #                 template_array.append(line)
 
-from pprint import pprint
+# from pprint import pprint
 
-with open('template.json') as f:
-    template = json.load(f)
+# with open('template.json') as f:
+#     template = json.load(f)
 
-pprint(template)
+# pprint(template)
 
-template["input_fastq_read1_files"][0]["class"][0]["path"]
+# template["input_fastq_read1_files"][0]["class"][0]["path"]
+
+# parse json content to an object
+
+class JParse(object):
+    def __init__(self, data):
+        self.__dict__ = json.loads(data)
+
+parse = JParse('template.json')
+print(parse)
 
 # function to traverse deeply nested structures in json
 
