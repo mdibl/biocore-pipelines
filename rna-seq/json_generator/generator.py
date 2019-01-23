@@ -49,14 +49,14 @@ design_file.close()
 samples = {}
 with open('Sample_DF_JR08-18.txt', 'r') as design_file:
     for line in design_file:
-        field = line.split("\t", line[0])
+        field = line.split("\t", 0, line)
         sample_id = field[0]
         samples = [sample_id] = {}
         reads = glob.glob("/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018/")
 
-#
-# load json file into a dict
 
+
+# load json file into a dict
 
 # def js_r(filename):
 #     r = json.load(open('template.json'), object_pairs_hook=OrderedDict)
