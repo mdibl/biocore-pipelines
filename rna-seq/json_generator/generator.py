@@ -5,7 +5,6 @@ import errno
 import os
 import pprint
 import fileinput
-from collections import OrderedDict
 
 # lists all files with .fastq filetype in given directory
 for file in os.listdir('/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018/'):
@@ -58,7 +57,7 @@ with open('template.json') as f:
 
 pprint(template)
 
-template["input_fastq_read1_files"][0]
+template['input_fastq_read1_files'][0]['class'][0]['path']
 
 # function to traverse deeply nested structures in json
 
