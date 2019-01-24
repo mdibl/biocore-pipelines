@@ -20,9 +20,9 @@ with open("read_list.txt", "w") as rl:
     for path, subdirs, files in os.walk(r'/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018'):
         for filename in files:
             f = os.path.join(filename)
-            lines = rl.readlines()
-            lines.sort()
             rl.write(str(f) + os.linesep)
+    lines = rl.readlines()
+    lines.sort()
 
 # open design file and loads into memory
 design_file = open('Sample_DF_JR08-18.txt', 'r')
