@@ -21,8 +21,8 @@ with open("read_list.txt", "w") as rl:
         for filename in files:
             f = os.path.join(filename)
             rl.write(str(f) + os.linesep)
-    lines = rl.readlines()
-    lines.sort()
+    # lines = rl.readlines()
+    # lines.sort()
 
 # open design file and loads into memory
 design_file = open('Sample_DF_JR08-18.txt', 'r')
