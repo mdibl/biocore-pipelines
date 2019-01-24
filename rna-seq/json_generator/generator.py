@@ -15,6 +15,13 @@ for file in os.listdir('/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018/'):
 template_path = '/data/projects/Biocore/biocore-pipelines/rna-seq/json_generator/*.json'
 jason_template = glob.glob(template_path)
 
+# creates text file containing read names in the sample directory 
+with open("read_list.txt", "w") as rl:
+    for path, subdirs, files in os.walk(r'/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018'):
+        for filename in files:
+            f = os.path.join(path, filename)
+            rl.write(str(f) + os.linesep)
+
 # open design file and loads into memory
 design_file = open('Sample_DF_JR08-18.txt', 'r')
 contents = design_file.read()
@@ -45,6 +52,7 @@ with open('Sample_DF_JR08-18.txt', 'r') as design_file:
         sample_id = field[0]
         samples[sample_id] = {}
         # get list of read files for the sample_id from experiment_base
+
         reads = glob.glob(read_path + sample_id)
         
 # load json file into a dict
