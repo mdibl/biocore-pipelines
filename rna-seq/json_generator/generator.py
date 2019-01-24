@@ -44,7 +44,8 @@ with open('Sample_DF_JR08-18.txt', 'r') as design_file:
         field = line.split("\t", 0)
         sample_id = field[0]
         samples[sample_id] = {}
-        reads = glob.glob(sample_id + read_path)
+        # get list of read files for the sample_id from experiment_base
+        reads = glob.glob(read_path + sample_id)
         
 # load json file into a dict
 
