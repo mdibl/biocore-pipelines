@@ -36,7 +36,7 @@ design_file.close()
 #     fields=split("\t",line)
 #     sample_id=field[0]
 #     samples[sample_id]={}
-#     #get list of reads files for this sample_id from experiment_base
+#     #get list of reads files for this sample_id from experiment_base_dir
 #     reads=glob.glob("path2reads/sample_id*)
 #     #get read1_file
 #     #get read2_file
@@ -53,7 +53,7 @@ with open('Sample_DF_JR08-18.txt', 'r') as design_file:
         field = line.split("\t", 0)
         sample_id = field[0]
         samples[sample_id] = {}
-        # get list of read files for the sample_id from experiment_base
+        # get list of read files for specific sample_id from experiment_base_dir
 
         reads = glob.glob(read_path + sample_id)
         
@@ -61,7 +61,7 @@ with open('Sample_DF_JR08-18.txt', 'r') as design_file:
 
 # def js_r(filename):
 #     r = json.load(open('template.json'), object_pairs_hook=OrderedDict)
-#     print json.dumps(r, indent=2)
+#         print json.dumps(r, indent=2)
 
 
 # if __name__ == "__main__":
