@@ -1,1 +1,0 @@
-/opt/software/external/ggr-cwl/GGR-cwl/v1.0/RNA-seq_pipeline/pipeline-pe-unstranded-with-sjdb.cwl
