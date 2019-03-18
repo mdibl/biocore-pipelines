@@ -47,6 +47,8 @@ samtools index -b /data/scratch/JarodRollins/JR18-08/Alignments/Reseq/22_TO_02.b
 ##Output is a text file of counts
 python3.4 -m HTSeq.scripts.count -f bam -r name --max-reads-in-buffer 60000000 -s reverse /data/scratch/JarodRollins/JR18-08/Alignments/Reseq/22_TO_02.bam /data/scratch/JarodRollins/JR18-08/Caenorhabditis_elegans.WBcel235.94.gtf > /data/scratch/JarodRollins/JR18-08/Htseq/HTSeq_22_TO_02.counts
 
+featureCounts -p -B -T 8 -s 2 -a /data/scratch/JarodRollins/JR18-08/Caenorhabditis_elegans.WBcel235.94.gtf -o /data/scratch/JarodRollins/JR18-08/featureCounts/Reselect/22_TO_01.counts /data/scratch/JarodRollins/JR18-08/Hisat2/Reselect/22_TO_01.bam
+
 
 
 

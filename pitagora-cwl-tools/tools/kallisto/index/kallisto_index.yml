@@ -1,0 +1,4 @@
+index_name: _INDEX_NAME_
+fasta_files:
+  - class: File
+    path: _PATH_TO_FASTA_
