@@ -1,0 +1,7 @@
+annotation:
+  class: File
+  path: _PATH_TO_GTF_
+nthreads: _NTHREADS_
+input_bam:
+  class: File
+  path: _INPUT_BAM_

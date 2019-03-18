@@ -10,7 +10,7 @@ JSON_FILE=/data/projects/Biocore/biocore-pipelines/rna-seq/Mouse_KO_2019/SL35112
 #
 ## Cwl Command line options
 #
-CWL_COMMAND_OPTIONS="--no-container --debug  --timestamps"
+CWL_COMMAND_OPTIONS="--no-container --debug  --timestamps "
 #
 ## The owner of the pipeline results directory 
 #
@@ -18,5 +18,5 @@ PIPELINE_OWNER=nmaki
 #
 ## Pipeline results directory 
 #
-RESULTS_DIR=/data/scratch/rna-seq/VootYin/Mouse_KO_2019/results
+RESULTS_DIR=/data/scratch/rna-seq/VootYin/Mouse_KO_2019/test/results
 #
