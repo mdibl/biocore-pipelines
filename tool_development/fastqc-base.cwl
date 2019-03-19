@@ -1,10 +1,9 @@
 #!/usr/bin/env cwl-runner
 cwlVersion: v1.0
 class: CommandLineTool
-
-requirements:
-- $import: fastqc-docker.yml
-
+hints:
+  - class: DockerRequirement
+    dockerPull: 'quay.io/biocontainers/fastqc:0.11.7--pl5.22.0_2'
 inputs:
   fastqFile:
     type: File # No reason to accept multiple files as no overall report is generated
