@@ -6,15 +6,18 @@ doc: "FastQC aims to provide a simple way to do some quality control checks on r
 #hints:
  # DockerRequirement:
   #  dockerPull: quay.io/biocontainers/fastqc:0.11.7--pl5.22.0_2
+requirements:
+  - class: InlineJavascriptRequirement
 
 baseCommand: [fastqc]
-
+stdout: $(inputs.input_fastq_file.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_fastqc_con.txt")
+stderr: $(inputs.input_fastq_file.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_fastqc_err.txt")
 arguments:
   - prefix: --outdir
     valueFrom: $(runtime.outdir)
 
 inputs:
-  seqfile:
+  input_fastq_file:
     label: "a set of sequence files"
     doc: "a set of sequence files"
     type: File[]
@@ -129,6 +132,14 @@ outputs:
     type: File[]
     outputBinding:
       glob: "*_fastqc.zip"
+  output_qc_report_file:
+    type: File
+    outputBinding:
+      glob: $(inputs.input_fastq_file.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_fastqc.zip")
+  console_log:
+      type: stdout
+  error_log:
+      type: stderr
 
 $namespaces:
   s: https://schema.org/
