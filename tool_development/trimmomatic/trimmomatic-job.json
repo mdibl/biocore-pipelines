@@ -1,0 +1,20 @@
+{
+  "trimmomatic_jar_path": "/opt/software/external/trimmomatic/trimmomatic/trimmomatic-0.38.jar",
+  "reads1":
+  {
+    "path":  "/data/scratch/rna-seq/JarodRollins/JR18-08/22_TO_02_S5_R1_001.fastq",
+    "class": "File"
+  },
+  "reads2":
+  {
+    "path":  "/data/scratch/rna-seq/JarodRollins/JR18-08/22_TO_02_S5_R2_001.fastq",
+    "class": "File"
+  },
+  "input_adapters_file":
+  {
+    "path":  "/opt/software/external/ggr-cwl/GGR-cwl-v1.0.0/v1.0/default_adapters_fromfastqc_30aug2018.fa",
+    "class": "File"
+  },
+  "end_mode": "PE",
+  "illuminaclip": "2:30:15"
+}
