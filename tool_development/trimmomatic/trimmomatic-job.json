@@ -1,11 +1,11 @@
 {
   "trimmomatic_jar_path": "/opt/software/external/trimmomatic/trimmomatic/trimmomatic-0.38.jar",
-  "reads1":
+  "input_read1_fastq_file":
   {
     "path":  "/data/scratch/rna-seq/JarodRollins/JR18-08/22_TO_02_S5_R1_001.fastq",
     "class": "File"
   },
-  "reads2":
+  "input_read2_fastq_file":
   {
     "path":  "/data/scratch/rna-seq/JarodRollins/JR18-08/22_TO_02_S5_R2_001.fastq",
     "class": "File"
