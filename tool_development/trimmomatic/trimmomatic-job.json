@@ -16,5 +16,6 @@
     "class": "File"
   },
   "end_mode": "PE",
-  "illuminaclip": "2:30:15"
+  "illuminaclip": "2:30:15",
+  "nthreads": 8
 }
