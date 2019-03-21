@@ -1,0 +1,25 @@
+sudo: required
+
+language: python
+
+python:
+  - "2.7"
+
+# command to install dependencies
+install:
+  - pip install -U pip setuptools
+  - pip install html5lib
+  - pip install cwltool
+  - pip install cwlref-runner
+
+services:
+  - docker
+
+script:
+  - test/test.sh
+branches:
+  only:
+    - master
+
+notifications:
+  email: false
