@@ -63,7 +63,7 @@ outputs:
 steps:
   - id: fastqc_pitagora
     in:
-      - id: input_fastq_file
+      - id: input_read_files
         source:
           - input_read1_fastq_file
     out:
@@ -94,7 +94,7 @@ steps:
     'sbg:y': -666
   - id: fastqc_pitagora_1
     in:
-      - id: input_fastq_file
+      - id: input_read_files
         source:
           - input_read2_fastq_file
     out:
