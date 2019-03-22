@@ -17,7 +17,7 @@ arguments:
     valueFrom: $(runtime.outdir)
 
 inputs:
-  input_fastq_file:
+  input_read_files:
     label: "a set of sequence files"
     doc: "a set of sequence files"
     type: File[]
