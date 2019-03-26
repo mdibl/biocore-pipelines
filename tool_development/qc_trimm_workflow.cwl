@@ -86,7 +86,7 @@ steps:
       - id: output_read1_trimmed_unpaired_file
       - id: output_read2_trimmed_paired_file
       - id: output_read2_trimmed_unpaired_file
-    run: trimmomatic/trimmomatic.cwl
+    run: trimmomatic.cwl
     label: >-
       Trimmomatic: A robust command line tool for trimming and cropping FASTQ
       data
