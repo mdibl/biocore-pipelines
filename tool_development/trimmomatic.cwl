@@ -46,7 +46,7 @@
         SE|PE
         Single End (SE) or Paired End (PE) mode
     input_read1_fastq_file:
-      type: File
+      type: File[]
       inputBinding:
         position: 5
       doc: FASTQ file for input read (read R1 in Paired End mode)
@@ -63,7 +63,7 @@
         included in the "dropped reads" count presented in the trimmomatic summary.
         <length>:  Specifies the minimum length of reads to be kept
     input_read2_fastq_file:
-      type: File?
+      type: File[]
       inputBinding:
         position: 6
       doc: FASTQ file for read R2 in Paired End mode
@@ -225,6 +225,11 @@
       outputBinding:
         glob: $(inputs.log_filename)
       doc: Trimmomatic Log file.
+    output_error_file:
+      type: File?
+      outputBinding:
+        glob: $(inputs.error_filenam)
+      doc: Trimmomatic Error file.
     output_read1_trimmed_unpaired_file:
       type: File?
       outputBinding:
