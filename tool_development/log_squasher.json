@@ -1,4 +1,7 @@
 {
-    "log_files": "/data/projects/Biocore/biocore-pipelines/tool_development/qc_*log.txt",
+    "log_files": 
+    {       
+    "path": "/data/projects/Biocore/biocore-pipelines/tool_development/qc_*log.txt",
     "class": "File"
+    }
 }
