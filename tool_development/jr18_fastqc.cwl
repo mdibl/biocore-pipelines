@@ -36,8 +36,8 @@ arguments:
   - position: 5
     prefix: '-o'
     valueFrom: $(runtime.outdir)
-hints:
-  - class: DockerRequirement
-    dockerPull: 'quay.io/biocontainers/fastqc:0.11.7--pl5.22.0_2'
+#hints:
+  #- class: DockerRequirement
+   # dockerPull: 'quay.io/biocontainers/fastqc:0.11.7--pl5.22.0_2'
 requirements:
   - class: InlineJavascriptRequirement

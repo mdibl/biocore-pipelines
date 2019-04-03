@@ -17,7 +17,7 @@ outputs:
    outputBinding:
      glob: "*_fastqc_err.tar.gz"
 
-label: log_squasher_v2
+label: error_squasher
 arguments:
  - position: 0
    prefix: ''
