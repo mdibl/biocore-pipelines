@@ -2,23 +2,23 @@ class: CommandLineTool
 cwlVersion: v1.0
 
 id: error_squasher
-baseCommand: [tar, -czf]
+baseCommand: [tar, -zcf]
 
 inputs:
- - id: error_files
-   type: File
+ - id: file_pattern:
+   type: string[]
    inputBinding:
-     position: 0
-     valueFrom: qc_error_log.txt
+     position: 2
+     itemSeparator: "*"
+     
+ - id: output_file_name
+  type: string
+  inputBinding:
+    position: 1
 
 outputs:
- - id: tar_error_files
+ - id: tar_error_file
    type: File
    outputBinding:
-     glob: $(outputs.error_files)
+     glob: output_file_name
 
-label: error_squasher
-arguments:
- - position: 0
-   prefix: ''
-   valueFrom: '--wildcards' 
