@@ -1,7 +1,7 @@
 {
-    "log_files": 
+    "error_files": 
     {       
-    "path": "/data/projects/Biocore/biocore-pipelines/tool_development/*_fastqc_err.txt",
+    "path": "/data/projects/Biocore/biocore-pipelines/tool_development/qc_error_log.txt",
     "class": "File"
     }
 }

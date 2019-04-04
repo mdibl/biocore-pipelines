@@ -1,21 +1,21 @@
 class: CommandLineTool
 cwlVersion: v1.0
 
-id: log_squasher_v2
-baseCommand: [tar, -zcf]
+id: error_squasher
+baseCommand: [tar, -czf]
 
 inputs:
  - id: error_files
    type: File
    inputBinding:
      position: 0
-     valueFrom: *_fastqc_err.txt
+     valueFrom: qc_error_log.txt
 
 outputs:
  - id: tar_error_files
    type: File
    outputBinding:
-     glob: "*_fastqc_err.tar.gz"
+     glob: $(outputs.error_files)
 
 label: error_squasher
 arguments:
