@@ -1,8 +1,5 @@
 class: CommandLineTool
 cwlVersion: v1.0
-baseCommand: fastqc
-stdout: $(inputs.input_fastq_file.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_fastqc_con.txt")
-stderr: $(inputs.input_fastq_file.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_fastqc_err.txt")
 inputs:
   format: 
     default: fastq
@@ -14,6 +11,9 @@ inputs:
     type: File
     inputBinding:
       position: 4
+  output_prefix:
+    type: string
+    default: qc
   threads:
     default: 1
     type: int
@@ -41,3 +41,6 @@ arguments:
    # dockerPull: 'quay.io/biocontainers/fastqc:0.11.7--pl5.22.0_2'
 requirements:
   - class: InlineJavascriptRequirement
+baseCommand: fastqc
+stdout: $(inputs.output_prefix + "_" + inputs.input_fastq_file.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_fastqc_con.txt")
+stderr: $(inputs.output_prefix + "_" + inputs.input_fastq_file.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_fastqc_err.txt")

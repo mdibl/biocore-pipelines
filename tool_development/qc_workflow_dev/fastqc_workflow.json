@@ -3,5 +3,6 @@
       {
         "path": "/home/jhgraber/cwl-test/test_1.fastq.gz",
         "class": "File"
-       }
+       },
+    "output_prefix": "testQC"
   }
