@@ -25,9 +25,9 @@ outputs:
     type: File
     outputBinding:
       glob: $(inputs.input_fastq_file.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_fastqc.zip")
-  fastqc_console_log:
+  console_log:
     type: stdout
-  fastqc_error_log: 
+  error_log: 
     type: stderr
 arguments:
   - position: 5
