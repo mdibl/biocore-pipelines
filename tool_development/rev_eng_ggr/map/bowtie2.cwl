@@ -551,6 +551,8 @@ outputs:
      type: File
      outputBinding:
        glob: $(inputs.output_filename + '.bowtie2.log')
+       ## figure out naming param for actual outputs
+       ## 
 baseCommand:
  - bowtie2
 stdout: $(inputs.output_filename + '.sam')
