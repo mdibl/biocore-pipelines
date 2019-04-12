@@ -3,18 +3,23 @@ class: CommandLineTool
 label: "FastQC: A quality control tool for high throughput sequence data"
 doc: "FastQC aims to provide a simple way to do some quality control checks on raw sequence data coming from high throughput sequencing pipelines. It provides a modular set of analyses which you can use to give a quick impression of whether your data has any problems of which you should be aware before doing any further analysis. http://www.bioinformatics.babraham.ac.uk/projects/fastqc/"
 
-hints:
-  DockerRequirement:
-    dockerPull: quay.io/biocontainers/fastqc:0.11.7--pl5.22.0_2
+#hints:
+  #DockerRequirement:
+    #dockerPull: quay.io/biocontainers/fastqc:0.11.7--pl5.22.0_2
 
 baseCommand: [fastqc]
+stdout: $(inputs.output_prefix + "_" + inputs.input_read_files.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_fastqc_con.txt")
+stderr: $(inputs.output_prefix + "_" + inputs.input_read_files.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_fastqc_err.txt")
+
+requirements:
+  - class: InlineJavascriptRequirement
 
 arguments:
   - prefix: --outdir
     valueFrom: $(runtime.outdir)
 
 inputs:
-  seqfile:
+  input_read_files:
     label: "a set of sequence files"
     doc: "a set of sequence files"
     type: File[]
@@ -125,10 +130,14 @@ inputs:
       prefix: --dir
 
 outputs:
-  fastqc_result:
-    type: File[]
+  output_qc_report_file:
+    type: File
     outputBinding:
-      glob: "*_fastqc.zip"
+      glob: $(inputs.input_fastq_file.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_fastqc.zip")
+  fastqc_console_log:
+    type: stdout
+  fastqc_error_log: 
+    type: stderr
 
 $namespaces:
   s: https://schema.org/
