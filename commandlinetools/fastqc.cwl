@@ -8,8 +8,10 @@ doc: "FastQC aims to provide a simple way to do some quality control checks on r
     #dockerPull: quay.io/biocontainers/fastqc:0.11.7--pl5.22.0_2
 
 baseCommand: [fastqc]
-stdout: $(inputs.output_prefix + "_" + inputs.input_read_files.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_fastqc_con.txt")
-stderr: $(inputs.output_prefix + "_" + inputs.input_read_files.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_fastqc_err.txt")
+#stdout: $(inputs.output_prefix + "_" + inputs.input_read_files.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_fastqc_con.txt")
+#stderr: $(inputs.output_prefix + "_" + inputs.input_read_files.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_fastqc_err.txt")
+stdout: $(inputs.output_prefix + "_fastqc_con.txt")
+stderr: $(inputs.output_prefix + "_fastqc_err.txt")
 
 requirements:
   - class: InlineJavascriptRequirement
