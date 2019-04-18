@@ -133,7 +133,7 @@ outputs:
   output_qc_report_file:
     type: File
     outputBinding:
-      glob: $(inputs.input_fastq_file.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_fastqc.zip")
+      glob: $(inputs.input_read_files.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_fastqc.zip")
   fastqc_console_log:
     type: stdout
   fastqc_error_log: 
