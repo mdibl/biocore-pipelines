@@ -133,7 +133,7 @@ inputs:
 
 outputs:
   output_qc_report_file:
-    type: File
+    type: File[]
     outputBinding:
       glob: $(inputs.output_prefix + "_fastqc.zip")
   fastqc_console_log:
