@@ -1,7 +1,8 @@
 {
     "input_fastq_file":
       {
-        "path": "/data/internal/JarodRollins/JR18-08/Reseq/22_TO_02_S5_R1_001.fastq.gz",
+        "path": "/home/jhgraber/cwl-test/test_1.fastq.gz",
         "class": "File"
-       }
+       },
+    "output_prefix": "testQC"
   }
