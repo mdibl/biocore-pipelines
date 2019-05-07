@@ -1,4 +1,5 @@
  class: CommandLineTool
+ // This is a blurb 
  cwlVersion: v1.0
  doc: |
     Trimmomatic is a fast, multithreaded command line tool that can be used to trim and crop
