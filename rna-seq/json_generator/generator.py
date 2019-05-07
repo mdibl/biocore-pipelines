@@ -12,7 +12,7 @@ import fileinput
 #         print(
 #             os.path.join("/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018", file))
 
-with os.scandir('/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018/') as entries:
+with os.scandir('data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018/') as entries:
     for entry in entries:
         print(entry.name)
 
