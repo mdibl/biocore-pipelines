@@ -1,5 +1,4 @@
 cwlVersion: v1.0
-// der test
 class: CommandLineTool
 label: "fasterq-dump: dump .sra format file to generate fastq file, way more faster"
 doc: "sra-toolkit: https://github.com/ncbi/sra-tools/wiki/Download-On-Demand"
