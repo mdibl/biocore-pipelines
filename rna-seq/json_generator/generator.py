@@ -30,6 +30,11 @@ contents = design_file.read()
 print(contents)
 design_file.close()
 
+test_file = open('test_success.txt', 'r')
+tcontents = test_file.read()
+print(tcontents)
+test_file.close()
+
 # load samples with corresponding read files into dictionary
 # samples={}
 # for each line in design file:
