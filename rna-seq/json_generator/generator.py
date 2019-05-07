@@ -12,6 +12,10 @@ import fileinput
 #         print(
 #             os.path.join("/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018", file))
 
+with os.scandir('/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018/') as entries:
+    for entry in entries:
+        print(entry.name)
+
 template_path = '/data/projects/Biocore/biocore-pipelines/rna-seq/json_generator/*.json'
 jason_template = glob.glob(template_path)
 
