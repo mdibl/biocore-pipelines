@@ -1,5 +1,0 @@
-sample	genotype	rep	cond	pc1
-1GRKO_1_S21	VBAm	1	cor	pos
-1GRKO_2_S22	VBAm	2	cor	pos
-1GRKO_3_S23	VBAm	3	cor	neg
-1GRKO_4_S24	VBAm	4	cor	neg

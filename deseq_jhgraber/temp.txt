@@ -1,6 +1,0 @@
-f2	/data/projects/DustinUpdike/Jesse_GLH-1/rsem/144-1P.genes.results
-f3	/data/projects/DustinUpdike/Jesse_GLH-1/rsem/144-2P.genes.results
-f6	/data/projects/DustinUpdike/Jesse_GLH-1/rsem/144-3P.genes.results
-f8	/data/projects/DustinUpdike/Jesse_GLH-1/rsem/64-1P.genes.results
-f10	/data/projects/DustinUpdike/Jesse_GLH-1/rsem/64-2P.genes.results
-f11	/data/projects/DustinUpdike/Jesse_GLH-1/rsem/64-3P.genes.results
