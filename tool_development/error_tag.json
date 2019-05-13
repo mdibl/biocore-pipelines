@@ -1,8 +1,0 @@
-{
-    "file_pattern":["qc","log.txt"],
-    "out_file": 
-    {       
-    "path": "",
-    "class": "File"
-    }
-}

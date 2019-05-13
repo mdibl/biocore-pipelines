@@ -1,8 +1,0 @@
-zipFileName: myzip.zip
-sourceFiles:
-  - class: File
-    path: 22_TO_02_S5_R1_001_fastqc_err.txt
-  - class: File
-    path: qc_1_log.txt
-  - class: File
-    path: qc_2_log.txt
