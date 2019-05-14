@@ -12,6 +12,10 @@ import fileinput
 #         print(
 #             os.path.join("/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018", file))
 
+with os.scandir('/data/scratch/rna-seq/JimCoffman/RNASeq_Dec2018/') as entries:
+    for entry in entries:
+        print(entry.name)
+
 template_path = '/data/projects/Biocore/biocore-pipelines/rna-seq/json_generator/*.json'
 jason_template = glob.glob(template_path)
 
@@ -29,6 +33,11 @@ design_file = open('Sample_DF_JR08-18.txt', 'r')
 contents = design_file.read()
 print(contents)
 design_file.close()
+
+test_file = open('test_success.txt', 'r')
+tcontents = test_file.read()
+print(tcontents)
+test_file.close()
 
 # load samples with corresponding read files into dictionary
 # samples={}
