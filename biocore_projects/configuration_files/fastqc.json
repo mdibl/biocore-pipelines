@@ -1,0 +1,10 @@
+{
+  "input_read_files": [
+    {
+      "path": "/data/internal/JarodRollins/JR18-08/Reseq/22_TO_02_S5_R1_001.fastq.gz",
+      "class": "File"
+     }
+  ],
+  "nthreads": 8,
+  "output_prefix": "cwl_testRuns"
+}

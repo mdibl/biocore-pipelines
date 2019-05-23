@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+##Full path to the cwl file
+#
+CWL_SCRIPT=/opt/software/external/ggr-cwl/GGR-cwl/v1.0/RNA-seq_pipeline/pipeline-pe-unstranded-with-sjdb.cwl
+#
+##Full path to the pipeline json file
+#
+JSON_FILE=/data/projects/Biocore/biocore-pipelines/rna-seq/Mouse_KO_2019/SL351124.mus_musculus.json
+#
+## Cwl Command line options
+#
+CWL_COMMAND_OPTIONS="--no-container --debug  --timestamps "
+#
+## The owner of the pipeline results directory 
+#
+PIPELINE_OWNER=nmaki
+#
+## Pipeline results directory 
+#
+RESULTS_DIR=/data/scratch/rna-seq/VootYin/Mouse_KO_2019/test/results
+#
