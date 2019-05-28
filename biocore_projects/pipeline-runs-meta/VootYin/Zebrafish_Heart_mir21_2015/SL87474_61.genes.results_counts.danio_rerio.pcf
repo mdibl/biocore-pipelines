@@ -6,7 +6,7 @@ CWL_SCRIPT=/opt/software/external/ggr-cwl/GGR-cwl/v1.0/RNA-seq_pipeline/pipeline
 #
 ##Full path to the pipeline json file
 #
-JSON_FILE=/data/projects/Biocore/biocore-pipelines/rna-seq/Zebrafish_Heart_let7_2015/SL87477_64.danio_rerio.json
+JSON_FILE=/data/projects/Biocore/biocore_analysis/biocore_projects/rna-seq/VootYin/Zebrafish_Heart_mir21_2015/SL87474_61.genes.results_counts.danio_rerio.json
 #
 ## Cwl Command line options
 #
@@ -18,5 +18,5 @@ PIPELINE_OWNER=nmaki
 #
 ## Pipeline results directory 
 #
-RESULTS_DIR=/data/scratch/rna-seq/VootYin/Zebrafish_Heart_let7_2015/results
+RESULTS_DIR=/data/scratch/rna-seq/VootYin/Zebrafish_Heart_mir21_2015/results
 #
