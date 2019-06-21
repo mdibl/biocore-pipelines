@@ -18,5 +18,5 @@ PIPELINE_OWNER=nmaki
 #
 ## Pipeline results directory 
 #
-RESULTS_DIR=/data/scratch/rna-seq/VootYin/vyin_ANA-9_001/results/run-1559058248
+RESULTS_DIR=/data/scratch/rna-seq/VootYin/vyin_ANA-9_001/results/vyin_ANA-9_001_1559156114
 #
