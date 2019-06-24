@@ -1,0 +1,55 @@
+#proposed workflow for mRNA-seq data of project JR18-08
+#using one set of R1 and R2 reads as example, 22_TO_02_S5_R1_001.fastq.gz and 22_TO_02_S5_R2_001.fastq.gz
+
+#if checksum doesn't exist, create m5d checksum 
+##output is appended to a common output in the same directory
+md5sum /data/internal/JarodRollins/JR18-08/Reseq/22_TO_02_S5_R1_001.fastq.gz &>> /data/internal/JarodRollins/JR18-08/Reseq/JR18-18_md5sum.txt
+md5sum /data/internal/JarodRollins/JR18-08/Reseq/22_TO_02_S5_R2_001.fastq.gz &>> /data/internal/JarodRollins/JR18-08/Reseq/JR18-18_md5sum.txt
+
+#if checksums do exist, check that they are valid
+md5sum -c /data/internal/JarodRollins/JR18-08/Reseq/JR18-18_md5sum.txt
+
+#before trimming, generate fastQ reports for each file
+#output is a html and associated compressed file
+fastqc -o /data/scratch/JarodRollins/JR18-08/fastQC/reseq/ -t 8 /data/internal/JarodRollins/JR18-08/Reseq/22_TO_02_S5_R1_001.fastq.gz
+fastqc -o /data/scratch/JarodRollins/JR18-08/fastQC/reseq/ -t 8 /data/internal/JarodRollins/JR18-08/Reseq/22_TO_02_S5_R2_001.fastq.gz
+
+#Removing TrueSeq adapters in palindrome mode, no quality or end trimming is performed in this example
+##output are four fastq files and a trim log (optional)
+#Using the -baseout option use the same Prefix for all four files generated and place in the same folder.
+#The suffix  for fastq files will be 1P, 2P, 1U or 2U for the Paired and Unpaired reads. 
+#The trimm log is placed in a sub directory for troubleshooting  
+
+java -Xmx40G -jar /opt/software/external/trimmomatic/trimmomatic-0.36/trimmomatic-0.36.jar PE -phred33 -threads 8 -baseout /data/scratch/JarodRollins/JR18-08/Trimm/Reseq/22_TO_02.fastq.gz -trimlog /data/scratch/JarodRollins/JR18-08/Trimm/Reseq/logs/22_TO_02_trim.log /data/internal/JarodRollins/JR18-08/Reseq/22_TO_02_S5_R1_001.fastq.gz /data/internal/JarodRollins/JR18-08/Reseq/22_TO_02_S5_R2_001.fastq.gz ILLUMINACLIP:/opt/software/external/trimmomatic/trimmomatic-0.36/adapters/TruSeq3-PE-2.fa:2:30:10
+
+#post trimming fastQ
+#there shouldn't any meaningful reads left in the R2 unpaired file and so it is omitted here
+##output is a .html and associated .zip 
+fastqc -o /data/scratch/JarodRollins/JR18-08/fastQC/Trimm/ -t 8 /data/scratch/JarodRollins/JR18-08/Trimm/Reseq/22_TO_02_1P.fastq.gz
+fastqc -o /data/scratch/JarodRollins/JR18-08/fastQC/Trimm/ -t 8 /data/scratch/JarodRollins/JR18-08/Trimm/Reseq/22_TO_02_2P.fastq.gz
+fastqc -o /data/scratch/JarodRollins/JR18-08/fastQC/Trimm/ -t 8 /data/scratch/JarodRollins/JR18-08/Trimm/Reseq/22_TO_02_1U.fastq.gz
+
+#aligning to reference genome
+# in this example reads from two different runs are being aligned together, with one run having a large amount of unpaired reads. 
+## Output is a sam file and the summary log
+hisat2 -p 8 -x /data/transformed/hisat2-2.1.0/ensembl-94/caenorhabditis_elegans-dna/hisat2-ensembl-dna --phred33 --max-intronlen 5000 --rna-strandness RF -1 /data/scratch/JarodRollins/JR18-08/Trimm/22_TO_02_1P.fastq.gz,/data/scratch/JarodRollins/JR18-08/Trimm/Reseq/22_TO_02_1P.fastq.gz -2 /data/scratch/JarodRollins/JR18-08/Trimm/22_TO_02_2P.fastq.gz,/data/scratch/JarodRollins/JR18-08/Trimm/Reseq/22_TO_02_2P.fastq.gz -U /data/scratch/JarodRollins/JR18-08/Trimm/22_TO_02_1U.fastq.gz -S /data/scratch/JarodRollins/JR18-08/Alignments/Reseq/22_TO_02.sam --summary-file /data/scratch/JarodRollins/JR18-08/Alignments/Reseq/22_TO_02_summary.log
+
+#sort the sam file by position
+##output is bam placed in same folder
+samtools sort -m 4G -@ 8 -O bam /data/scratch/JarodRollins/JR18-08/Alignments/Reseq/22_TO_02.sam -o /data/scratch/JarodRollins/JR18-08/Alignments/Reseq/22_TO_02.bam 
+
+#index resulting bam file for visualization in IGV
+##output is 22_TO_02.bai and by default is in same folder as the bam file as they are typically needed together
+samtools index -b /data/scratch/JarodRollins/JR18-08/Alignments/Reseq/22_TO_02.bam
+
+#counting reads per gene using HTseq, command below is shown with Htseq is not in the path
+#https://htseq.readthedocs.io/en/release_0.11.1/
+##Output is a text file of counts
+python3.4 -m HTSeq.scripts.count -f bam -r name --max-reads-in-buffer 60000000 -s reverse /data/scratch/JarodRollins/JR18-08/Alignments/Reseq/22_TO_02.bam /data/scratch/JarodRollins/JR18-08/Caenorhabditis_elegans.WBcel235.94.gtf > /data/scratch/JarodRollins/JR18-08/Htseq/HTSeq_22_TO_02.counts
+
+featureCounts -p -B -T 8 -s 2 -a /data/scratch/JarodRollins/JR18-08/Caenorhabditis_elegans.WBcel235.94.gtf -o /data/scratch/JarodRollins/JR18-08/featureCounts/Reselect/22_TO_01.counts /data/scratch/JarodRollins/JR18-08/Hisat2/Reselect/22_TO_01.bam
+
+
+
+
+
