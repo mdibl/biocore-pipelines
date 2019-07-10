@@ -45,6 +45,7 @@
   "nthreads_qc": 8,
   "nthreads_quant": 8,
   "nthreads_trimm": 8,
+  "project_run_id": "",
   "rsem_reference_files": {
     "class": "Directory",
     "location": "/data/transformed/RSEM-v1.3.0/ensembl-93/danio_rerio-genome/"
