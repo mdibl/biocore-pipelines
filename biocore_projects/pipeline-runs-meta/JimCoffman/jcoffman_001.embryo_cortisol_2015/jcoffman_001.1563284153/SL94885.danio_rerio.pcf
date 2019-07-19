@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+##Full path to the cwl file
+#
+CWL_SCRIPT=/opt/software/external/ggr-cwl/GGR-cwl/v1.0/B/pipeline-pe-unstranded-with-sjdb.cwl
+#
+##Full path to the pipeline json file
+#
+JSON_FILE=/data/projects/Biocore/biocore_analysis/biocore_projects/rna-seq/JimCoffman/jcoffman_001.embryo_cortisol_2015/jcoffman_001.1563284153/SL94885.danio_rerio.json
+#
+## Cwl Command line options
+#
+CWL_COMMAND_OPTIONS="--no-container --debug  --timestamps "
+#
+## The owner of the pipeline results directory 
+#
+PIPELINE_OWNER=gmurray
+#
+## Pipeline results directory 
+#
+RESULTS_DIR=/data/scratch/rna-seq/JimCoffman/jcoffman_001.embryo_cortisol_2015/jcoffman_001.1563284153
+#
