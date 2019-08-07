@@ -24,5 +24,10 @@
       type: File
       outputBinding:
         glob: stdout.txt
+    console_log:
+      type: stdout
+    error_log:
+      type: stderr
  baseCommand: diff
- stdout: stdout.txt
+ stdout: diff_stdout.txt
+ stderr: diff_stderr.txt

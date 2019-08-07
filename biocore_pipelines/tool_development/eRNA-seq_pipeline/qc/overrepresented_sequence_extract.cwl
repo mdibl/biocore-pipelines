@@ -22,6 +22,10 @@
       type: File
       outputBinding:
         glob: $(inputs.input_basename + '.custom_adapters.fasta')
+    console_log:
+      type: stdout
+    error_log:
+      type: stderr
  baseCommand: overrepresented_sequence_extract.py
  arguments:
   - valueFrom: $(inputs.input_basename + '.custom_adapters.fasta')
