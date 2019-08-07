@@ -8,6 +8,8 @@ hints:
     dockerPull: quay.io/biocontainers/fastqc:0.11.7--pl5.22.0_2
 
 baseCommand: [fastqc]
+stdout: $(inputs.input_fastq_file.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_fastqc_con.txt")
+stderr: $(inputs.input_fastq_file.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_fastqc_err.txt")
 
 arguments:
   - prefix: --outdir
@@ -125,10 +127,14 @@ inputs:
       prefix: --dir
 
 outputs:
-  fastqc_result:
-    type: File[]
+  output_qc_report_file:
+    type: File
     outputBinding:
-      glob: "*_fastqc.zip"
+      glob: $(inputs.input_fastq_file.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_fastqc.zip")
+  console_log:
+    type: stdout
+  error_log: 
+    type: stderr
 
 $namespaces:
   s: https://schema.org/
