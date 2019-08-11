@@ -215,6 +215,10 @@
       type: File
       doc: FASTA file containing adapters, PCR sequences, etc. It is used to search for and remove these sequences in the input FASTQ file(s)
  outputs:
+    console_log:
+      type: stdout
+    error_log: 
+      type: stderr
     output_read1_trimmed_file:
       type: File
       outputBinding:
@@ -252,6 +256,8 @@
             return null;
           }
  baseCommand: java
+ stdout: $(inputs.input_fastq_file.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_trimmomatic_con.txt")
+ stderr: $(inputs.input_fastq_file.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_trimmomatic_err.txt")
  arguments:
   - valueFrom: $("-Djava.io.tmpdir="+runtime.tmpdir)
     shellQuote: false
