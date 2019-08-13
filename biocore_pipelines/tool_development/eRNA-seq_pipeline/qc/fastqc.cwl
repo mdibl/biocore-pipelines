@@ -9,6 +9,9 @@ hints:
 requirements:
   - class: InlineJavascriptRequirement
 
+requirements:
+  - class: InlineJavascriptRequirement
+
 baseCommand: [fastqc]
 stdout: $(inputs.input_fastq_file.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_fastqc_con.txt")
 stderr: $(inputs.input_fastq_file.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_fastqc_err.txt")
