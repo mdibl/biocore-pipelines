@@ -6,6 +6,7 @@ doc: "FastQC aims to provide a simple way to do some quality control checks on r
 hints:
   DockerRequirement:
     dockerPull: quay.io/biocontainers/fastqc:0.11.7--pl5.22.0_2
+    
 requirements:
   - class: InlineJavascriptRequirement
 
