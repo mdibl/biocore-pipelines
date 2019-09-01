@@ -29,5 +29,5 @@
     error_log:
       type: stderr
  baseCommand: diff
- stdout: diff_stdout.txt
- stderr: diff_stderr.txt
+ stdout: diff_out.txt
+ stderr: diff_err.txt

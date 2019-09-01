@@ -32,5 +32,5 @@
     error_log:
       type: stderr
  baseCommand: unzip
- stderr: $(inputs.input_basename + '.fastqc_data.txt')
- stdout: $(inputs.input_basename + '.fastqc_data.txt')
+ stderr: extract_fastqc_data_err.txt
+ stdout: extract_fastqc_data_out.txt

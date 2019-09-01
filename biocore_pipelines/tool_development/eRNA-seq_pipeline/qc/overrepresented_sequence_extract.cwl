@@ -27,8 +27,8 @@
     error_log:
       type: stderr
  baseCommand: overrepresented_sequence_extract.py
- stdout: $(inputs.input_fastqc_data.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_overrepr_seq_extract_con.txt")
- stderr: $(inputs.input_fastqc_data.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_overrepr_seq_extract_err.txt")
+ stdout: overrepresented_sequence_extract_out.txt
+ stderr: overrepresented_sequence_extract_err.txt
  arguments:
   - valueFrom: $(inputs.input_basename + '.custom_adapters.fasta')
     position: 3

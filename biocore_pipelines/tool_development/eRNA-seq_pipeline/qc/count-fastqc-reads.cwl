@@ -21,5 +21,5 @@
     error_log:
       type: stderr
  baseCommand: count-fastqc_data-reads.sh
- stdout: $(inputs.input_basename + '.fastqc-read_count.txt')
- stderr: $(inputs.input_basename + '.fastqc-read_count.txt')
+ stdout: count-fastqc-reads_out.txt
+ stderr: count-fastqc-reads_err.txt
