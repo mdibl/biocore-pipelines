@@ -1,4 +1,4 @@
 seqfile:
   - class: File
-    path: _PATH_TO_SEQFILE_
-nthreads: _NTHREADS_
+    path: "/Users/nmaki/Desktop/cwl_testing/22_TO_04_S38_R1_001.fastq.gz"
+nthreads: 4

@@ -11,8 +11,8 @@ requirements:
   - class: InlineJavascriptRequirement
 
 baseCommand: [fastqc]
-stdout: $(inputs.input_fastq_file.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_fastqc_con.txt")
-stderr: $(inputs.input_fastq_file.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_fastqc_err.txt")
+stdout: fastqc_con.txt
+stderr: fastqc_err.txt
 
 arguments:
   - prefix: --outdir
@@ -133,7 +133,7 @@ outputs:
   output_qc_report_file:
     type: File
     outputBinding:
-      glob: $(inputs.input_fastq_file.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_fastqc.zip")
+      glob: $(inputs.seqfile.basename).fastqc.zip
   console_log:
     type: stdout
   error_log: 
