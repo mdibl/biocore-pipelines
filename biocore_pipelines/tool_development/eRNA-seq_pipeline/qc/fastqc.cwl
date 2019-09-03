@@ -6,6 +6,8 @@ doc: "FastQC aims to provide a simple way to do some quality control checks on r
 hints:
   DockerRequirement:
     dockerPull: quay.io/biocontainers/fastqc:0.11.7--pl5.22.0_2
+  ResourceRequirement:
+    ramMin: 4096
     
 requirements:
   - class: InlineJavascriptRequirement
@@ -133,7 +135,7 @@ outputs:
   output_qc_report_file:
     type: File
     outputBinding:
-      glob: "*_fastqc.zip"
+      glob: $(inputs.seqfile.basename + "*_fastqc.zip")
   console_log:
     type: stdout
   error_log: 
