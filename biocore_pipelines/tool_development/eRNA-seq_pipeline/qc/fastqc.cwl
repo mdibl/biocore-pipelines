@@ -13,8 +13,8 @@ requirements:
   - class: InlineJavascriptRequirement
 
 baseCommand: [fastqc]
-stdout: fastqc_con.txt
-stderr: fastqc_err.txt
+stdout: $((inputs.seqfile.basename)+"_console_log.txt")
+stderr: $((inputs.seqfile.basename)+"_error_log.txt")
 
 arguments:
   - prefix: --outdir
@@ -135,7 +135,7 @@ outputs:
   output_qc_report_file:
     type: File
     outputBinding:
-      glob: $(inputs.seqfile.basename + "*_fastqc.zip")
+      glob: "*_fastqc.zip"
   console_log:
     type: stdout
   error_log: 
