@@ -16,10 +16,4 @@
       type: string
       outputBinding:
         outputEval: $(inputs.input_file.path.substr(inputs.input_file.path.lastIndexOf('/') + 1, inputs.input_file.path.lastIndexOf('.') - (inputs.input_file.path.lastIndexOf('/') + 1)))
-    console_log:
-      type: stdout
-    error_log:
-      type: stderr
  baseCommand: echo
- stdout: $(inputs.input_file.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_extract-basename_con.txt")
- stderr: $(inputs.input_file.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_extract-basename_err.txt")

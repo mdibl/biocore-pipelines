@@ -7,9 +7,6 @@ hints:
   DockerRequirement:
     dockerPull: quay.io/biocontainers/fastqc:0.11.7--pl5.22.0_2
 
-requirements:
-  - class: InlineJavascriptRequirement
-
 baseCommand: [fastqc]
 stdout: $(inputs.input_fastq_file.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_fastqc_con.txt")
 stderr: $(inputs.input_fastq_file.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_fastqc_err.txt")
