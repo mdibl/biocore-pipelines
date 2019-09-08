@@ -13,8 +13,8 @@ requirements:
   - class: InlineJavascriptRequirement
 
 baseCommand: [fastqc]
-stdout: $((inputs.seqfile.basename)+"_console_log.txt")
-stderr: $((inputs.seqfile.basename)+"_error_log.txt")
+stdout: $((inputs.seqfile[0].basename)+"_console_log.txt")
+stderr: $((inputs.seqfile[0].basename)+"_error_log.txt")
 
 arguments:
   - prefix: --outdir
