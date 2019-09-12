@@ -256,8 +256,8 @@
             return null;
           }
  baseCommand: java
- stdout: trimm_out.txt
- stderr: trimm_err.txt
+ stdout: $((inputs.seqfile[0].basename)+"_console_log.txt")
+ stderr: $((inputs.seqfile[0].basename)+"_error_log.txt")
  arguments:
   - valueFrom: $("-Djava.io.tmpdir="+runtime.tmpdir)
     shellQuote: false
