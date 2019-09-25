@@ -1,1 +1,0 @@
-# cwl wrapper for Trinity
