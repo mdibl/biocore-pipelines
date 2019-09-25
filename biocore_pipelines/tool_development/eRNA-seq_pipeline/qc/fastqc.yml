@@ -1,4 +1,4 @@
-seqfile:
+input_fastq_file:
   - class: File
     path: "/Users/nmaki/Desktop/cwl_testing/22_TO_04_S38_R1_001.fastq.gz"
 nthreads: 4

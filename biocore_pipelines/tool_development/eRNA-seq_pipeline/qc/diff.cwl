@@ -26,8 +26,8 @@
         glob: stdout.txt
     console_log:
       type: stdout
-    error_log:
+    error_log: 
       type: stderr
  baseCommand: diff
- stdout: diff_out.txt
- stderr: diff_err.txt
+ stdout: $(inputs.basename).diff_console_log.txt
+ stderr: $(inputs.basename).diff_error_log.txt

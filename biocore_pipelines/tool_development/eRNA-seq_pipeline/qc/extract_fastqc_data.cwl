@@ -29,8 +29,8 @@
         glob: $(inputs.input_basename + '.fastqc_data.txt')
     console_log:
       type: stdout
-    error_log:
+    error_log: 
       type: stderr
  baseCommand: unzip
- stderr: extract_fastqc_data_err.txt
- stdout: extract_fastqc_data_out.txt
+ stdout: $(inputs.input_qc_report_file.basename).extract_fastqc_data_console_log.txt
+ stderr: $(inputs.input_qc_report_file.basename).extract_fastqc_data_error_log.txt
