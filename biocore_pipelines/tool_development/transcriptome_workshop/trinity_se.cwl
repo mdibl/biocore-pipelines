@@ -21,17 +21,25 @@ inputs:
       prefix: '--seqType'
     label: 'read file(s) format'
     doc: >
-      type of reads: (fa or fq)
-  - id: trinity_max_mem
-    type: string
-    default: 20G
+      "type of reads: (fa or fq)"
+  - id: trimmomatic
+    type: boolean?
     inputBinding:
       position: 2
+      prefix: '--trimmomatic'
+    label: 'Enable preprocessing of read(s) w/ trimmomatic'
+    doc: >
+      "execution of integrated qc trimming and adapter clipping"
+  - id: trinity_max_mem
+    type: string
+    default: 50G
+    inputBinding:
+      position: 3
       prefix: '--max_memory'
     label: 'maximum memory allocated'
     doc: >
-      Suggested max memory to use by Trinity where limiting can be enabled.
-      (jellyfish, sorting, etc) provided in Gb of RAM, ie. --max_memory 10G
+      "Suggested max memory to use by Trinity where limiting can be enabled.
+      (jellyfish, sorting, etc) provided in Gb of RAM, ie. --max_memory 50G"
   - id: single_reads
     type: File
     inputBinding:
@@ -40,8 +48,8 @@ inputs:
       itemSeparator: ","
     label: 'Single read(s)'
     doc: >
-      single reads, one or more file names, comma-delimited
-      (note, if single file contains pairs, can use flag: --run_as_paired)
+      "single reads, one or more file names, comma-delimited
+      (note, if single file contains pairs, can use flag: --run_as_paired)"
   - id: trinity_ss_lib_type
     type: string
     inputBinding:
@@ -49,8 +57,8 @@ inputs:
       prefix: '--SS_lib_type'
     label: 'Strand-specific RNA-Seq read orientation'
     doc: >
-      Strand-specific RNA-Seq read orientation. if paired: RF or FR, if single:
-      F or R. (dUTP method = RF). See web documentation
+      "Strand-specific RNA-Seq read orientation. if paired: RF or FR, if single:
+      F or R. (dUTP method = RF). See web documentation"
   - id: trinity_cpu
     type: int?
     default: 2
@@ -59,7 +67,7 @@ inputs:
       prefix: '--CPU'
     label: 'number of CPUs allocated'
     doc: >
-      number of CPUs to use by Trinity
+      "number of CPUs to use by Trinity"
   - id: no_normalize_reads
     type: boolean?
     inputBinding:
@@ -86,13 +94,13 @@ outputs:
       glob: "*fasta"
 
 doc: >
-  Trinity, developed at the Broad Institute and the Hebrew University of
+  "Trinity, developed at the Broad Institute and the Hebrew University of
   Jerusalem,  represents a novel method for the efficient and robust de novo
   reconstruction  of transcriptomes from RNA-seq data.  Trinity combines three
   independent software modules: Inchworm, Chrysalis, and  Butterfly, applied
   sequentially to process large volumes of RNA-seq reads.
 
-  Documentation at https://github.com/trinityrnaseq/trinityrnaseq/wiki
+  Documentation at https://github.com/trinityrnaseq/trinityrnaseq/wiki"
 
 label: Trinity assembles transcript sequences from Illumina RNA-Seq data.
 
