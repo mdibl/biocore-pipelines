@@ -8,6 +8,8 @@ hints:
     dockerPull: quay.io/biocontainers/star:2.6.0c--0
 
 baseCommand: [STAR, --runMode, genomeGenerate]
+stdout: $((inputs.genomeFastaFiles[0].basename)+"_console_log.txt")
+stderr: $((inputs.genomeFastaFiles[0].basename)+"_error_log.txt")
 
 arguments:
   - prefix: "--genomeDir"
@@ -46,6 +48,10 @@ outputs:
     type: File[]
     outputBinding:
       glob: "*"
+  console_log:
+    type: stdout
+  error_log: 
+    type: stderr
 
 $namespaces:
   s: https://schema.org/

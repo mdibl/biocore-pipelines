@@ -256,8 +256,8 @@
             return null;
           }
  baseCommand: java
- stdout: $(inputs.input_fastq_file.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_trimmomatic_con.txt")
- stderr: $(inputs.input_fastq_file.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_trimmomatic_err.txt")
+ stdout: $((inputs.seqfile[0].basename)+"_console_log.txt")
+ stderr: $((inputs.seqfile[0].basename)+"_error_log.txt")
  arguments:
   - valueFrom: $("-Djava.io.tmpdir="+runtime.tmpdir)
     shellQuote: false

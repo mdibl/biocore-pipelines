@@ -1,0 +1,7 @@
+{
+  "input_fastq_read1_files": [
+    { "class": "File","path": "/Users/nmaki/Desktop/cwl_testing/22_TO_04_S38_R1_001.fastq.gz" }
+  ],
+  "default_adapters_file": { "class": "File", "path": "/Users/nmaki/Desktop/GGR-cwl-v1.0.0/v1.0/default_adapters_fromfastqc_30aug2018.fa" },
+  "nthreads": 4
+}
