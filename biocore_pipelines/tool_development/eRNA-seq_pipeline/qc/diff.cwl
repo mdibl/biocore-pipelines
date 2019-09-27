@@ -24,15 +24,5 @@
       type: File
       outputBinding:
         glob: stdout.txt
-<<<<<<< HEAD
  baseCommand: diff
  stdout: stdout.txt
-=======
-    console_log:
-      type: stdout
-    error_log: 
-      type: stderr
- baseCommand: diff
- stdout: $(inputs.basename).diff_console_log.txt
- stderr: $(inputs.basename).diff_error_log.txt
->>>>>>> dev
