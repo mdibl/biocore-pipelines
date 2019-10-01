@@ -11,8 +11,6 @@ requirements:
       - $import: trinity-seq_type.yaml
 
 baseCommand: [ /usr/local/bin/trinityrnaseq/Trinity, --full_cleanup ]
-stdout: $(inputs.single_reads.basename).trinity_data_console_log.txt
-stderr: $(inputs.single_reads.basename).trinity_data_error_log.txt
 inputs:
   - id: trinity_seq_type
     type: string
@@ -93,12 +91,6 @@ outputs:
     type: File
     outputBinding:
       glob: "*fasta"
-  - id: console_log:
-    label: Console output log
-    type: stdout
-  - id: error_log:
-    label: Console error log 
-    type: stderr
 
 doc: >
   "Trinity, developed at the Broad Institute and the Hebrew University of
