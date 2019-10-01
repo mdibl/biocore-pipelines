@@ -27,6 +27,10 @@
       type: File
       outputBinding:
         glob: $(inputs.input_basename + '.fastqc_data.txt')
+<<<<<<< HEAD
+ baseCommand: unzip
+ stdout: $(inputs.input_basename + '.fastqc_data.txt')
+=======
     console_log:
       type: stdout
     error_log: 
@@ -34,3 +38,4 @@
  baseCommand: unzip
  stdout: $(inputs.input_qc_report_file.basename).extract_fastqc_data_console_log.txt
  stderr: $(inputs.input_qc_report_file.basename).extract_fastqc_data_error_log.txt
+>>>>>>> dev

@@ -1,7 +1,7 @@
 {
-  "seqfile": [
+  "input_read_files": [
     {
-      "path": "/home/nmaki/test_readfiles/SL87462_49_R1_ALL.fastq.gz",
+      "path": "/data/internal/JarodRollins/JR18-08/Reseq/22_TO_02_S5_R1_001.fastq.gz",
       "class": "File"
      }
   ],
