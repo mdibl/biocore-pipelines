@@ -4,4 +4,4 @@ trinity_max_mem: 50G
 trinity_cpu: 8
 single_reads: 
     class: File
-    path: /data/scratch/transcriptome_workshop/DustinUpdike/dupdike_001.jesse_glh-1/144-1T_GT18-09423_GGTCACGA-CATAATAC_S12_R1_001.fastq
+    path: /data/scratch/transcriptome-assembly/DustinUpdike/dupdike_001.jesse_glh-1/144-1T_GT18-09423_GGTCACGA-CATAATAC_S12_R1_001.fastq
