@@ -1,4 +1,4 @@
-trinity_ss_lib_type: F
+trinity_ss_lib_type: R
 trinity_seq_type: fq
 trinity_max_mem: 50G
 trinity_cpu: 8
