@@ -20,7 +20,7 @@ inputs:
 			position: 2
 			prefix: '-o'
 		label: 'Output filename'
-		docs: > "Name of output file, required"
+		doc: > "Name of output file, required"
 
 	- id: seq_id_threshold
 		type: string
