@@ -82,14 +82,16 @@ outputs:
 			glob: "*fasta"
 
 
-label:  'Clusters nucleotide dataset into clusters that fit a custom similarity threshold'
+label:  'Clusters nucleotide dataset into bundles that fit a custom similarity threshold'
 
 doc: > 
 	"CD-HIT-EST clusters a nucleotide dataset into clusters that meet a user-defined similarity threshold, 
 	usually a sequence identity. The input is a DNA/RNA dataset in fasta format and the output are two files: 
 	a fasta file of representative sequences and a text file of list of clusters. Since eukaryotic genes usually 
 	have long introns, which cause long gaps, it is difficult to make full-length alignments for these genes. So, 
-	CD-HIT-EST is good for non-intron containing sequences like EST."
+	CD-HIT-EST is good for non-intron containing sequences like EST.
+
+	Documentation can be found at: https://github.com/weizhongli/cdhit/wiki/3.-User's-Guide#CDHITEST"
 
 hints:
 	-	class: DockerRequirement
