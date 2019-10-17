@@ -1,0 +1,6 @@
+single_reads:
+    class: File
+    path: /data/scratch/transcriptome-assembly/JamesGodwin/jgodwin_001.AmbyAmp1/trinity_out_dir/Trinity.fasta
+output_filename: jgodwin_001.AmbyAmp1_tran
+cdhit_max_memory: 51200
+cdhit_max_cpu: 8
