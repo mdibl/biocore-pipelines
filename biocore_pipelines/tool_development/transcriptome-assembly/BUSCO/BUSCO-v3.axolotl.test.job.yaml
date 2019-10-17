@@ -1,21 +1,21 @@
 blastSingleCore: null
-cpu: null
-evalue: null
+cpu: 8
+evalue: 1e-03
 force: null
 help: null
 lineage:
   class: Directory
-  path: test-input/example
+  path: /data/external/busco_lineages/vertebrata_odb9
 long: null
 mode: tran
-outputName: TEST
+outputName: axolotl_busco
 quiet: null
 regionLimit: null
 restart: null
 sequenceFile:
   class: File
   format: 'edam:format_1929'
-  path: test-input/target.fa
+  path: /data/scratch/transcriptome-assembly/JamesGodwin/jgodwin_001.AmbyAmp1/trinity_out_dir/Trinity.fasta
 species: null
 tarzip: null
 tempPath: null
