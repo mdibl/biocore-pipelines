@@ -4,7 +4,7 @@ $namespaces:
   edam: 'http://edamontology.org/'
   s: 'http://schema.org/'
 
-baseCommand: [cd-hit-est]
+baseCommand: [ cd-hit-est ]
 inputs: 
   - id: single_reads
     type: File
@@ -13,7 +13,6 @@ inputs:
       prefix: '-i'
 		label: 'Single read(s)'
 		doc: > "input filename(s) in fasta format, single read(s)"
-
 	- id: output_filename
 		type: string
 		inputBinding:
@@ -21,27 +20,24 @@ inputs:
 			prefix: '-o'
 		label: 'Output filename'
 		doc: > "Name of output file, required"
-
 	- id: seq_id_threshold
-		type: string
+		type: float
 		default: 0.9
 		inputBinding:
 			position: 3
 			prefix: '-c'
 		label: 'Sequence identity threshold'
-		doc: > "default cd-hits 'global seq identity', calculated as
+		doc: > "default cd-hits global seq identity, calculated as
 						number of identical bases in alignment / by full length
 						of shorter sequence"
-
 	- id: word_length
-		type: string
+		type: int?
 		default: 10
 		inputBinding:
 			position: 4
 			prefix: '-n'
 		label: 'Word length'
 		doc: > "TODO: read Users guide for word_length"
-
 	- id: clstr_desc_len
 		type: string
 		default: 20
@@ -50,7 +46,6 @@ inputs:
 			prefix: '-d'
 		label: 'Cluster file description length'
 		doc: > "If set to 0, will take fasta defline, stop at 1st space"
-
 	- id: cdhit_max_memory
 		type: int?
 		default: 4096
@@ -59,7 +54,6 @@ inputs:
 			prefix: '-M'
 		label: 'Memory limit (in MB)'
 		doc: > "If set to 0, memory will be unlimited"
-
 	- id: cdhit_max_cpu
 		type: int?
 		default: 8
@@ -68,7 +62,6 @@ inputs:
 			prefix: '-T'
 		label: 'Thread limit'
 		doc: > "Number of threads, with 0 all CPUs will be used"
-
 outputs:
 	-	id: cluster_dir
 		label: 'Contains representative seq(s), text file of list of clusters'
@@ -76,13 +69,12 @@ outputs:
 		outputBinding:
 			glob: "."
 	- id: rep_seq
-		label: Representative sequences
+		label: 'Representative sequences'
 		type: File
 		outputBinding:
 			glob: "*fasta"
-
-
-label:  'Clusters nucleotide dataset into bundles that fit a custom similarity threshold'
+			
+label:  Clusters nucleotide dataset into bundles that fit a custom similarity threshold
 
 doc: > 
 	"CD-HIT-EST clusters a nucleotide dataset into clusters that meet a user-defined similarity threshold, 
