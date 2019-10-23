@@ -60,13 +60,13 @@ inputs:
       position: 7
       prefix: '--prep_reference'
     label: 'prepare reference, constructs target index'
-  - id: output_dir
+"  - id: output_dir
     type: string
     inputBinding:
       position: 8
       prefix: '--output_dir'
       default: output_dir
-    label: 'write all files to given output directory'
+    label: 'write all files to given output directory'"
 outputs:
   - id: aln_and_est_dir
     label: Alignment and estimation directory containing results
