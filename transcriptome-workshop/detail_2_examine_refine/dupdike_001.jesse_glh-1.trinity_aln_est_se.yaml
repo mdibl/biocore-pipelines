@@ -2,6 +2,7 @@ trinity_ss_lib_type: R
 trinity_seq_type: fq
 trinity_aln_method: bowtie
 trinity_est_method: RSEM
+output_dir: rsem_outdir
 transcripts:
     class: File
     path: /data/scratch/transcriptome-assembly/DustinUpdike/dupdike_001.jesse_glh-1/trinity_out_dir/Trinity.fasta
