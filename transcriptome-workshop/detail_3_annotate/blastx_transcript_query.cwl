@@ -43,7 +43,7 @@ inputs:
       position: 5
       prefix: '-evalue'
     label: 'expected value for saving hits'
-  - id: out_flag:
+  - id: out_flag
     type: string
     default: "blastx.outfmt6"
     inputBinding:
