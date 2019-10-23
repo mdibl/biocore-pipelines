@@ -54,10 +54,16 @@ inputs:
       position: 6
       prefix: '--trinity_mode'
     label: 'automatically generate gene_trans_map and utilize'
+  - id: prep_reference
+    type: boolean?
+    inputBinding:
+      position: 7
+      prefix: '--prep_reference'
+    label: 'prepare reference, constructs target index'
   - id: output_dir
     type: string
     inputBinding:
-      position: 7
+      position: 8
       prefix: '--output_dir'
     label: 'write all files to given output directory'
 outputs:
