@@ -31,7 +31,7 @@ inputs:
     type: File
     inputBinding:
       position: 3
-      prefix: '--single_reads'
+      prefix: '--single'
       itemSeparator: ","
     label: 'single read files (separated by commas, no spaces)'
   - id: trinity_est_method
