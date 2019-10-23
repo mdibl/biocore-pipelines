@@ -22,7 +22,7 @@ inputs:
     label: 'transcript fasta file'
   - id: trinity_seq_type
     type: string
-    default: fq
+    default: fa
     inputBinding:
       position: 2
       prefix: '--seqType'
