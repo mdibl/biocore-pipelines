@@ -10,8 +10,7 @@ requirements:
       - $import: trinity-ss_lib_type.yaml
       - $import: trinity-seq_type.yaml
 
-baseCommand: [ /usr/local/bin/trinityrnaseq/Trinity, --full_cleanup ]
-
+baseCommand: [ Trinity, --full_cleanup ]
 inputs:
   - id: trinity_seq_type
     type: string
@@ -121,9 +120,9 @@ hints:
     packages:
       Trinity:
         version:
-          - 2.6.5
+          - 2.8.5
   - class: DockerRequirement
-    dockerPull: 'trinityrnaseq/trinityrnaseq:2.6.5'
+    dockerPull: 'trinityrnaseq/trinityrnaseq:2.8.5'
 
 $schemas:
   - 'http://edamontology.org/EDAM_1.16.owl'
