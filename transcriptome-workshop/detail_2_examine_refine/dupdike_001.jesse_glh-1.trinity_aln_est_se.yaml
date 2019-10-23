@@ -2,6 +2,8 @@ trinity_ss_lib_type: R
 trinity_seq_type: fa
 trinity_aln_method: bowtie2
 trinity_est_method: kallisto
+trinity_mode: true
+prep_reference: true
 output_dir: kallisto_outdir
 transcripts:
     class: File
