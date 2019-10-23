@@ -29,7 +29,6 @@ inputs:
     inputBinding:
       position: 3
       prefix: '-max_target_seqs'
-      default: 5
     label: 'number of aligned seq to keep, 
             norm default is 1, but Shad 2018 recommends 5'
   - id: outfmt
