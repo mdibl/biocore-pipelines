@@ -6,7 +6,7 @@ $namespaces:
 
 baseCommand: [ blastx ]
 inputs:
-  - id: query
+  - id: transcript
     type: File
     inputBinding:
       position: 1
@@ -47,8 +47,11 @@ inputs:
       prefix: '-evalue'
       default: 1e-3
     label: 'expected value for saving hits'
-
-
+outputs:
+  - id: blastx_output
+    type: File
+    outputBinding:
+      default: blastx.outfmt6
 doc: >
   "Referenced paper: https://academic.oup.com/bioinformatics/article-abstract/35/9/1613/5106166"
   "Blast+ CLO: https://www.ncbi.nlm.nih.gov/books/NBK279684/"
