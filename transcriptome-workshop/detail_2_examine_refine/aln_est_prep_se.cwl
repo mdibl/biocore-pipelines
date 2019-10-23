@@ -7,8 +7,6 @@ $namespaces:
 requirements:
   SchemaDefRequirement:
     types:
-      - $import: trinity-ss_lib_type.yaml
-      - $import: trinity-seq_type.yaml
       - $import: trinity-est_method.yaml
       - $import: trinity-aln_method.yaml
 
@@ -23,7 +21,7 @@ inputs:
   - id: trinity_est_method
     type: string
     inputBinding:
-      position: 4
+      position: 2
       prefix: '--est_method'
     label: 'abundance estimation method
             alignment based: RSEM|eXpress
@@ -31,19 +29,19 @@ inputs:
   - id: trinity_aln_method
     type: string
     inputBinding:
-      position: 5
+      position: 3
       prefix: '--aln_method'
     label: 'alignment method'
   - id: trinity_mode
     type: boolean?
     inputBinding:
-      position: 6
+      position: 4
       prefix: '--trinity_mode'
     label: 'automatically generate gene_trans_map and utilize'
   - id: prep_reference
     type: boolean?
     inputBinding:
-      position: 7
+      position: 5
       prefix: '--prep_reference'
     label: 'prepare reference, constructs target index'
 outputs:
