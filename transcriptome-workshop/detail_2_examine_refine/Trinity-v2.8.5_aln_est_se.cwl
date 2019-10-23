@@ -10,7 +10,7 @@ requirements:
       - $import: trinity-ss_lib_type.yaml
       - $import: trinity-seq_type.yaml
       - $import: trinity-est_method.yaml
-      - $import: trinity_aln_method.yaml
+      - $import: trinity-aln_method.yaml
 
 baseCommand: [ /opt/software/external/trinity/trinity/util/align_and_estimate_abundance.pl ]
 inputs:
