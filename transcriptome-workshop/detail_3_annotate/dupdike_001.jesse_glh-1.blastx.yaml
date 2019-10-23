@@ -1,3 +1,7 @@
 transcript:
     class: File
     path: /data/scratch/transcriptome-assembly/DustinUpdike/dupdike_001.jesse_glh-1/Trinity.fasta
+num_threads: 8
+max_target_seqs: 5
+outfmt: 6
+e_value: 1e-3

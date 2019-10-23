@@ -23,7 +23,6 @@ inputs:
     inputBinding:
       position: 3
       prefix: '-num_threads'
-      default: 8
     label: 'number of threads for blastx'
   - id: max_target_seqs
     type: int
@@ -38,20 +37,18 @@ inputs:
     inputBinding:
       position: 4
       prefix: '-outfmt'
-      default: 6
     label: 'alignment view options (6 denotes tabuler alignment view)'
   - id: e_value
     type: string
     inputBinding:
       position: 5
       prefix: '-evalue'
-      default: 1e-3
     label: 'expected value for saving hits'
 outputs:
   - id: blastx_output
     type: File
     outputBinding:
-      default: blastx.outfmt6
+      glob: blastx.outfmt6
 doc: >
   "Referenced paper: https://academic.oup.com/bioinformatics/article-abstract/35/9/1613/5106166"
   "Blast+ CLO: https://www.ncbi.nlm.nih.gov/books/NBK279684/"
