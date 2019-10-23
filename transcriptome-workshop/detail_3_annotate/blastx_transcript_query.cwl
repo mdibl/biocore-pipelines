@@ -32,13 +32,13 @@ inputs:
     label: 'number of aligned seq to keep, 
             norm default is 1, but Shad 2018 recommends 5'
   - id: outfmt
-    type: string
+    type: int
     inputBinding:
       position: 4
       prefix: '-outfmt'
     label: 'alignment view options (6 denotes tabuler alignment view)'
   - id: e_value
-    type: string
+    type: float
     inputBinding:
       position: 5
       prefix: '-evalue'
