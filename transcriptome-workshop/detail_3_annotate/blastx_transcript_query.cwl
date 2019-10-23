@@ -5,7 +5,17 @@ $namespaces:
   s: 'http://schema.org/'
 
 baseCommand: [ blastx ]
+hints:
+  DockerRequirement:
+    dockerPull: ncbi/blast
+requirements:
+- class: EnvVarRequirement
+  envDef:
+  - envName: BLASTDB
+    envValue: $(inputs.blastdb_dir.path)
 inputs:
+  - id: blastdb_dir
+    type: Directory?
   - id: transcript
     type: File
     inputBinding:
