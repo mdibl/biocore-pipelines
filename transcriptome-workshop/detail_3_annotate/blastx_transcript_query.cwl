@@ -43,11 +43,17 @@ inputs:
       position: 5
       prefix: '-evalue'
     label: 'expected value for saving hits'
+  - id: out_flag:
+    type: string
+    default: "blastx.outfmt6"
+    inputBinding:
+      position: 6
+      prefix: '-out'
 outputs:
   - id: blastx_output
     type: File
     outputBinding:
-      glob: blastx.outfmt6
+      glob: $(inputs.out_flag)
 doc: >
   "Referenced paper: https://academic.oup.com/bioinformatics/article-abstract/35/9/1613/5106166"
   "Blast+ CLO: https://www.ncbi.nlm.nih.gov/books/NBK279684/"
