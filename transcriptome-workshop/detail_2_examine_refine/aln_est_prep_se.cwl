@@ -7,6 +7,8 @@ $namespaces:
 requirements:
   SchemaDefRequirement:
     types:
+      - $import: trinity-ss_lib_type.yaml
+      - $import: trinity-seq_type.yaml
       - $import: trinity-est_method.yaml
       - $import: trinity-aln_method.yaml
 
@@ -18,10 +20,24 @@ inputs:
       position: 1
       prefix: '--transcripts'
     label: 'transcript fasta file'
+  - id: trinity_seq_type
+    type: string
+    default: fq
+    inputBinding:
+      position: 2
+      prefix: '--seqType'
+    label: 'fq|fa'
+  - id: single_reads
+    type: File
+    inputBinding:
+      position: 3
+      prefix: '--single'
+      itemSeparator: ","
+    label: 'single read files (separated by commas, no spaces)'
   - id: trinity_est_method
     type: string
     inputBinding:
-      position: 2
+      position: 4
       prefix: '--est_method'
     label: 'abundance estimation method
             alignment based: RSEM|eXpress
@@ -29,21 +45,27 @@ inputs:
   - id: trinity_aln_method
     type: string
     inputBinding:
-      position: 3
+      position: 5
       prefix: '--aln_method'
     label: 'alignment method'
   - id: trinity_mode
     type: boolean?
     inputBinding:
-      position: 4
+      position: 6
       prefix: '--trinity_mode'
     label: 'automatically generate gene_trans_map and utilize'
   - id: prep_reference
     type: boolean?
     inputBinding:
-      position: 5
+      position: 7
       prefix: '--prep_reference'
     label: 'prepare reference, constructs target index'
+  - id: output_dir
+    type: string
+    inputBinding:
+      position: 8
+      prefix: '--output_dir'
+    label: 'write all files to given output directory'
 outputs:
   - id: aln_and_est_dir
     label: Alignment and estimation directory containing results
