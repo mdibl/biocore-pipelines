@@ -28,7 +28,7 @@ inputs:
       prefix: '--seqType'
     label: 'fq|fa'
   - id: single_reads
-    type: string
+    type: File
     inputBinding:
       position: 3
       prefix: '--single_reads'
