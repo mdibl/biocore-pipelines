@@ -5,7 +5,7 @@ trinity_est_method: RSEM
 output_dir: rsem_outdir
 transcripts:
     class: File
-    path: /data/scratch/transcriptome-assembly/DustinUpdike/dupdike_001.jesse_glh-1/trinity_out_dir/Trinity.fasta
+    path: /data/scratch/transcriptome-assembly/DustinUpdike/dupdike_001.jesse_glh-1/Trinity.fasta
 single_reads:
     class: File
     path: /data/scratch/transcriptome-assembly/DustinUpdike/dupdike_001.jesse_glh-1/64-1P.fastq
