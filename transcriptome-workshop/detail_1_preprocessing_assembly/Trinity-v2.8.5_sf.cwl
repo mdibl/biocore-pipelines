@@ -47,6 +47,7 @@ inputs:
     label: 'text file containing samples'
     doc: >
       "tab-delimited file, indicates biological replicate relationships"
+  ##TODO add input for directory of read files, otherwise using samples_file will not work
   - id: trinity_ss_lib_type
     type: string
     inputBinding:
