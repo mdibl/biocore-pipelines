@@ -47,23 +47,17 @@ inputs:
       position: 4
       prefix: '-outfmt'
     label: 'alignment view options (6 denotes tabuler alignment view)'
-  - id: taxid_flag
-    type: string?
-    inputBinding:
-      position: 5
-      prefix: '-taxids'
-    label: 'taxonomy id to assign all sequences'
   - id: e_value
     type: float
     inputBinding:
-      position: 6
+      position: 5
       prefix: '-evalue'
     label: 'expected value for saving hits'
   - id: out_flag
     type: string
     default: "blastx.outfmt6"
     inputBinding:
-      position: 7
+      position: 6
       prefix: '-out'
 outputs:
   - id: blastx_output
