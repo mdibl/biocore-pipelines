@@ -4,8 +4,7 @@ $namespaces:
   gx: "http://galaxyproject.org/cwl#"
   edam: 'http://edamontology.org/'
   s: 'http://schema.org/'
-baseCommand:
-  - TransDecoder.LongOrfs
+baseCommand: [ /opt/software/external/transdecoder/TransDecoder/TransDecoder.LongOrfs ]
 inputs:
   - format: 'edam:format_3475'
     id: geneToTranscriptMap
@@ -90,7 +89,7 @@ requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
-    dockerPull: 'greatfireball/ime_transdecoder:5.0.2'
+    dockerPull: 'greatfireball/ime_transdecoder:5.5.0'
   - class: gx:interface
     gx:inputs:
       - gx:name: geneToTranscriptMap
