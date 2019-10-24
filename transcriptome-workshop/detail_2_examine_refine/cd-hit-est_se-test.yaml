@@ -1,0 +1,6 @@
+single_reads:
+    class: File
+    path: /data/scratch/transcriptome-assembly/DustinUpdike/dupdike_001.jesse_glh-1/trinity_allT_strandR/Trinity.fasta
+output_filename: dupdike_001.jesse_glh-1_est
+cdhit_max_memory: 51200
+cdhit_max_cpu: 8
