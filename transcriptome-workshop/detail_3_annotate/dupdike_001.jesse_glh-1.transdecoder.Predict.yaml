@@ -1,7 +1,7 @@
 geneticCode: null
 longOpenReadingFrames:
   class: Directory
-  path: test-input/test_transcripts.fasta.transdecoder_dir
+  path: /data/scratch/transcriptome-assembly/DustinUpdike/dupdike_001.jesse_glh-1/trinity_allT_strandR/Trinity.fasta.transdecoder_dir
 noRefineStarts: null
 retainBlastpHits: null
 retainLongOrfsLength: null
