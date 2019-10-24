@@ -13,6 +13,8 @@ requirements:
       - $import: trinity-aln_method.yaml
 
 baseCommand: [ /opt/software/external/trinity/trinity/util/align_and_estimate_abundance.pl ]
+stdout: stdout.txt
+stderr: stderr.txt
 inputs:
   - id: transcripts
     type: File
@@ -72,6 +74,10 @@ outputs:
     type: Directory
     outputBinding:
       glob: "."
+  - id: console_log:
+    type: stdout
+  - id: error_log: 
+    type: stderr
 doc: >
   "Trinity, developed at the Broad Institute and the Hebrew University of
   Jerusalem,  represents a novel method for the efficient and robust de novo
