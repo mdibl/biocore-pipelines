@@ -1,7 +1,7 @@
 geneToTranscriptMap: null
 geneticCode: null
 minimumProteinLength: null
-strandSpecific: R
+strandSpecific: true
 transcriptsFile:
   class: File
   format: 'edam:format_1929'
