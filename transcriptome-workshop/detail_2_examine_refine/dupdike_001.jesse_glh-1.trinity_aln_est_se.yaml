@@ -1,5 +1,5 @@
 trinity_ss_lib_type: R
-trinity_seq_type: fa
+trinity_seq_type: fq
 trinity_aln_method: bowtie2
 trinity_est_method: RSEM
 trinity_mode: true
