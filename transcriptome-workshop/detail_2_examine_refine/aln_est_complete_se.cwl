@@ -74,10 +74,6 @@ outputs:
     type: Directory
     outputBinding:
       glob: "."
-  - id: console_log:
-    type: File
-  - id: error_log: 
-    type: File
 doc: >
   "Trinity, developed at the Broad Institute and the Hebrew University of
   Jerusalem,  represents a novel method for the efficient and robust de novo
