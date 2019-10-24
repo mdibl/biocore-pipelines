@@ -1,6 +1,6 @@
 transcript:
     class: File
-    path: /data/scratch/transcriptome-assembly/DustinUpdike/dupdike_001.jesse_glh-1/Trinity.fasta
+    path: /data/scratch/transcriptome-assembly/DustinUpdike/dupdike_001.jesse_glh-1/trinity_allT_strandR/Trinity.fasta
 blastdb_dir:
     class: Directory
     path: /data/external/trinotatedb/
