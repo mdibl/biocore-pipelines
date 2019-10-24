@@ -3,8 +3,7 @@ cwlVersion: v1.0
 $namespaces:
   edam: 'http://edamontology.org/'
   s: 'http://schema.org/'
-baseCommand:
-  - TransDecoder.Predict
+baseCommand: [ /opt/software/external/transdecoder/TransDecoder/TransDecoder.Predict ]
 inputs:
   - id: geneticCode
     type: TransDecoder-v5-genetic_codes.yaml#genetic_codes?
