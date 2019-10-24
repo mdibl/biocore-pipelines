@@ -12,7 +12,7 @@ inputs:
       position: 1
       prefix: '-i'
       label: 'Single read(s)'
-		doc: > "input filename(s) in fasta format, single read(s)"
+      doc: > "input filename(s) in fasta format, single read(s)"
 	- id: output_filename
 		type: string
 		inputBinding:
