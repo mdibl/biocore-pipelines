@@ -1,0 +1,8 @@
+geneToTranscriptMap: null
+geneticCode: null
+minimumProteinLength: null
+strandSpecific: R
+transcriptsFile:
+  class: File
+  format: 'edam:format_1929'
+  path: /data/scratch/transcriptome-assembly/DustinUpdike/dupdike_001.jesse_glh-1/trinity_allT_strandR/Trinity.fasta
