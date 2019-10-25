@@ -5,7 +5,7 @@ force: null
 help: null
 lineage:
   class: Directory
-  path: test-input/example
+  path: /data/external/busco_lineages/release-v2/eukaryota/nematoda_odb9.tar.gz
 long: null
 mode: tran
 outputName: TEST
@@ -15,7 +15,7 @@ restart: null
 sequenceFile:
   class: File
   format: 'edam:format_1929'
-  path: test-input/target.fa
+  path: /data/scratch/transcriptome-assembly/DustinUpdike/dupdike_001.jesse_glh-1/trinity_allT_strandR/Trinity.fasta
 species: null
 tarzip: null
 tempPath: null
