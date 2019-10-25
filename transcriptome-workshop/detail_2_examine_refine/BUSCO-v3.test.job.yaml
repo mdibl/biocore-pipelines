@@ -5,7 +5,7 @@ force: null
 help: null
 lineage:
   class: Directory
-  path: /data/external/busco_lineages/release-v2/eukaryota/nematoda_odb9.tar.gz
+  path: /data/transformed/busco_lineages/nematoda_odb9
 long: null
 mode: tran
 outputName: TEST
