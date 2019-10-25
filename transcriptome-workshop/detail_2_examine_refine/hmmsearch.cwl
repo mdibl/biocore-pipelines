@@ -36,6 +36,7 @@ inputs:
     label: 'use TC (trusted cutoff) score threshold'
   - id: cpu
     type: int
+    default: 8
     inputBinding:
       position: 5
       prefix: '--cpu'
