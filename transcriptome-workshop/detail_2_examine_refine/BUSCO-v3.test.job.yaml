@@ -5,7 +5,7 @@ force: null
 help: null
 lineage:
   class: Directory
-  path: /data/transformed/busco_lineages/arthropoda_odb9
+  path: /tmp/metazoa_odb9
 long: null
 mode: tran
 outputName: TEST
