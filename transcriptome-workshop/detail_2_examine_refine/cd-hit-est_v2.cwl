@@ -25,29 +25,23 @@ inputs:
     inputBinding:
       position: 4
       prefix: '-n'
-  - id: clstr_desc_len
-    type: int
-    default: 20
-    inputBinding:
-      position: 5
-      prefix: '-d'
   - id: cdhit_max_memory
     type: int
     default: 1600
     inputBinding:
-      position: 6
+      position: 5
       prefix: '-M'
   - id: cdhit_max_cpu
     type: int
     default: 8
     inputBinding:
-      position: 7
+      position: 6
       prefix: '-T'
 outputs:
   - id: cluster_dir
     type: Directory
     outputBinding:
-      glob: "."
+      glob: "$(inputs.output_filename).clstr"
   - id: rep_seq
     type: File
     outputBinding:
