@@ -48,9 +48,9 @@ inputs:
       prefix: '-Z'
     label: 'assert total num of targets is (x), for per seq E-val calc'
   - id: db
-      type: File
-      inputBinding:
-        position: 7
+    type: File
+    inputBinding:
+      position: 7
   - id: query
     type: File
     inputBinding:
