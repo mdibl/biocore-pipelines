@@ -121,3 +121,5 @@ $schemas:
 s:license: "https://www.apache.org/licenses/LICENSE-2.0"
 s:copyrightHolder: "EMBL - European Bioinformatics Institute, 2018"
 s:author: "Arnaud Meng, Maxim Scheremetjew"
+s:modified_by: "MDI Biological Laboratory, 2019"
+s:mod_author: "Nathaniel Maki"
