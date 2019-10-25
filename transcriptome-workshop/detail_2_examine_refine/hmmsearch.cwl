@@ -27,7 +27,7 @@ inputs:
       position: 3
       prefix: '--domtblout'
     label: 'save tabular file, summarizing per-domain output'
-  - id: cut_tc:
+  - id: cut_tc
     type: boolean
     default: true
     inputBinding:
