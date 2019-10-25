@@ -33,7 +33,7 @@ inputs:
       prefix: '-d'
   - id: cdhit_max_memory
     type: int
-    default: 16384
+    default: 1600
     inputBinding:
       position: 6
       prefix: '-M'
@@ -51,4 +51,4 @@ outputs:
   - id: rep_seq
     type: File
     outputBinding:
-      glob: "*.fasta"
+      glob: "$(inputs.output_filename)"
