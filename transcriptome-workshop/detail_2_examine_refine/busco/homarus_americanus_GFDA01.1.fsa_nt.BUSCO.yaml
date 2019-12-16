@@ -5,10 +5,10 @@ force: null
 help: null
 lineage:
   class: Directory
-  path: /tmp/metazoa_odb9
+  path: /data/transformed/busco/metazoa_odb9
 long: null
 mode: tran
-outputName: TEST
+outputName: Homarus_americanus_GFDA01.1.fsa_nt
 quiet: null
 regionLimit: null
 restart: null
