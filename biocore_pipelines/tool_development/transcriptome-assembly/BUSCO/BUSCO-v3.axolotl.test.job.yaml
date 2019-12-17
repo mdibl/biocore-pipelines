@@ -15,7 +15,7 @@ restart: null
 sequenceFile:
   class: File
   format: 'edam:format_1929'
-  path: /data/scratch/transcriptome-assembly/JamesGodwin/jgodwin_001.AmbyAmp1/trinity_out_dir/Trinity.fasta
+  path: /data/scratch/transcriptome-assembly/axolotl-omics-transcriptome/Am_34_longer300bp/Am_34.longer300bp.FINAL.fa
 species: null
 tarzip: null
 tempPath: null

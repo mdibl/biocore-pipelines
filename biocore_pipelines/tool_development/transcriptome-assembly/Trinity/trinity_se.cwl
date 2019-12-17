@@ -10,7 +10,7 @@ requirements:
       - $import: trinity-ss_lib_type.yaml
       - $import: trinity-seq_type.yaml
 
-baseCommand: [ /usr/local/bin/trinityrnaseq/Trinity, --full_cleanup ]
+baseCommand: [Trinity, --full_cleanup ]
 inputs:
   - id: trinity_seq_type
     type: string

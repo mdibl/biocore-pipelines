@@ -1,5 +1,5 @@
 blastSingleCore: null
-cpu: null
+cpu: 8
 evalue: null
 force: null
 help: null
