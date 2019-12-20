@@ -16,5 +16,8 @@
       type: File
       outputBinding:
         glob: $(inputs.input_basename + '.fastqc-read_count.txt')
+    fastqc_read_count_error:
+      type: stderr
  baseCommand: count-fastqc_data-reads.sh
  stdout: $(inputs.input_basename + '.fastqc-read_count.txt')
+ stderr: $(inputs.input_basename + '.fastqc-read_count_err.txt')
