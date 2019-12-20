@@ -137,7 +137,7 @@ outputs:
     outputBinding:
       glob: inputs.output_prefix + "*_fastqc.zip"
   fastqc_console_log:
-    type: stdout
+    type: File
   fastqc_error_log: 
     type: stderr
 
