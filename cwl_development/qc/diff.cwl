@@ -25,6 +25,7 @@
       outputBinding:
         glob: stdout.txt
     diff_error_log:
-      type: File
+      type: stderr 
  baseCommand: diff
  stdout: diff_stdout.txt
+ stderr: diff_stderr.txt
