@@ -144,7 +144,7 @@ $namespaces:
   edam: http://edamontology.org/
 
 s:license: https://spdx.org/licenses/Apache-2.0
-s:codeRepository: https://github.com/pitagora-network/pitagora-cwl
+s:sourceCode: https://github.com/pitagora-network/pitagora-cwl
 s:codeRepository: https://github.com/mdibl/biocore_analysis
 s:author(s):
   - class: s:Person
