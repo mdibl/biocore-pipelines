@@ -1,11 +1,6 @@
 cwlVersion: v1.0
 class: CommandLineTool
 label: "FastQC: A quality control tool for high throughput sequence data"
-doc: "FastQC aims to provide a simple way to do some quality control checks on raw sequence data coming from high throughput sequencing pipelines. It provides a modular set of analyses which you can use to give a quick impression of whether your data has any problems of which you should be aware before doing any further analysis. http://www.bioinformatics.babraham.ac.uk/projects/fastqc/"
-
-hints:
-  DockerRequirement:
-    dockerPull: quay.io/biocontainers/fastqc:0.11.7--pl5.22.0_2
 
 requirements:
   - class: InlineJavascriptRequirement
@@ -27,7 +22,9 @@ inputs:
       position: 100
   casava:
     label: "Files come from raw casava output"
-    doc: "Files come from raw casava output. Files in the same sample group (differing only by the group number) will be analysed as a set rather than individually. Sequences with the filter flag set in the header will be excluded from the analysis. Files must have the same names given to them by casava (including being gzipped and ending with .gz) otherwise they won't be grouped together correctly."
+    doc: "Files come from raw casava output. Files in the same sample group (differing only by the group number) will be analysed as a set rather than individually. 
+         Sequences with the filter flag set in the header will be excluded from the analysis. Files must have the same names given to them by casava 
+         (including being gzipped and ending with .gz) otherwise they won't be grouped together correctly."
     type: boolean?
     default: false
     inputBinding:
@@ -139,18 +136,22 @@ outputs:
   error_log:
     type: stderr
 
-$namespaces:
-  s: https://schema.org/
-  edam: http://edamontology.org/
+hints:
+  DockerRequirement:
+    dockerPull: quay.io/biocontainers/fastqc:0.11.7--pl5.22.0_2
 
-s:license: https://spdx.org/licenses/Apache-2.0
-s:codeRepository: https://github.com/pitagora-network/pitagora-cwl
-s:author:
-  - class: s:Person
-    s:identifier: https://orcid.org/0000-0003-3777-5945
-    s:email: mailto:inutano@gmail.com
-    s:name: Tazro Ohta
+doc: >
+     "FastQC aims to provide a simple way to do some quality control checks on raw sequence data coming from high throughput sequencing pipelines. 
+     It provides a modular set of analyses which you can use to give a quick impression of whether your data has any problems of which you should 
+     be aware before doing any further analysis. Documenation can be found here: http://www.bioinformatics.babraham.ac.uk/projects/fastqc/"
+
+label: "Fastqc provides fast and accurate quality control checking on faw sequence read data."
 
 $schemas:
-  - https://schema.org/docs/schema_org_rdfa.html
-  - http://edamontology.org/EDAM_1.18.owl
+  - 'http://edamontology.org/EDAM_1.18.owl'
+  - 'https://schema.org/docs/schema_org_rdfa.html'
+s:license: "https://www.apache.org/licenses/LICENSE-2.0"
+s:copyrightHolder: "PITAGORA network, 2019"
+s:author: "Tazro Ohta"
+s:editor: "Nathaniel Maki"
+
