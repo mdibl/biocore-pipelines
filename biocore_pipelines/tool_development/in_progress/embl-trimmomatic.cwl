@@ -3,28 +3,30 @@
 cwlVersion: v1.0
 class: CommandLineTool
 
-hints:
-  SoftwareRequirement:
-    packages:
-      trimmomatic:
-        specs: [ "https://identifiers.org/rrid/RRID:SCR_011848" ]
-        version: [ "0.32", "0.35", "0.36" ]
+#hints:
+ # SoftwareRequirement:
+  #  packages:
+   #   trimmomatic:
+    #    specs: [ "https://identifiers.org/rrid/RRID:SCR_011848" ]
+     #   version: [ "0.32", "0.35", "0.36", "0.38", "0.39"]
 
 requirements:
  ResourceRequirement:
-   ramMin: 10240
-   coresMin: 8
+   ramMin: 4096
+   coresMin: 2
  SchemaDefRequirement:
    types:
-    - $import: trimmomatic-end_mode.yaml
-    - $import: trimmomatic-sliding_window.yaml
-    - $import: trimmomatic-phred.yaml
-    - $import: trimmomatic-illumina_clipping.yaml
-    - $import: trimmomatic-max_info.yaml
+    - $import: ../tests/trimmomatic/trimmomatic-end_mode.yaml
+    - $import: ../tests/trimmomatic/trimmomatic-sliding_window.yaml
+    - $import: ../tests/trimmomatic/trimmomatic-phred.yaml
+    - $import: ../tests/trimmomatic/trimmomatic-illumina_clipping.yaml
+    - $import: ../tests/trimmomatic/trimmomatic-max_info.yaml
  InlineJavascriptRequirement: {}
  ShellCommandRequirement: {}
 
-# hints:
+hints:
+  DockerRequirement:
+    dockerPull: dukegcb/trimmomatic
 #  - $import: trimmomatic-docker.yml
 
 inputs:
@@ -261,8 +263,8 @@ outputs:
            }
          }
 
-baseCommand: [ java, org.usadellab.trimmomatic.Trimmomatic ]
-
+#baseCommand: [ java, org.usadellab.trimmomatic.Trimmomatic ]
+baseCommand: [ java ]
 arguments:
 - valueFrom: trim.log
   prefix: -trimlog 
@@ -315,7 +317,7 @@ $namespaces:
  edam: http://edamontology.org/
  s: http://schema.org/
 $schemas:
- - http://edamontology.org/EDAM_1.16.owl
+ - http://edamontology.org/EDAM_1.18.owl
  - https://schema.org/docs/schema_org_rdfa.html
 
 s:license: "https://www.apache.org/licenses/LICENSE-2.0"
