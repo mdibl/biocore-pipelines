@@ -13,6 +13,8 @@
  requirements:
     InlineJavascriptRequirement: {}
     ShellCommandRequirement: {}
+    ResourceRequirement:
+      ramMin: 4096
  hints:
     DockerRequirement:
       dockerPull: dukegcb/trimmomatic

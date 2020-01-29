@@ -185,7 +185,7 @@
       doc: |
         <quality>
         Remove low quality bases from the end. As long as a base has a value below this threshold
-        the base is removed and the next base (which as trimmomatic is starting from the 3" prime end
+        the base is removed and the next base (which as trimmomatic is starting from the 3 prime end
         would be base preceding the just removed base) will be investigated. This approach can be
         used removing the special illumina "low quality segment" regions (which are marked with
         quality score of 2), but we recommend Sliding Window or MaxInfo instead

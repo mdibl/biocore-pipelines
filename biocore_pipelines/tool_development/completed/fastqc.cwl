@@ -1,9 +1,18 @@
 cwlVersion: v1.0
 class: CommandLineTool
+
+doc: >
+     "FastQC aims to provide a simple way to do some quality control checks on raw sequence data coming from high throughput sequencing pipelines. 
+     It provides a modular set of analyses which you can use to give a quick impression of whether your data has any problems of which you should 
+     be aware before doing any further analysis. Documenation can be found here: http://www.bioinformatics.babraham.ac.uk/projects/fastqc/"
+
 label: "FastQC: A quality control tool for high throughput sequence data"
 
 requirements:
   - class: InlineJavascriptRequirement
+hints:
+  DockerRequirement:
+    dockerPull: quay.io/biocontainers/fastqc:0.11.7--pl5.22.0_2
 
 baseCommand: [fastqc]
 stdout: $(inputs.seqfile[0].basename + "_fastqc_console.txt")
@@ -135,17 +144,6 @@ outputs:
     type: stdout
   error_log:
     type: stderr
-
-hints:
-  DockerRequirement:
-    dockerPull: quay.io/biocontainers/fastqc:0.11.7--pl5.22.0_2
-
-doc: >
-     "FastQC aims to provide a simple way to do some quality control checks on raw sequence data coming from high throughput sequencing pipelines. 
-     It provides a modular set of analyses which you can use to give a quick impression of whether your data has any problems of which you should 
-     be aware before doing any further analysis. Documenation can be found here: http://www.bioinformatics.babraham.ac.uk/projects/fastqc/"
-
-label: "Fastqc provides fast and accurate quality control checking on faw sequence read data."
 
 $schemas:
   - 'http://edamontology.org/EDAM_1.18.owl'
