@@ -3,13 +3,12 @@ class: CommandLineTool
 label: "FastQC: A quality control tool for high throughput sequence data"
 doc: "FastQC aims to provide a simple way to do some quality control checks on raw sequence data coming from high throughput sequencing pipelines. It provides a modular set of analyses which you can use to give a quick impression of whether your data has any problems of which you should be aware before doing any further analysis. http://www.bioinformatics.babraham.ac.uk/projects/fastqc/"
 
-hints:
-  DockerRequirement:
-    dockerPull: quay.io/biocontainers/fastqc:0.11.7--pl5.22.0_2
+requirements:
+  - class: InlineJavascriptRequirement
 
 baseCommand: [fastqc]
-stdout: $(inputs.input_fastq_file.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_fastqc_con.txt")
-stderr: $(inputs.input_fastq_file.path.replace(/^.*[\\\/]/, "").replace(/\.gz$/,"").replace(/\.[^/.]+$/, "") + "_fastqc_err.txt")
+stdout: $(inputs.output_prefix + "_fastqc_con.txt")
+stderr: $(inputs.output_prefix + "_fastqc_err.txt")
 
 arguments:
   - prefix: --outdir
@@ -141,12 +140,12 @@ $namespaces:
   edam: http://edamontology.org/
 
 s:license: https://spdx.org/licenses/Apache-2.0
-s:codeRepository: https://github.com/pitagora-network/pitagora-cwl
+s:codeRepository: https://github.com/mdibl/biocore_analysis
 s:author:
   - class: s:Person
-    s:identifier: https://orcid.org/0000-0003-3777-5945
-    s:email: mailto:inutano@gmail.com
-    s:name: Tazro Ohta
+    s:identifier: https://orcid.org/0000-0001-9120-8365
+    s:email: mailto:nmaki@mdibl.org
+    s:name: Nathaniel Maki
 
 $schemas:
   - https://schema.org/docs/schema_org_rdfa.html
