@@ -1,4 +1,7 @@
 seqfile:
   - class: File
-    path: _PATH_TO_SEQFILE_
-nthreads: _NTHREADS_
+    path: "/Users/nmaki/Desktop/local_cwl_testing/by4741ipa1d1rep1samp4_R1_001.fastq"
+default_adapters_file:
+  - class: File
+    path: "/Users/nmaki/Desktop/ggr-cwl/GGR-cwl-v1.0.0/v1.0/default_adapters_fromfastqc_30aug2018.fa"
+nthreads: 4
