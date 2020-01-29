@@ -7,7 +7,12 @@ hints:
   DockerRequirement:
     dockerPull: quay.io/biocontainers/fastqc:0.11.7--pl5.22.0_2
 
+requirements:
+  - class: InlineJavascriptRequirement
+
 baseCommand: [fastqc]
+stdout: $(inputs.seqfile[0].basename + "_fastqc_console.txt")
+stderr: $(inputs.seqfile[0].basename + "_fastqc_error.txt")
 
 arguments:
   - prefix: --outdir
@@ -129,6 +134,10 @@ outputs:
     type: File[]
     outputBinding:
       glob: "*_fastqc.zip"
+  console_log:
+    type: stdout
+  error_log:
+    type: stderr
 
 $namespaces:
   s: https://schema.org/
