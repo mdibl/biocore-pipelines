@@ -1,7 +1,8 @@
  class: CommandLineTool
  cwlVersion: v1.0
- doc: |
-    Trimmomatic is a fast, multithreaded command line tool that can be used to trim and crop
+
+ doc: >
+    "Trimmomatic is a fast, multithreaded command line tool that can be used to trim and crop
     Illumina (FASTQ) data as well as to remove adapters. These adapters can pose a real problem
     depending on the library preparation and downstream application.
     There are two major modes of the program: Paired end mode and Single end mode. The
@@ -9,13 +10,20 @@
     information contained in paired reads to better find adapter or PCR primer fragments
     introduced by the library preparation process.
     Trimmomatic works with FASTQ files (using phred + 33 or phred + 64 quality scores,
-    depending on the Illumina pipeline used).
+    depending on the Illumina pipeline used)."
+
+label: "Trimmomatic is quality control utility, able to trim and crop FASTQ read data"
+
  requirements:
-    InlineJavascriptRequirement: {}
-    ShellCommandRequirement: {}
+    - class: InlineJavascriptRequirement: {}
+    - class:ShellCommandRequirement: {}
  hints:
     DockerRequirement:
       dockerPull: dukegcb/trimmomatic
+
+ stdout: $(inputs.input_read*_fastq_file.basename + "_trimm_console.txt")
+ stderr: $(inputs.input_read*_fastq_file.basename + "_trimm_error.txt")
+
  inputs:
     phred:
       type: string
