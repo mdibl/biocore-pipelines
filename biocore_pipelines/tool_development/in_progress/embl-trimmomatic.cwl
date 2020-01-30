@@ -24,9 +24,9 @@ requirements:
  InlineJavascriptRequirement: {}
  ShellCommandRequirement: {}
 
-hints:
-  DockerRequirement:
-    dockerPull: dukegcb/trimmomatic
+#hints:
+ # DockerRequirement:
+  #  dockerPull: dukegcb/trimmomatic
 #  - $import: trimmomatic-docker.yml
 
 inputs:
