@@ -1,0 +1,70 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "KerstenBreuer",
+      "name": "KerstenBreuer",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/28008309?v=4",
+      "profile": "https://github.com/KerstenBreuer",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "tetron",
+      "name": "Peter Amstutz",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1316612?v=4",
+      "profile": "https://github.com/tetron",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "michael-kotliar",
+      "name": "Michael Kotliar",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/19493721?v=4",
+      "profile": "https://github.com/michael-kotliar",
+      "contributions": [
+        "ideas",
+        "code"
+      ]
+    },
+    {
+      "login": "pvanheus",
+      "name": "pvanheus",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4154788?v=4",
+      "profile": "https://github.com/pvanheus",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "medcelerate",
+      "name": "medcelerate",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/32549017?v=4",
+      "profile": "https://github.com/medcelerate",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "stain",
+      "name": "stain",
+      "avatar_url": "ihttps://avatars3.githubusercontent.com/u/253413?v=4",
+      "profile": "https://github.com/stain",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "bio-cwl-tools",
+  "projectOwner": "common-workflow-library",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": false
+}
