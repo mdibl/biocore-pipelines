@@ -1,0 +1,8 @@
+{
+    "input_fastq_file":
+      {
+        "path": "/home/jhgraber/cwl-test/test_1.fastq.gz",
+        "class": "File"
+       },
+    "output_prefix": testQC
+  }

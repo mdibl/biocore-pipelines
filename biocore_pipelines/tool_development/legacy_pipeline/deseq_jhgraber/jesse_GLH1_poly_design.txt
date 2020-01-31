@@ -1,0 +1,7 @@
+sample	label	genotype
+f2	/data/projects/DustinUpdike/Jesse_GLH-1/rsem/144-1P.genes.results	glh1
+f3	/data/projects/DustinUpdike/Jesse_GLH-1/rsem/144-2P.genes.results	glh1
+f6	/data/projects/DustinUpdike/Jesse_GLH-1/rsem/144-3P.genes.results	glh1
+f8	/data/projects/DustinUpdike/Jesse_GLH-1/rsem/64-1P.genes.results	wt
+f10	/data/projects/DustinUpdike/Jesse_GLH-1/rsem/64-2P.genes.results	wt
+f11	/data/projects/DustinUpdike/Jesse_GLH-1/rsem/64-3P.genes.results	wt
