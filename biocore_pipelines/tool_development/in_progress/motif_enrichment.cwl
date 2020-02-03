@@ -16,4 +16,5 @@ inputs:
       - File[]
     inputBinding:
       position: 1
-      
+    doc: |
+      Input for file that contains Position Weight Matrices
