@@ -1,3 +1,4 @@
+install.packages("BiocManager")
 install.packages("PWMEnrich")
 install.packages("Biostrings")
 install.packages("IRanges")
