@@ -1,0 +1,4 @@
+FROM r-base
+COPY . /Users/nmaki/Documents/GitHub/biocore_analysis/aux_scripts/
+WORKDIR /Users/nmaki/Documents/GitHub/biocore_analysis/biocore_pipelines/tool_development/in_progress/
+CMD ["Rscript", "Motif_Enrichment_v2.R"]
