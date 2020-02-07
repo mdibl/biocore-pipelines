@@ -8,3 +8,8 @@ doc: >
 
 label:  "The DESeq2 package uses the analysis of count data from high-throughput sequencing results to detect differential gene expression"
 
+requirements:
+  - class: InlineJavascriptRequirement
+hints:
+  DockerRequirement:
+    dockerPull: docker pull quay.io/biocontainers/bioconductor-deseq2:1.26.0--r36he1b5a44_0
