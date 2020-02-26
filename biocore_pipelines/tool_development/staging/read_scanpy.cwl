@@ -94,7 +94,11 @@ doc: >
     It includes preprocessing, visualization, clustering, trajectory inference and differential expression testing. 
     The Python-based implementation efficiently deals with datasets of more than one million cells."
 
-label: "Scanpy Reads takes in 10x data as input and saves it in a specified format"
+label: 'Scanpy Reads takes in 10x data as input and saves it in a specified format'
+
+arguments:
+  - prefix: '--output'
+    valueFrom: $(runtime.outdir)/scanpy_out_dir/
 
 hints:
   - class: DockerRequirement
