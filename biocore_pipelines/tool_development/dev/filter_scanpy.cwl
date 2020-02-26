@@ -52,11 +52,14 @@ inputs:
     inputBinding:
       position: 6
       prefix: '--gene-name'
-    label: 'Name of the variable that contains gene names, used for flagging mitochondria genes'
+    label: 'name of the variable that contains gene names, used for flagging mitochondria genes'
   
   - id: list-attr
     type: boolean?
-    
+      prefix: '--list-attr'
+    label: 'list attributes that can be filtered on'
+  
+  - id: 
 
 
 
