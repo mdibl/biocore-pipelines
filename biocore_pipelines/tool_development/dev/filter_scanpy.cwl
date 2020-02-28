@@ -59,9 +59,40 @@ inputs:
       prefix: '--list-attr'
     label: 'list attributes that can be filtered on'
   
-  - id: 
+  - id: param
+    type: string, float
+    inputBinding:
+      position: 7
+      prefix: '--param'
+    label: 'numerical parameters used to filter the data, in the format of "-p name min max"'
+  
+  - id: category
+    type: string
+    inputBinding:
+      position: 8
+      prefix: '--category'
+    label: 'categorical attributes used to filter the data in format of
+            "-c <name> <values>", where entries with <name> attribute with value in <values> are kept'
+  
+  - id: subset 
+    type: string
+    inputBinding:
+      position: 9
+      prefix: '--subset'
+    label: 'similar to --category in format of -s <name> <file>'
 
+  - id: input_obj
+    type: File
+    inputBinding:
+      position: 10
+    label: 'input file in format specified by --input-format'
 
+outputs:
+  - id: output_obj
+    type: File
+    outputBinding:
+      glob: "*."
+    label: 'output file in format specified by --output-format'
 
 doc: >
     "Scanpy is a scalable toolkit for analyzing single-cell gene expression data built jointly with anndata. 
