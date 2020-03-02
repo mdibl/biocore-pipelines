@@ -66,7 +66,7 @@ inputs:
     type: int
     default: 20
     inputBinding:
-      position: 7
+      position: 8
       prefix: '--n-bins'
     label: 'number of bins for binning the mean gene expression'
 
@@ -74,7 +74,7 @@ inputs:
     type: int
     default: 2000
     inputBinding:
-      position: 8
+      position: 9
       prefix: '--n-top-genes'
     label: 'number of highly-variable genes to keep'
 
@@ -82,7 +82,7 @@ inputs:
     type: string
     default: "seurat"
     inputBinding:
-      position: 9
+      position: 10
       prefix: '--flavor'
     label: choose flavor for computing normalized dispersion [seurat|cellranger]
 
@@ -96,7 +96,7 @@ inputs:
     type: string, int
     default: None, None
     inputBinding:
-      position: 10
+      position: 11
       prefix: '--by-batch'
     label: 'find highly variable genes within each batch defined by <text>
             then pool and keep those found in at least <integer> batches'
