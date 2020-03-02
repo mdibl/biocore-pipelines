@@ -78,6 +78,35 @@ inputs:
       prefix: '--n-top-genes'
     label: 'number of highly-variable genes to keep'
 
+  - id: flavor
+    type: string
+    default: "seurat"
+    inputBinding:
+      position: 9
+      prefix: '--flavor'
+    label: choose flavor for computing normalized dispersion [seurat|cellranger]
+
+  - id: subset
+    type: boolean?
+    inputBinding:
+      prefix: '--subset'
+    label: 'when set, inplace subset to highly-variable genes, otherwise only flag hvg'
+
+  - id: by-batch
+    type: string, int
+    default: None, None
+    inputBinding:
+      position: 10
+      prefix: '--by-batch'
+    label: 'find highly variable genes within each batch defined by <text>
+            then pool and keep those found in at least <integer> batches'
+
+outputs:
+  - id: output_obj
+    type: File
+    outputBinding:
+      glob: "*."
+    label: 'output file in format specified by --output-format'
 
 doc: >
     "Scanpy is a scalable toolkit for analyzing single-cell gene expression data built jointly with anndata. 
