@@ -33,7 +33,7 @@ inputs:
     inputBinding:
       position: 2
       prefix: '--output-format'
-    label: 'output object format [anndata|loom|zarr]'
+    label: 'Output object format [anndata|loom|zarr]'
 
   - id: zarr-chunk-size
     type: int
@@ -41,14 +41,14 @@ inputs:
     inputBinding:
       position: 3
       prefix: '--zarr-chunk-size'
-    label: 'chunk size for writing outputs in zarr format'
+    label: 'Chunk size for writing outputs in zarr format'
   
   - id: export-mtx
     type: string
     inputBinding:
       position: 4
       prefix: '--export-mtx'
-    label: 'when specified, use as prefix for exporting mtx files'
+    label: 'When specified, use as prefix for exporting mtx files'
   
   - id: show-obj
     type: string
@@ -56,7 +56,7 @@ inputs:
     inputBinding:
       position: 5
       prefix: '--show-obj'
-    label: 'print output object summary info to specified stream [stdout|stderr]'
+    label: 'Print output object summary info to specified stream [stdout|stderr]'
 
   - id: mean-limits
     type: float
@@ -64,7 +64,7 @@ inputs:
     inputBinding:
       position: 6
       prefix: '--mean-limits'
-    label: 'cutoffs for the mean of expression in the format of "-m min max"'
+    label: 'Cutoffs for the mean of expression in the format of "-m min max"'
   
   - id: disp-limits
     type: float
@@ -72,7 +72,7 @@ inputs:
     inputBinding:
       position: 7
       prefix: '--disp-limits'
-    label: 'cutoffs for the dispersion of expression in the format of "-d min max"'
+    label: 'Cutoffs for the dispersion of expression in the format of "-d min max"'
 
   - id: n-bins
     type: int
@@ -80,7 +80,7 @@ inputs:
     inputBinding:
       position: 8
       prefix: '--n-bins'
-    label: 'number of bins for binning the mean gene expression'
+    label: 'Number of bins for binning the mean gene expression'
 
   - id: n-top-genes
     type: int
@@ -88,7 +88,7 @@ inputs:
     inputBinding:
       position: 9
       prefix: '--n-top-genes'
-    label: 'number of highly-variable genes to keep'
+    label: 'Number of highly-variable genes to keep'
 
   - id: flavor
     type: string
@@ -96,13 +96,13 @@ inputs:
     inputBinding:
       position: 10
       prefix: '--flavor'
-    label: choose flavor for computing normalized dispersion [seurat|cellranger]
+    label: Choose flavor for computing normalized dispersion [seurat|cellranger]
 
   - id: subset
     type: boolean?
     inputBinding:
       prefix: '--subset'
-    label: 'when set, inplace subset to highly-variable genes, otherwise only flag hvg'
+    label: 'When set, inplace subset to highly-variable genes, otherwise only flag hvg'
 
   - id: by-batch
     type: string, int
@@ -110,7 +110,7 @@ inputs:
     inputBinding:
       position: 11
       prefix: '--by-batch'
-    label: 'find highly variable genes within each batch defined by <text>
+    label: 'Find highly variable genes within each batch defined by <text>
             then pool and keep those found in at least <integer> batches'
 
 outputs:
@@ -118,7 +118,7 @@ outputs:
     type: File
     outputBinding:
       glob: "*."
-    label: 'output file in format specified by --output-format'
+    label: 'Output file in format specified by --output-format'
 
 $schemas:
   - 'http://edamontology.org/EDAM_1.16.owl'
