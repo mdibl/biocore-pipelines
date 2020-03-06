@@ -63,3 +63,23 @@ inputs:
       position: 6
       prefix: '--no-zero-center'
     label: 'When set, omit zero-centering variables to allow efficeint handling of sparse input'
+  - id: max-value
+    type: float
+    inputBinding:
+      position: 7
+      prefix: '--max-value'
+    label: 'When specified, clip to this value after scaling, otherwise no'
+    
+outputs:
+  - id: output_obj
+    type: File
+    outputBinding:
+      glob: "*."
+    label: 'Output file in format specified by --output-format'
+
+$schemas:
+  - 'http://edamontology.org/EDAM_1.16.owl'
+  - 'https://schema.org/docs/schema_org_rdfa.html'
+s:license: "https://www.gnu.org/licenses/gpl-3.0.en.html"
+s:copyrightHolder: "MDIBL - MDI Biological Laboratory, 2020"
+s:author: "Nathaniel Maki"
