@@ -1,10 +1,25 @@
 class: CommandLineTool
 cwlVersion: v1.0
-$namespaces:
-  edam: 'http://edamontology.org/'
-  s: 'http://schema.org/'
 
-baseCommand: [scanpy-cli, read, --debug]
+doc: >
+    "Scanpy is a scalable toolkit for analyzing single-cell gene expression data built jointly with anndata. 
+    It includes preprocessing, visualization, clustering, trajectory inference and differential expression testing. 
+    The Python-based implementation efficiently deals with datasets of more than one million cells."
+
+label: 'Scanpy Reads takes in 10x data as input and saves it in a specified format'
+
+hints:
+  - class: DockerRequirement
+    dockerPull: 'docker pull quay.io/biocontainers/scanpy-scripts:0.2.9--py_0'
+
+baseCommand: [scanpy-cli, read]
+
+stdout: $(inputs.input-10x-h5.basename + "_read-scanpy_console.txt")
+stderr: $(inputs.input-10x-h5.basename + "_read-scanpy_error.txt")
+
+arguments:
+  - prefix: '--output'
+    valueFrom: $(runtime.outdir)/scanpy_out_dir/
 
 inputs:
   - id: input-10x-h5
@@ -89,20 +104,6 @@ outputs:
       glob: "*."
     label: 'output file in format specified by --output-format'
 
-doc: >
-    "Scanpy is a scalable toolkit for analyzing single-cell gene expression data built jointly with anndata. 
-    It includes preprocessing, visualization, clustering, trajectory inference and differential expression testing. 
-    The Python-based implementation efficiently deals with datasets of more than one million cells."
-
-label: 'Scanpy Reads takes in 10x data as input and saves it in a specified format'
-
-arguments:
-  - prefix: '--output'
-    valueFrom: $(runtime.outdir)/scanpy_out_dir/
-
-hints:
-  - class: DockerRequirement
-    dockerPull: 'docker pull quay.io/biocontainers/scanpy-scripts:0.2.9--py_0'
 $schemas:
   - 'http://edamontology.org/EDAM_1.16.owl'
   - 'https://schema.org/docs/schema_org_rdfa.html'

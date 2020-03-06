@@ -13,6 +13,7 @@ hints:
     dockerPull: 'docker pull quay.io/biocontainers/scanpy-scripts:0.2.9--py_0'
 
 baseCommand: [scanpy-cli, norm]
+
 stdout: $(inputs.input_obj.basename + "_norm-scanpy_console.txt")
 stderr: $(inputs.input_obj.basename + "_norm-scanpy_error.txt")
 
