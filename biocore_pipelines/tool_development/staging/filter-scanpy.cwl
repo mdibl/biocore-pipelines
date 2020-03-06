@@ -36,7 +36,7 @@ inputs:
     inputBinding:
       position: 2
       prefix: '--output-format'
-    label: 'output object format [anndata|loom|zarr]'
+    label: 'Output object format [anndata|loom|zarr]'
   
   - id: zarr-chunk-size
     type: int
@@ -44,14 +44,14 @@ inputs:
     inputBinding:
       position: 3
       prefix: '--zarr-chunk-size'
-    label: 'chunk size for writing outputs in zarr format'
+    label: 'Chunk size for writing outputs in zarr format'
   
   - id: export-mtx
     type: string
     inputBinding:
       position: 4
       prefix: '--export-mtx'
-    label: 'when specified, use as prefix for exporting mtx files'
+    label: 'When specified, use as prefix for exporting mtx files'
   
   - id: show-obj
     type: string
@@ -59,7 +59,7 @@ inputs:
     inputBinding:
       position: 5
       prefix: '--show-obj'
-    label: 'print output object summary info to specified stream [stdout|stderr]'
+    label: 'Print output object summary info to specified stream [stdout|stderr]'
   
   - id: gene-name
     type: string
@@ -67,26 +67,26 @@ inputs:
     inputBinding:
       position: 6
       prefix: '--gene-name'
-    label: 'name of the variable that contains gene names, used for flagging mitochondria genes'
+    label: 'Name of the variable that contains gene names, used for flagging mitochondria genes'
   
   - id: list-attr
     type: boolean?
       prefix: '--list-attr'
-    label: 'list attributes that can be filtered on'
+    label: 'List attributes that can be filtered on'
   
   - id: param
     type: string, float
     inputBinding:
       position: 7
       prefix: '--param'
-    label: 'numerical parameters used to filter the data, in the format of "-p name min max"'
+    label: 'Numerical parameters used to filter the data, in the format of "-p name min max"'
   
   - id: category
     type: string
     inputBinding:
       position: 8
       prefix: '--category'
-    label: 'categorical attributes used to filter the data in format of
+    label: 'Categorical attributes used to filter the data in format of
             "-c <name> <values>", where entries with <name> attribute with value in <values> are kept'
   
   - id: subset 
@@ -94,20 +94,20 @@ inputs:
     inputBinding:
       position: 9
       prefix: '--subset'
-    label: 'similar to --category in format of -s <name> <file>'
+    label: 'Similar to --category in format of -s <name> <file>'
 
   - id: input_obj
     type: File
     inputBinding:
       position: 10
-    label: 'input file in format specified by --input-format'
+    label: 'Input file in format specified by --input-format'
 
 outputs:
   - id: output_obj
     type: File
     outputBinding:
       glob: "*."
-    label: 'output file in format specified by --output-format'
+    label: 'Output file in format specified by --output-format'
 
   - id: console_log:
     type: stdout

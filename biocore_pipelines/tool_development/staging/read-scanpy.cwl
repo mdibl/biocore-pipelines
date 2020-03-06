@@ -27,14 +27,14 @@ inputs:
     inputBinding:
       position: 1
       prefix: '--input-10x-h5'
-    label: 'input 10x data in Cell-Ranger hdf5 format'
+    label: 'Input 10x data in Cell-Ranger hdf5 format'
 
   - id: input-10x-mtx
     type: Directory
     inputBinding:
       position: 2
       prefix: '--input-10x-mtx'
-    label: 'path of input folder containing the 10x data in mtx format'
+    label: 'Path of input folder containing the 10x data in mtx format'
   
   - id: output-format
     type: string
@@ -42,7 +42,7 @@ inputs:
     inputBinding:
       position: 3
       prefix: '--output-format'
-    label: 'output object format [anndata|loom|zarr]'
+    label: 'Output object format [anndata|loom|zarr]'
   
   - id: zarr-chunk-size
     type: int
@@ -50,14 +50,14 @@ inputs:
     inputBinding:
       position: 4
       prefix: '--zarr-chunk-size'
-    label: 'chunk size for writing outputs in zarr format'
+    label: 'Chunk size for writing outputs in zarr format'
   
   - id: export-mtx
     type: string
     inputBinding:
       position: 5
       prefix: '--export-mtx'
-    label: 'when specified, use as prefix for exporting mtx files'
+    label: 'When specified, use as prefix for exporting mtx files'
   
   - id: show-obj
     type: string
@@ -65,7 +65,7 @@ inputs:
     inputBinding:
       position: 6
       prefix: '--show-obj'
-    label: 'print output object summary info to specified stream [stdout|stderr]'
+    label: 'Print output object summary info to specified stream [stdout|stderr]'
   
   - id: genome
     type: string
@@ -73,7 +73,7 @@ inputs:
     inputBinding:
       position: 7
       prefix: '--genome'
-    label: 'name of genome group in hdf5 file, required by "--input-10x-h5"'
+    label: 'Name of genome group in hdf5 file, required by "--input-10x-h5"'
   
   - id: var-names
     type: string
@@ -81,28 +81,28 @@ inputs:
     inputBinding:
       position: 8
       prefix: '--var-names'
-    label: 'attribute to be used as the index of the variable table, required by "--input-10x-mtx" [gene_symbols|gene_ids]'
+    label: 'Attribute to be used as the index of the variable table, required by "--input-10x-mtx" [gene_symbols|gene_ids]'
 
   - id: extra-obs
     type: File
     inputBinding:
       position: 9
       prefix: '--extra-obs'
-    label: 'extra cell metadata table, must be TSV with header row, index column, and matched dimension'
+    label: 'Extra cell metadata table, must be TSV with header row, index column, and matched dimension'
 
   - id: extra-var
     type: File
     inputBinding:
       position: 10
       prefix: '--extra-var'
-    label: 'extra gene metadata table, must be TSV with header row, index column, and matched dimension'
+    label: 'Extra gene metadata table, must be TSV with header row, index column, and matched dimension'
 
 outputs:
   - id: output_obj
     type: File
     outputBinding:
       glob: "*."
-    label: 'output file in format specified by --output-format'
+    label: 'Output file in format specified by --output-format'
 
 $schemas:
   - 'http://edamontology.org/EDAM_1.16.owl'
