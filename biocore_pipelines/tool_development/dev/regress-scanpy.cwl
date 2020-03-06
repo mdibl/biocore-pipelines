@@ -6,13 +6,13 @@ doc: >
     It includes preprocessing, visualization, clustering, trajectory inference and differential expression testing. 
     The Python-based implementation efficiently deals with datasets of more than one million cells."
 
-label: 'Scanpy scale scales data per gene'
+label: 'Scanpy regress regress-out observation variables'
 
 hints:
   - class: DockerRequirement
     dockerPull: 'docker pull quay.io/biocontainers/scanpy-scripts:0.2.9--py_0'
 
-baseCommand: [scanpy-cli, scale]
+baseCommand: [scanpy-cli, regress]
 
 arguments:
   - prefix: '--output'
@@ -58,20 +58,20 @@ inputs:
       prefix: '--show-obj'
     label: 'Print output object summary info to specified stream [stdout|stderr]'
 
-  - id: no-zero-center
-    type: boolean?
+  - id: n-jobs
+    type: int
     inputBinding:
       position: 6
-      prefix: '--no-zero-center'
-    label: 'When set, omit zero-centering variables to allow efficeint handling of sparse input'
-    
-  - id: max-value
-    type: float
+      prefix: '--n-jobs'
+    label: 'Number of jobs for parallel computation'
+  
+  - id: keys
+    type: string
     inputBinding:
       position: 7
-      prefix: '--max-value'
-    label: 'When specified, clip to this value after scaling, otherwise no'
-    
+      prefix: '--keys'
+    label: 'Key(s) for observation annotation on which to regress'
+
 outputs:
   - id: output_obj
     type: File
