@@ -4,7 +4,8 @@ cwlVersion: v1.0
 doc: >
     "Scanpy is a scalable toolkit for analyzing single-cell gene expression data built jointly with anndata. 
     It includes preprocessing, visualization, clustering, trajectory inference and differential expression testing. 
-    The Python-based implementation efficiently deals with datasets of more than one million cells."
+    The Python-based implementation efficiently deals with datasets of more than one million cells.
+    Link to current documentation: https://scanpy.readthedocs.io/en/stable/"
 
 label: 'Scanpy norm normalises data per cell'
 
