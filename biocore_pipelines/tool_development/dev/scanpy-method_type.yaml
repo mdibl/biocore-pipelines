@@ -1,0 +1,4 @@
+# Refer to embed-scanpy.cwl for additional details 
+type: enum
+name: method
+symbols: [ umap, tsne, fdg, diffmap ]
