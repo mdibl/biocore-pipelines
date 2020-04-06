@@ -6,7 +6,7 @@ doc: >
     It includes preprocessing, visualization, clustering, trajectory inference and differential expression testing. 
     The Python-based implementation efficiently deals with datasets of more than one million cells."
 
-label: 'Scanpy paga allows for trajectory inference by abstract graph analysis'
+label: 'Scanpy dpt allows for trajectory inference by abstract graph analysis'
 
 hints:
   - class: DockerRequirement

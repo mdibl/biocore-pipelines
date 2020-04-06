@@ -112,7 +112,7 @@ inputs:
     inputBinding:
       position: 12
       prefix: '--corr-method'
-    label: 'P-value correction method [benjamini-hochberg|bonferroni'
+    label: 'P-value correction method [benjamini-hochberg|bonferroni]'
 
   - id: rankby-abs
     type: boolean
