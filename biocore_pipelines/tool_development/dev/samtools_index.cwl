@@ -34,5 +34,13 @@ outputs:
     secondaryFiles: .bai
     outputBinding:
       glob: $(inputs.bam_sorted.basename)
+  console_log:
+    type: stdout
+  error_log:
+    type: stderr
+
+stdout: $(inputs.bam_sorted.basename)_console_log.txt
+stderr: $(inputs.bam_sorted.basename)_error_log.txt
+
       
     

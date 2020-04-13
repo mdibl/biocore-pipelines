@@ -33,4 +33,11 @@ outputs:
     type: File
     outputBinding:
       glob: $(inputs.output_name)
+  - id: console_log
+    type: stdout
+  - id: error_log
+    type: stderr
+
+stdout: $(inputs.output_name.basename)_console_log.txt
+stderr: $(inputs.output_name.basename)_error_log.txt
     
