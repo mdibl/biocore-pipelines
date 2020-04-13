@@ -37,10 +37,13 @@ inputs:
       position: 1
       prefix: -n
 
-stdout: $(inputs.bam_unsorted.basename)
-
 outputs:
   bam_sorted:
     type: stdout
+  error_log:
+    type: stderr
+
+stdout: $(inputs.bam_unsorted.basename)_console_log.txt
+stderr: $(inputs.bam_unsorted.basename)_error_log.txt
   
   
