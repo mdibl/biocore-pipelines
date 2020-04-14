@@ -77,7 +77,6 @@ outputs:
       loadContents: true
       outputEval: $(parseInt(self[0].contents))
 
-stdout: $(inputs.bam.basename)_console_log.txt
 stderr: $(inputs.bam.basename)_error_log.txt
   
   
