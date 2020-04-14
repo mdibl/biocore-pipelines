@@ -32,5 +32,9 @@ inputs:
 outputs:
   bam:
     type: stdout
+  error_log:
+    type: stderr
+
+stderr: $(inputs.sam.basename)_error_log.txt
   
   

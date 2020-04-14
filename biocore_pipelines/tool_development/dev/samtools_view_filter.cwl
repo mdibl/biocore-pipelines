@@ -66,5 +66,9 @@ inputs:
 outputs:
   bam_filtered:
     type: stdout
+  error_log:
+    type: stderr
+
+stderr: $(inputs.bam.basename)_error_log.txt
   
   
