@@ -45,12 +45,12 @@ arguments:
         }
       }
     position: 3
-# stdout: $(inputs.bam.nameroot + "_aln_read_counts.txt")
+stdout: $(inputs.bam.nameroot + "_aln_read_counts.txt")
 
 inputs:
   bam:
     doc: reads to be checked in bam format
-    type: File
+    type: File[]
     inputBinding:
       position: 10
   is_paired_end:
@@ -76,8 +76,8 @@ outputs:
       glob:  "*_aln_read_counts.txt"
       loadContents: true
       outputEval: $(parseInt(self[0].contents))
-      
-stdout: $(inputs.bam.basename)_console_log.txt
-stderr: $(inputs.bam.basename)_error_log.txt
+
+#stdout: $(inputs.bam.basename)_console_log.txt
+stderr: $(inputs.bam.nameroot)_error_log.txt
   
   
