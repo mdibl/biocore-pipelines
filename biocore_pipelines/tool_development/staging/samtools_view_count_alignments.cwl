@@ -78,6 +78,6 @@ outputs:
 
 #stdout: $(inputs.bam.basename)_consosle_log.txt
 stdout: $(inputs.bam[0].nameroot + "_aln_read_counts.txt")
-stderr: $(inputs.bam[0].nameroot + "count_alignments_error_log.txt")
+stderr: $(inputs.bam[0].nameroot + "_count_alignments_error_log.txt")
   
   
