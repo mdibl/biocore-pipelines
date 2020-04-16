@@ -45,7 +45,6 @@ arguments:
         }
       }
     position: 3
-stdout: $(inputs.bam.nameroot + "_aln_read_counts.txt")
 
 inputs:
   bam:
@@ -77,7 +76,8 @@ outputs:
       loadContents: true
       outputEval: $(parseInt(self[0].contents))
 
-#stdout: $(inputs.bam.basename)_console_log.txt
-stderr: $(inputs.bam.nameroot)_error_log.txt
+#stdout: $(inputs.bam.basename)_consosle_log.txt
+stdout: $(inputs.bam[0].nameroot + "_aln_read_counts.txt")
+stderr: $(inputs.bam[0].nameroot + "_error_log.txt")
   
   
