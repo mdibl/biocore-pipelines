@@ -20,12 +20,11 @@ arguments:
   - valueFrom: -b
     position: 1
     # output in bam format
-stdout: $(inputs.sam.nameroot).bam
 
 inputs:
   sam:
     doc: reads to be checked in sam format
-    type: File
+    type: File[]
     inputBinding:
       position: 2
 
@@ -35,6 +34,7 @@ outputs:
   error_log:
     type: stderr
 
-stderr: $(inputs.sam.basename)_error_log.txt
+stdout: $(inputs.sam[0].nameroot).bam
+stderr: $(inputs.sam[0].nameroot + "_error_log.txt")
   
   

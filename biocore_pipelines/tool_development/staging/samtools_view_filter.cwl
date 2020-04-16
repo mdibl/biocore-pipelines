@@ -43,12 +43,11 @@ arguments:
         }
       }
     position: 3
-stdout: $(inputs.bam.nameroot)_filt.bam
 
 inputs:
   bam:
     doc: aligned reads to be checked in bam format
-    type: File
+    type: File[]
     inputBinding:
       position: 10
   is_paired_end:
@@ -69,6 +68,7 @@ outputs:
   error_log:
     type: stderr
 
-stderr: $(inputs.bam.basename)_error_log.txt
+stdout: $(inputs.bam[0].nameroot)_filt.bam
+stderr: $(inputs.bam[0].nameroot + "_error_log.txt")
   
   
