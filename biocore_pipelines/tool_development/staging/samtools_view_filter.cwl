@@ -69,6 +69,6 @@ outputs:
     type: stderr
 
 stdout: $(inputs.bam[0].nameroot)_filt.bam
-stderr: $(inputs.bam[0].nameroot + "_error_log.txt")
+stderr: $(inputs.bam[0].nameroot + "filter_error_log.txt")
   
   
