@@ -76,8 +76,14 @@ outputs:
       glob:  "*_aln_read_counts.txt"
       loadContents: true
       outputEval: $(parseInt(self[0].contents))
+<<<<<<< HEAD
 
 #stdout: $(inputs.bam.basename)_console_log.txt
 stderr: $(inputs.bam.nameroot)_error_log.txt
+=======
+      
+#stdout: $(inputs.bam.basename)_console_log.txt
+#stderr: $(inputs.bam.basename)_error_log.txt
+>>>>>>> b05a0fed62974d85fdb2c97700b365c6e365ed2e
   
   
