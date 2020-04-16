@@ -129,7 +129,7 @@ arguments:
     position: 1000
     shellQuote: false
 
-stdout: $(inputs.bam[0].nameroot + "_stats_console_log.txt"
+stdout: $(inputs.bam[0].nameroot + "_stats_console_log.txt")
 stderr: $(inputs.bam[0].nameroot + "_stats_error_log.txt")
 $namespaces:
   s: http://schema.org/
