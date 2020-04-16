@@ -31,7 +31,7 @@ outputs:
   console_log:
     type: stdout
 
-  error_log
+  error_log:
     type: stderr
 
   log_file:
