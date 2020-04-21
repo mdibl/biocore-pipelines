@@ -122,12 +122,6 @@ outputs:
     type: File
     outputBinding:
       glob: out/abundances.h5
-  
-  console_log:
-    type: stdout
-
-  error_log:
-    type: stderr
 
 # Long form method for defining optional outputs
 
@@ -145,7 +139,4 @@ outputs:
     type: ["null", File]
     outputBinding:
       glob: "fusion.txt"
-
-stdout: $(inputs.InputReads[0].nameroot + "_kallisto_quant_console_log.txt")
-stderr: $(inputs.InputReads[0].nameroot + "_kallisto_quant_error_log.txt")
   
