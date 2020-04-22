@@ -5,4 +5,4 @@ fasta_files:
   - class: File
     path: "/data/scratch/nmaki/cwl_testing/0AB1_S1_LALL_R2_001.fastq"
 
-IndexName: "danio_rerio-transcriptome_joined"
+index_name: "danio_rerio-transcriptome_joined"
