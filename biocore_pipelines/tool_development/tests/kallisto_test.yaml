@@ -1,6 +1,10 @@
 InputFiles:
   - class: File
     path: "/data/scratch/nmaki/cwl_testing/0AB1_S1_LALL_R1_001.fastq"
-    
+
   - class: File
     path: "/data/scratch/nmaki/cwl_testing/0AB1_S1_LALL_R2_001.fastq"
+
+IndexName:
+  - class: File
+    path: "/data/transformed/kallisto_linux-v0.45.1/ensembl/release-96/danio_rerio-transcriptome_joined"
