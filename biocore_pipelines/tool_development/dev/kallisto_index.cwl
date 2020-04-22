@@ -3,6 +3,9 @@ class: CommandLineTool
 label: "kallisto index: builds an index from a FASTA formatted file of target sequences"
 doc: "kallisto is a program for quantifying abundances of transcripts from RNA-Seq data, or more generally of target sequences using high-throughput sequencing reads. https://pachterlab.github.io/kallisto/manual.html#index"
 
+requirements:
+  - class: InlineJavascriptRequirement
+  
 hints:
   DockerRequirement:
     dockerPull: quay.io/biocontainers/kallisto:0.44.0--h7d86c95_2
