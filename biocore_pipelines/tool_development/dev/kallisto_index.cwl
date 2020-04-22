@@ -46,10 +46,10 @@ outputs:
       glob: $(inputs.index_name)
 
   console_log:
-    type:stdout
+    type: stdout
 
   error_log:
-    type:stderr
+    type: stderr
 
 stdout: $(inputs.fasta_files[0].nameroot + "_kallisto_index_console.txt")
 stderr: $(inputs.fasta_files[0].nameroot + "_kallisto_index_error.txt")
