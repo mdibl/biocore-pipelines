@@ -41,4 +41,13 @@ outputs:
     type: File
     outputBinding:
       glob: $(inputs.IndexName)
+
+  console_log:
+    type: stdout
+
+  error_log:
+    type: stderr
+
+stdout: $(inputs.InputFiles[0].nameroot + "_kallisto_index_console_log.txt")
+stderr: $(inputs.InputFiles[0].nameroot + "_kallisto_index_error_log.txt")
   
