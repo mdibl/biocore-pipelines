@@ -137,6 +137,15 @@ outputs:
     outputBinding:
       glob: $(inputs.out_dir_name)
 
+  console_log:
+    type: stdout
+
+  error_log:
+    type: stderr
+
+stdout: $(inputs.index_file.nameroot + "_kallisto_quant_se_console.txt")
+stderr: $(inputs.index_file.nameroot + "_kallisto_quant_se_error.txt")
+
 $namespaces:
   s: https://schema.org/
   edam: http://edamontology.org/

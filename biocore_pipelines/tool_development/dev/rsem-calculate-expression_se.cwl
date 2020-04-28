@@ -14,6 +14,7 @@ arguments:
     position: 2
 
 inputs:
+
   nthreads:
     label: "Number of threads to use"
     doc: "Number of threads to use. Both Bowtie/Bowtie2, expression estimation and 'samtools sort' will use this many threads. (Default: 1)"
@@ -21,6 +22,7 @@ inputs:
     inputBinding:
       prefix: --num-threads
       position: 0
+
   input_fastq:
     label: "Comma-separated list of files containing single-end reads"
     doc: "Comma-separated list of files containing single-end reads. By default, these files are assumed to be in FASTQ format."
@@ -28,14 +30,17 @@ inputs:
     inputBinding:
       position: 1
       itemSeparator: ","
+
   rsem_index_dir:
     label: "A path to the directory contains RSEM index files"
     doc: "A path to the directory contains RSEM index files"
     type: Directory
+
   rsem_index_prefix:
     label: "The name of RSEM index files"
     doc: "The name of RSEM index files"
     type: string
+
   rsem_output_prefix:
     label: "The name of the sample analyzed"
     doc: "The name of the sample analyzed. All output files are prefixed by this name (e.g., sample_name.genes.results)"
@@ -44,34 +49,49 @@ inputs:
       position: 3
 
 outputs:
+
   genes_result:
     type: File
     outputBinding:
       glob: "*.genes.results"
+
   isoforms_result:
     type: File
     outputBinding:
       glob: "*.isoforms.results"
+
   stat:
     type: Directory
     outputBinding:
       glob: "*.stat"
+
   star_output:
     type: Directory
     outputBinding:
       glob: "*.temp"
 
+  console_log:
+    type: stdout
+  
+  error_log:
+    type: stderr
+
 $namespaces:
   s: https://schema.org/
   edam: http://edamontology.org/
-
-s:license: https://spdx.org/licenses/Apache-2.0
-s:codeRepository: https://github.com/pitagora-network/pitagora-cwl
+s:copyrightHolder: "MDI Biological Laboratory, 2020"
+s:license: "https://www.apache.org/licenses/LICENSE-2.0"
+s:codeRepository: https://github.com/mdibl/biocore_analysis
 s:author:
   - class: s:Person
     s:identifier: https://orcid.org/0000-0003-3777-5945
     s:email: mailto:inutano@gmail.com
     s:name: Tazro Ohta
+s:author:
+  - class: s:Person
+    s:identifier: https://orcid.org/0000-0001-9120-8365
+    s:email: mailto:nmaki@mdibl.org
+    s:name: Nathaniel Maki
 
 $schemas:
   - https://schema.org/docs/schema_org_rdfa.html
