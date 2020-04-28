@@ -136,10 +136,8 @@ outputs:
     type: File[]
     outputBinding:
       glob: "*_fastqc.zip"
-
   console_log:
     type: stdout
-
   error_log:
     type: stderr
 

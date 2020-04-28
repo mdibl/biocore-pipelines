@@ -1,6 +1,6 @@
 cwlVersion: v1.0
 class: CommandLineTool
-label: 'kallisto quant: runs the quantification algorithm'
+label: "kallisto quant: runs the quantification algorithm"
 doc: "kallisto is a program for quantifying abundances of transcripts from RNA-Seq data, or more generally of target sequences using high-throughput sequencing reads. https://pachterlab.github.io/kallisto/manual.html#quant"
 
 hints:
@@ -14,24 +14,24 @@ arguments:
 
 inputs:
   index_file:
-    label: '[Required] Filename for the kallisto index'
+    label: "[Required] Filename for the kallisto index"
     doc: "Filename for the kallisto index to be used for quantification"
     type: File
     inputBinding:
       prefix: -i
   out_dir_name:
-    label: 'Name of the directory to write output to'
+    label: "Name of the directory to write output to"
     doc: "Name of the directory to write output to (default: kallisto_quant)"
     type: string
     default: "kallisto_quant"
   bias:
-    label: 'Perform sequence based bias correction'
+    label: "Perform sequence based bias correction"
     doc: "Perform sequence based bias correction"
     type: boolean?
     inputBinding:
       prefix: --bias
   bootstrap_samples:
-    label: 'Number of bootstrap samples'
+    label: "Number of bootstrap samples"
     doc: "Number of bootstrap samples (default: 0)"
     type: int
     default: 0
@@ -39,7 +39,7 @@ inputs:
       prefix: --bootstrap-samples=
       separate: false
   seed:
-    label: 'Seed for the bootstrap sampling'
+    label: "Seed for the bootstrap sampling"
     doc: "Seed for the bootstrap sampling (default: 42)"
     type: int
     default: 42
@@ -47,37 +47,37 @@ inputs:
       prefix: --seed=
       separate: false
   plain_text:
-    label: 'Output plaintext instead of HDF5'
+    label: "Output plaintext instead of HDF5"
     doc: "Output plaintext instead of HDF5"
     type: boolean?
     inputBinding:
       prefix: --plaintext
   fusion:
-    label: 'Search for fusions for Pizzly'
+    label: "Search for fusions for Pizzly"
     doc: "Search for fusions for Pizzly"
     type: boolean?
     inputBinding:
       prefix: --fusion
   fr_stranded:
-    label: 'Strand specific reads, first read forward'
+    label: "Strand specific reads, first read forward"
     doc: "Strand specific reads, first read forward"
     type: boolean?
     inputBinding:
       prefix: --fr-stranded
   rf_stranded:
-    label: 'Strand specific reads, first read reverse'
+    label: "Strand specific reads, first read reverse"
     doc: "Strand specific reads, first read reverse"
     type: boolean?
     inputBinding:
       prefix: --rf-stranded
   single_overhang:
-    label: 'Include overhanged reads'
+    label: "Include overhanged reads"
     doc: "Include reads where unobserved rest of fragment is predicted to lie outside a transcript"
     type: boolean?
     inputBinding:
       prefix: --single-overhang
   fragment_length:
-    label: 'Estimated average fragment length'
+    label: "Estimated average fragment length"
     doc: "Estimated average fragment length"
     type: double?
     default: 200
@@ -85,7 +85,7 @@ inputs:
       prefix: --fragment-length=
       separate: false
   standard_deviation:
-    label: 'Estimated standard deviation of fragment length'
+    label: "Estimated standard deviation of fragment length"
     doc: "Estimated standard deviation of fragment length (default: -l, -s values are estimated from paired end data, but are required when using --single)"
     type: double?
     default: 20
@@ -93,7 +93,7 @@ inputs:
       prefix: --sd=
       separate: false
   nthreads:
-    label: 'Number of threads'
+    label: "Number of threads"
     doc: "Number of threads to use (default: 1)"
     type: int?
     default: 1
@@ -101,31 +101,31 @@ inputs:
       prefix: --threads=
       separate: false
   pseudo_bam:
-    label: 'Save pseudoalignments to transcriptome to BAM file'
+    label: "Save pseudoalignments to transcriptome to BAM file"
     doc: "Save pseudoalignments to transcriptome to BAM file"
     type: boolean?
     inputBinding:
       prefix: --pseudobam
   genome_bam:
-    label: 'Project pseudoalignments to genome sorted BAM file'
+    label: "Project pseudoalignments to genome sorted BAM file"
     doc: "Project pseudoalignments to genome sorted BAM file"
     type: boolean?
     inputBinding:
       prefix: --genomebam
   gtf:
-    label: 'GTF file for transcriptome information'
+    label: "GTF file for transcriptome information"
     doc: "GTF file for transcriptome information (required for --genomebam)"
     type: File?
     inputBinding:
       prefix: --gtf
   chromosome:
-    label: 'Tab separated file with chrosome names and lengths'
+    label: "Tab separated file with chrosome names and lengths"
     doc: "Tab separated file with chrosome names and lengths (optional for --genomebam, but recommended)"
     type: File?
     inputBinding:
       prefix: --chromosome
   fq:
-    label: 'Input FASTQ file(s)''
+    label: "Input FASTQ file(s)"
     doc: "Input FASTQ file(s)"
     type: File[]
     inputBinding:
@@ -136,15 +136,13 @@ outputs:
     type: Directory
     outputBinding:
       glob: $(inputs.out_dir_name)
-
   console_log:
     type: stdout
-
   error_log:
     type: stderr
 
-stdout: $(inputs.index_file.nameroot + "_kallisto_quant_se_console.txt")
-stderr: $(inputs.index_file.nameroot + "_kallisto_quant_se_error.txt")
+stdout: $(inputs.index_file.basename + "_kallisto_quant-se_console.txt")
+stderr: $(inputs.index_file.basename + "_kallisto_quant-se_error.txt")
 
 $namespaces:
   s: https://schema.org/

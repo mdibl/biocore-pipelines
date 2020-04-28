@@ -36,15 +36,13 @@ outputs:
     type: Directory
     outputBinding:
       glob: $(inputs.reference_name)
-
   console_log:
     type: stdout
-  
   error_log:
     type: stderr
 
-stdout: $(inputs.reference_name.nameroot + "_rsem_index_console.txt")
-stderr: $(inputs.reference_name.nameroot + "_rsem_index_error.txt")
+stdout: $(inputs.reference_name.basename + "_rsem-index_console.txt")
+stderr: $(inputs.reference_name.basename + "_rsem-index_error.txt")
 
 $namespaces:
   s: https://schema.org/

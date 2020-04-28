@@ -7,11 +7,11 @@ hints:
   DockerRequirement:
     dockerPull: quay.io/biocontainers/rsem:1.3.0--boost1.64_3
 
-baseCommand: [rsem-calculate-expression, --star, --keep-intermediate-files, --no-bam-output, --paired-end]
+baseCommand: [rsem-calculate-expression, --star, --keep-intermediate-files, --no-bam-output]
 
 arguments:
   - valueFrom: $(inputs.rsem_index_dir.path)/$(inputs.rsem_index_prefix)
-    position: 3
+    position: 2
 
 inputs:
   nthreads:
@@ -21,18 +21,13 @@ inputs:
     inputBinding:
       prefix: --num-threads
       position: 0
-  input_fastq_fw:
-    label: "Upstream reads for paired-end data"
-    doc: "Upstream reads for paired-end data. By default, these files are assumed to be in FASTQ format."
-    type: File
+  input_fastq:
+    label: "Comma-separated list of files containing single-end reads"
+    doc: "Comma-separated list of files containing single-end reads. By default, these files are assumed to be in FASTQ format."
+    type: File[]
     inputBinding:
       position: 1
-  input_fastq_rv:
-    label: "Downstream reads for paired-end data"
-    doc: "Downstream reads for paired-end data. By default, these files are assumed to be in FASTQ format."
-    type: File
-    inputBinding:
-      position: 2
+      itemSeparator: ","
   rsem_index_dir:
     label: "A path to the directory contains RSEM index files"
     doc: "A path to the directory contains RSEM index files"
@@ -46,7 +41,7 @@ inputs:
     doc: "The name of the sample analyzed. All output files are prefixed by this name (e.g., sample_name.genes.results)"
     type: string
     inputBinding:
-      position: 4
+      position: 3
 
 outputs:
   genes_result:
@@ -65,18 +60,30 @@ outputs:
     type: Directory
     outputBinding:
       glob: "*.temp"
+  console_log:
+    type: stdout  
+  error_log:
+    type: stderr
+
+stdout: $(inputs.rsem_output_prefix.basename + "_rsem-calc-exp_se_console.txt")
+stderr: $(inputs.rsem_output_prefix.basename + "_rsem-calc-exp_se_error.txt")
 
 $namespaces:
   s: https://schema.org/
   edam: http://edamontology.org/
-
-s:license: https://spdx.org/licenses/Apache-2.0
-s:codeRepository: https://github.com/pitagora-network/pitagora-cwl
+s:copyrightHolder: "MDI Biological Laboratory, 2020"
+s:license: "https://www.apache.org/licenses/LICENSE-2.0"
+s:codeRepository: https://github.com/mdibl/biocore_analysis
 s:author:
   - class: s:Person
     s:identifier: https://orcid.org/0000-0003-3777-5945
     s:email: mailto:inutano@gmail.com
     s:name: Tazro Ohta
+s:author:
+  - class: s:Person
+    s:identifier: https://orcid.org/0000-0001-9120-8365
+    s:email: mailto:nmaki@mdibl.org
+    s:name: Nathaniel Maki
 
 $schemas:
   - https://schema.org/docs/schema_org_rdfa.html
