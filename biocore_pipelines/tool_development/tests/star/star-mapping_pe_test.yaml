@@ -1,0 +1,10 @@
+genomeDir:
+  - class: Directory
+    path: 
+fq1:
+  - class: File
+    path:
+fq2:
+  - class: File
+    path:
+nthreads: 8

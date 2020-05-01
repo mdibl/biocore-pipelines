@@ -1,0 +1,7 @@
+genomeFastaFiles:
+  - class: File
+    path:
+sjdbGTFfile:
+  - class: File
+    path:
+nthreads: 8

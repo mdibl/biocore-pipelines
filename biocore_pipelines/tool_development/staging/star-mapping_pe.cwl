@@ -208,8 +208,8 @@ outputs:
 #stdout: $(inputs.reference_name.basename + "_star_mapping_pe_console.txt")
 #stderr: $(inputs.reference_name.basename + "_star_mapping_pe_error.txt")
 
-stdout: star-mapping-pe_console.txt
-stderr: star-mapping-pe_error.txt
+stdout: star-mapping_pe_console.txt
+stderr: star-mapping_pe_error.txt
 
 $namespaces:
   s: https://schema.org/

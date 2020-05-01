@@ -21,8 +21,7 @@ inputs:
     default: STAR
   nthreads:
     label: "Number of threads"
-    doc: "defines the number of threads to be used for genome generation, it has
-to be set to the number of available cores on the server node."
+    doc: "defines the number of threads to be used for genome generation, it has to be set to the number of available cores on the server node."
     type: int
     inputBinding:
       prefix: --runThreadN
@@ -48,8 +47,7 @@ to be set to the number of available cores on the server node."
     inputBinding:
       prefix: --outSAMunmapped
   outSAMattributes:
-    label: "a string of desired SAM attributes, in the order desired for the output
-SAM"
+    label: "a string of desired SAM attributes, in the order desired for the output SAM"
     doc: "NH: any combination in any order, Standard: NH HI AS nM, All: NH HI AS nM NM MD jM jI ch, None: no attributes"
     type: string[]
     default: ["NH", "HI", "AS", "NM", "MD"]
@@ -77,10 +75,8 @@ SAM"
     inputBinding:
       prefix: --alignIntronMin
   outFilterMismatchNoverReadLmax:
-    label: "alignment will be output only if its ratio of mismatches to *read* length
-is less than or equal to this value."
-    doc: "alignment will be output only if its ratio of mismatches to *read* length
-is less than or equal to this value."
+    label: "alignment will be output only if its ratio of mismatches to *read* length is less than or equal to this value."
+    doc: "alignment will be output only if its ratio of mismatches to *read* length is less than or equal to this value."
     type: float
     default: 0.04
     inputBinding:
@@ -167,20 +163,13 @@ is less than or equal to this value."
     type: Directory
     inputBinding:
       prefix: --genomeDir
-  fq1:
-    label: "path to file that contain input read1"
-    doc: "path to file that contain input read1"
-    type: File
+  fq:
+    label: "paths to files that contain input read"
+    doc: "paths to files that contain input read1 (and, if needed, read2)"
+    type: File[]
     inputBinding:
       prefix: --readFilesIn
-      position: 50
-  fq2:
-    label: "path to file that contain input read2"
-    doc: "path to file that contain input read2"
-    type: File
-    inputBinding:
-      position: 51
-
+      itemSeparator: ","
 
 outputs:
   output_bam:
@@ -204,17 +193,33 @@ outputs:
     outputBinding:
       glob: "*.out"
 
+  console_log:
+    type: stdout
+  error_log:
+    type: stderr
+
+#stdout: $(inputs.reference_name.basename + "_star_mapping_se_console.txt")
+#stderr: $(inputs.reference_name.basename + "_star_mapping_se_error.txt")
+
+stdout: star-mapping_se_console.txt
+stderr: star-mapping_se_error.txt
+
 $namespaces:
   s: https://schema.org/
   edam: http://edamontology.org/
-
-s:license: https://spdx.org/licenses/Apache-2.0
-s:codeRepository: https://github.com/pitagora-network/pitagora-cwl
+s:copyrightHolder: "MDI Biological Laboratory, 2020"
+s:license: "https://www.apache.org/licenses/LICENSE-2.0"
+s:codeRepository: https://github.com/mdibl/biocore_analysis
 s:author:
   - class: s:Person
     s:identifier: https://orcid.org/0000-0003-3777-5945
     s:email: mailto:inutano@gmail.com
     s:name: Tazro Ohta
+s:author:
+  - class: s:Person
+    s:identifier: https://orcid.org/0000-0001-9120-8365
+    s:email: mailto:nmaki@mdibl.org
+    s:name: Nathaniel Maki
 
 $schemas:
   - https://schema.org/docs/schema_org_rdfa.html

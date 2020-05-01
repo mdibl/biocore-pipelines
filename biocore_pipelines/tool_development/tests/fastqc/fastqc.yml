@@ -4,4 +4,4 @@ seqfile:
 default_adapters_file:
   - class: File
     path: "/opt/software/external/ggr-cwl/GGR-cwl-v1.0.0/v1.0/default_adapters_fromfastqc_30aug2018.fa"
-nthreads: 4
+nthreads: 8
