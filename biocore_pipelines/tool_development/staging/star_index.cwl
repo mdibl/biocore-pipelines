@@ -16,8 +16,7 @@ arguments:
 inputs:
   nthreads:
     label: "Number of threads"
-    doc: "defines the number of threads to be used for genome generation, it has
-to be set to the number of available cores on the server node."
+    doc: "defines the number of threads to be used for genome generation, it has to be set to the number of available cores on the server node."
     type: int
     inputBinding:
       prefix: --runThreadN
@@ -52,8 +51,11 @@ outputs:
   error_log:
     type: stderr
 
-stdout: $(inputs.reference_name.basename + "_rsem-index_console.txt")
-stderr: $(inputs.reference_name.basename + "_rsem-index_error.txt")
+# stdout: $(inputs.reference_name.basename + "_rsem-index_console.txt")
+# stderr: $(inputs.reference_name.basename + "_rsem-index_error.txt")
+
+stdout: star-index_console.txt
+stderr: star-index_error.txt
 
 $namespaces:
   s: https://schema.org/
