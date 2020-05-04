@@ -1,7 +1,0 @@
-{
-    "error_file": 
-    {       
-    "path": "/data/projects/Biocore/biocore-pipelines/tool_development/*log.txt",
-    "class": "File"
-    }
-}

@@ -2,10 +2,6 @@
 cwlVersion: v1.0
 class: CommandLineTool
 
-doc: |
-  Count aligned reads in a BAM file. 
-  For single end data
-
 requirements:
   InlineJavascriptRequirement: {}
 hints:
@@ -14,6 +10,8 @@ hints:
     ramMin: 10000
   DockerRequirement:
     dockerPull: kerstenbreuer/samtools:1.7
+
+doc: for single end data
 
 baseCommand: ["samtools", "view"]
 arguments:
@@ -48,7 +46,7 @@ arguments:
 
 inputs:
   bam:
-    doc: reads to be checked in bam format
+    doc: aligned reads to be checked in bam format
     type: File[]
     inputBinding:
       position: 10
@@ -65,19 +63,12 @@ inputs:
       prefix: -q
 
 outputs:
-  aln_read_count_file:
+  bam_filtered:
     type: stdout
   error_log:
     type: stderr
-  aln_read_count:
-    type: long
-    outputBinding:
-      glob:  "*_aln_read_counts.txt"
-      loadContents: true
-      outputEval: $(parseInt(self[0].contents))
 
-#stdout: $(inputs.bam.basename)_consosle_log.txt
-stdout: $(inputs.bam[0].nameroot + "_aln_read_counts.txt")
-stderr: $(inputs.bam[0].nameroot + "_count_alignments_error.txt")
+stdout: $(inputs.bam[0].nameroot)_filt.bam
+stderr: $(inputs.bam[0].nameroot + "_filter_error.txt")
   
   

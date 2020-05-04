@@ -1,12 +1,10 @@
 cwlVersion: v1.0
 class: CommandLineTool
-
+label: "FastQC: A quality control tool for high throughput sequence data"
 doc: >
      "FastQC aims to provide a simple way to do some quality control checks on raw sequence data coming from high throughput sequencing pipelines. 
      It provides a modular set of analyses which you can use to give a quick impression of whether your data has any problems of which you should 
      be aware before doing any further analysis. Documenation can be found here: http://www.bioinformatics.babraham.ac.uk/projects/fastqc/"
-
-label: "FastQC: A quality control tool for high throughput sequence data"
 
 requirements:
   - class: InlineJavascriptRequirement
@@ -15,8 +13,6 @@ hints:
     dockerPull: quay.io/biocontainers/fastqc:0.11.7--pl5.22.0_2
 
 baseCommand: [fastqc]
-stdout: $(inputs.seqfile[0].basename + "_fastqc_console.txt")
-stderr: $(inputs.seqfile[0].basename + "_fastqc_error.txt")
 
 arguments:
   - prefix: --outdir
@@ -116,7 +112,7 @@ inputs:
     inputBinding:
       prefix: --limits
   kmers:
-    label: "the length of Kmer to look for in the Kmer content module"
+    label: "length of Kmer to look for in the Kmer content module"
     doc: "Specifies the length of Kmer to look for in the Kmer content module. Specified Kmer length must be between 2 and 10. Default length is 7 if not specified."
     type: int?
     inputBinding:
@@ -145,11 +141,26 @@ outputs:
   error_log:
     type: stderr
 
-$schemas:
-  - 'http://edamontology.org/EDAM_1.18.owl'
-  - 'https://schema.org/docs/schema_org_rdfa.html'
-s:license: "https://www.apache.org/licenses/LICENSE-2.0"
-s:copyrightHolder: "PITAGORA network, 2019"
-s:author: "Tazro Ohta"
-s:editor: "Nathaniel Maki"
+stdout: $(inputs.seqfile[0].basename + "_fastqc_console.txt")
+stderr: $(inputs.seqfile[0].basename + "_fastqc_error.txt")
 
+$namespaces:
+  s: https://schema.org/
+  edam: http://edamontology.org/
+s:copyrightHolder: "MDI Biological Laboratory, 2020"
+s:license: "https://www.apache.org/licenses/LICENSE-2.0"
+s:codeRepository: https://github.com/mdibl/biocore_analysis
+s:author:
+  - class: s:Person
+    s:identifier: https://orcid.org/0000-0003-3777-5945
+    s:email: mailto:inutano@gmail.com
+    s:name: Tazro Ohta
+s:author:
+  - class: s:Person
+    s:identifier: https://orcid.org/0000-0001-9120-8365
+    s:email: mailto:nmaki@mdibl.org
+    s:name: Nathaniel Maki
+
+$schemas:
+  - https://schema.org/docs/schema_org_rdfa.html
+  - http://edamontology.org/EDAM_1.18.owl

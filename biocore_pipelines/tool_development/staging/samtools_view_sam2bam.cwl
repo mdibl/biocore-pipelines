@@ -35,6 +35,6 @@ outputs:
     type: stderr
 
 stdout: $(inputs.sam[0].nameroot).bam
-stderr: $(inputs.sam[0].nameroot + "_error_log.txt")
+stderr: $(inputs.sam[0].nameroot + "_sam2bam_error.txt")
   
   

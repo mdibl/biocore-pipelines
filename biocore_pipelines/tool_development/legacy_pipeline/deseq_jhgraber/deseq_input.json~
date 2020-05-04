@@ -1,8 +1,0 @@
-{
-  "noextract": true,
-  "threads": 4,
-  "input_fastq_file": {
-    "class": "File",
-    "path": "/home/jhgraber/small_fastq_file_1000seqs.fastq"
-  }
-}

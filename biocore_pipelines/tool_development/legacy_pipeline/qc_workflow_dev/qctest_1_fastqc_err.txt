@@ -1,2 +1,0 @@
-Started analysis of test_1.fastq.gz
-Approx 100% complete for test_1.fastq.gz

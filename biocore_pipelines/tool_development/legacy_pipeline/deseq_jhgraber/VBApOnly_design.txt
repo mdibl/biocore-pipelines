@@ -1,9 +1,0 @@
-sample	genotype	rep	cond	group
-0GRKO1_S9	VBAp	1	ctl	VBAp_ctl
-0GRKO2_S10	VBAp	2	ctl	VBAp_ctl
-0GRKO3_S11	VBAp	3	ctl	VBAp_ctl
-0GRKO4_S12	VBAp	4	ctl	VBAp_ctl
-1GRKO1_S13	VBAp	1	cor	VBAp_cor
-1GRKO2_S14	VBAp	2	cor	VBAp_cor
-1GRKO3_S15	VBAp	3	cor	VBAp_cor
-1GRKO4_S16	VBAp	4	cor	VBAp_cor
