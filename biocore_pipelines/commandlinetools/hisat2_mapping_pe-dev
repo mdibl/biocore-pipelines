@@ -1,0 +1,23 @@
+clwVersion: v1.0
+class: CommandLineTool
+label: "HISAT2: graph-based alignment of next gen seq reads"
+
+hints:
+  DockerRequirements:
+    dockerPull: quay.io/biocontainers/hisat2
+
+baseCommand: [hisat2]
+
+arguments:
+  - prefix: -S
+    valueFrom: $(runtime.outdir)/$(inputs.out_sam_name)
+  - prefix: -x
+    valueFrom: $(inputs.hisat2_idx_basedir.path)/$(inputs.hisat2_idx_basename)
+
+inputs:
+  nthreads:
+    label: "Increase multi-thread capabilities"
+    doc: "Allows for threads to run on separate cores and sync when parsing reads and outputting alignments"
+    type: int
+    inputBinding:
+      prefix: --threads

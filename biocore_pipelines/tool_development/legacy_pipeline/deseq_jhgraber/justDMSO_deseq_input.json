@@ -1,0 +1,11 @@
+{
+  "count_file_name": "justDMSO_counts.txt",
+  "design_file_name": "justDMSO_design.txt",
+  "row_sum_th": "1",
+  "model_formula_terms": ["genotype","rep"],
+  "contrast":["genotype", "VBAp", "VBAm"],
+  "contrasts": [["genotype", "VBAp", "VBAm"],["rep","4","1"]],
+  "output_prefix": "justDMSO",
+  "gene_col_title": "geneID",
+  "separator": "\t"
+}

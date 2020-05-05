@@ -1,0 +1,48 @@
+LOCUS       DUP144_glh-1_del        1332 bp    DNA     linear   UNA 24-OCT-2018
+DEFINITION  glh-1: Caenorhabditis elegans.
+ACCESSION   172414
+KEYWORDS    .
+SOURCE      Caenorhabditis elegans
+  ORGANISM  Caenorhabditis elegans
+            Eukaryota; Metazoa; Ecdysozoa; Nematoda; Chromadorea; Rhabditida;
+            Rhabditoidea; Rhabditidae; Peloderinae; Caenorhabditis.
+FEATURES             Location/Qualifiers
+     5'UTR           1..124
+     CDS             join(125..427,476..550,602..721,773..988)
+     misc_feature    124^125
+                     /note="Geneious type: Editing History Deletion"
+     misc_signal     989..1009
+     CDS             order(989..1015,1067..1162)
+     intron          1016..1026
+     misc_feature    1027..1060
+     intron          1061..1066
+     misc_feature    1067..1078
+     protein_bind    1079..1105
+     protein_bind    1106..1132
+     protein_bind    1133..1159
+     3'UTR           1163..1298
+ORIGIN      
+        1 gtttcgccac gcgccccaac tacagtaacc tcgacacact catctactaa attttgggac
+       61 agttcctaat tctttttgct gttttcaact caattttctg gaaaaatctt aattttctgc
+      121 gaaaatgagt aaaggagaag aattgttcac tggagttgtc ccaatcctcg tcgagctcga
+      181 cggagacgtc aacggacaca agttctccgt ctccggagag ggagagggag acgccaccta
+      241 cggaaagctc accctcaagt tcatctgcac caccggaaag ctcccagtcc catggccaac
+      301 cctcgtcacc accttctgct acggagtcca atgcttctcc cgttacccag accacatgaa
+      361 gcgtcacgac ttcttcaagt ccgccatgcc agagggatac gtccaagagc gtaccatctt
+      421 cttcaaggta agtttaaaca tatatatact aactactgat tatttaaatt ttcaggacga
+      481 cggaaactac aagacccgtg ccgaggtcaa gttcgaggga gacaccctcg tcaaccgtat
+      541 cgagctcaag gtaagtttaa acagttcggt actaactaac catacatatt taaattttca
+      601 gggaatcgac ttcaaggagg acggaaacat cctcggacac aagctcgagt acaactacaa
+      661 ctcccacaac gtctacatca tggccgacaa gcaaaagaac ggaatcaagg tcaacttcaa
+      721 ggtaagttta aacatgattt tactaactaa ctaatctgat ttaaattttc agatccgtca
+      781 caacatcgag gacggatccg tccaactcgc cgaccactac caacaaaaca ccccaatcgg
+      841 agacggacca gtcctcctcc cagacaacca ctacctctcc acccaatccg ccctctccaa
+      901 ggacccaaac gagaagcgtg accacatggt cctcctcgag ttcgtcaccg ccgccggaat
+      961 cacccacgga atggacgagc tctacaagga gaatctgtac tttcaatccg gaaaggtaag
+     1021 tttaaaataa cttcgtatag catacattat acgaagttat tttcagggag ccggatctga
+     1081 ttataaagac gatgacgata agcgtgacta caaggacgac gacgacaagc gtgattacaa
+     1141 ggatgacgat gacaagagat agaaaaccga ccaattgata gtgtttcgca tttattaatg
+     1201 ctgtcagttc ccccatattt tatcctgccc ttgttgattt ttaattgtat ttgttggtgt
+     1261 tggttgtcgt tatagtcctc gccgcataaa ctctgttcaa tatcatgctg ttcacgactt
+     1321 caactattag tt
+//
