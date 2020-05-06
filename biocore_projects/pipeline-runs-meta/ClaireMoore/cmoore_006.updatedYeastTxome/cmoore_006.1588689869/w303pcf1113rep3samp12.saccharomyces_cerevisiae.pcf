@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+##Full path to the cwl file
+#
+CWL_SCRIPT=/opt/software/external/ggr-cwl/GGR-cwl/v1.0/RNA-seq_pipeline/pipeline-pe-revstranded-with-sjdb.cwl
+#
+##Full path to the pipeline json file
+#
+JSON_FILE=/data/projects/Biocore/biocore_analysis/biocore_projects/rna-seq/ClaireMoore/cmoore_006.updatedYeastTxome/cmoore_006.1588689869/w303pcf1113rep3samp12.saccharomyces_cerevisiae.json
+#
+## Cwl Command line options
+#
+CWL_COMMAND_OPTIONS="--no-container --debug  --timestamps "
+#
+## The owner of the pipeline results directory 
+#
+PIPELINE_OWNER=nmaki
+#
+## Pipeline results directory 
+#
+RESULTS_DIR=/data/scratch/rna-seq/ClaireMoore/cmoore_006.updatedYeastTxome/cmoore_006.1588689869
+#
