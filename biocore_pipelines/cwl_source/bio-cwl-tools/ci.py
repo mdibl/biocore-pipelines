@@ -7,7 +7,7 @@ has_failed = False
 tool_failed = False
 #changed_files = check_output("git --no-pager diff --name-status release..$(git branch | grep \* | cut -d ' ' -f2)", shell=True)
 try:
-    changed_files = check_output("git --no-pager diff --name-status release..FETCH_HEAD", shell=True)
+    changed_files = check_output("git --no-pager diff --name-status --diff-filter d release..FETCH_HEAD", shell=True)
     print("Using Head")
 except:
     print("Using Master")
@@ -43,11 +43,11 @@ for line in changed_files.decode('utf-8').rstrip().split('\n'):
                     print(crayons.red(f'Tool Failed Requirements: Line 1 : {fs}\n'))
                     tool_failed = True  
             if index == 1:
-                if line not in ["cwlVersion:v1.0", "cwlVersion: v1.0"]:
+                if line not in ["cwlVersion:v1.0", "cwlVersion: v1.0", "cwlVersion:v1.1", "cwlVersion: v1.1"]:
                     print(crayons.red(f'Tool Failed Requirements: Line 2 : {fs}\n'))
                     tool_failed = True
             if index == 2:
-                if line != "class: CommandLineTool":
+                if not (line == "class: CommandLineTool" or line == "class: Workflow" or line == "class: ExpressionTool"):
                     print(crayons.red(f'Tool Failed Requirements: Line 3 : {fs}\n'))
                     tool_failed = True
     if tool_failed == False:

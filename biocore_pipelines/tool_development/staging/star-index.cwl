@@ -42,7 +42,7 @@ inputs:
 
 outputs:
   starIndex:
-    type: File[]
+    type: File
     outputBinding:
       glob: "*"
 

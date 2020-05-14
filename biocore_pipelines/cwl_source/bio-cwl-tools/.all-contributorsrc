@@ -20,7 +20,8 @@
       "avatar_url": "https://avatars3.githubusercontent.com/u/1316612?v=4",
       "profile": "https://github.com/tetron",
       "contributions": [
-        "ideas"
+        "ideas",
+        "code"
       ]
     },
     {
@@ -58,6 +59,51 @@
       "profile": "https://github.com/stain",
       "contributions": [
         "code"
+      ]
+    },
+    {
+      "login": "mb1069",
+      "name": "Miguel Boland",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/9156542?v=4",
+      "profile": "https://github.com/mb1069",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "fjrmoreews",
+      "name": "fjrmoreews",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/15047744?v=4",
+      "profile": "https://github.com/fjrmoreews",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "hellymac",
+      "name": "cjuigne",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/25847234?v=4",
+      "profile": "https://github.com/hellymac",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "mberacochea",
+      "name": "Martín Beracochea",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1123897?v=4",
+      "profile": "https://github.com/mberacochea",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "denis-yuen",
+      "name": "Denis Yuen",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1730679?v=4",
+      "profile": "https://orcid.org/0000-0002-6130-1021",
+      "contributions": [
+        "doc"
       ]
     }
   ],

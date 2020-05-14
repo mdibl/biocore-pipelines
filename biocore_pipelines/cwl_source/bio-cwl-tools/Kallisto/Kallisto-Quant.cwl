@@ -9,7 +9,7 @@ requirements:
 inputs:
   InputReads:
     type: File[]
-    format: http://edamontology.org/format_1930 # FASTA
+    format: edam:format_1930  # FASTA
     inputBinding:
       position: 200
 
@@ -122,12 +122,6 @@ outputs:
     type: File
     outputBinding:
       glob: out/abundances.h5
-  
-  console_log:
-    type: stdout
-
-  error_log:
-    type: stderr
 
 # Long form method for defining optional outputs
 
@@ -146,6 +140,7 @@ outputs:
     outputBinding:
       glob: "fusion.txt"
 
-stdout: $(inputs.InputReads[0].nameroot + "_kallisto_quant_console_log.txt")
-stderr: $(inputs.InputReads[0].nameroot + "_kallisto_quant_error_log.txt")
-  
+$namespaces:
+  edam: http://edamontology.org/
+$schemas:
+  - http://edamontology.org/EDAM_1.18.owl
