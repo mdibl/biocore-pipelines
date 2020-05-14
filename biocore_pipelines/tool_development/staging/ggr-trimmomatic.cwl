@@ -218,7 +218,7 @@
     output_read1_trimmed_file:
       type: File
       outputBinding:
-        glob: $(inputs.input_read1_fastq_file.path.replace(/^.*[\\\/]/, '').replace(/\.[^/.]+$/, '') + '.trimmed.fastq.gz')
+        glob: $(inputs.input_read1_fastq_file.path.replace(/^.*[\\\/]/, '').replace(/\.[^/.]+$/, '') + '.trimmed.fastq')
     output_log_file:
       type: File?
       outputBinding:
