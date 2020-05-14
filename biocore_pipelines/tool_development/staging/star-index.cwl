@@ -46,6 +46,13 @@ outputs:
     outputBinding:
       glob: "*"
 
+  console_log:
+    type: stdout
+  error_log:
+    type: stderr
+  
+stdout: $(inputs.reference_name.basename + "_star_index_console.txt")
+stderr: $(inputs.reference_name.basename + "_star_index_error.txt")
 $namespaces:
   s: https://schema.org/
   edam: http://edamontology.org/
