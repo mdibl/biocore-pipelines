@@ -2,6 +2,6 @@ genomeFastaFiles:
   - class: File
     path: "/data/internal/ClaireMoore/cmoore_006.updatedYeastTxome/by4741ipa1d1rep1samp4_R1_001.fastq.gz"
 sjdbGTFfile:
-  - class: File
-    path: "/data/scratch/reference/ensembl/release-93/saccharomyces_cerevisiae-gtf/Saccharomyces_cerevisiae.R64-1-1.93.gtf"
+  class: File
+  path: "/data/scratch/reference/ensembl/release-93/saccharomyces_cerevisiae-gtf/Saccharomyces_cerevisiae.R64-1-1.93.gtf"
 nthreads: 8

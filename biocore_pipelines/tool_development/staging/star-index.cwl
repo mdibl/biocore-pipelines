@@ -29,7 +29,7 @@ inputs:
   sjdbGTFfile:
     label: "Path to annotation gtf file"
     doc: "specifies the path to the file with annotated transcripts in the standard GTF format. STAR will extract splice junctions from this file and use them to greatly improve accuracy of the mapping. While this is optional, and STAR can be run without annotations, using annotations is highly recommended whenever they are available. Starting from 2.4.1a, the annotations can also be included on the fly at the mapping step."
-    type: File[]
+    type: File
     inputBinding:
       prefix: --sjdbGTFfile
   sjdbOverhang:
@@ -42,7 +42,7 @@ inputs:
 
 outputs:
   starIndex:
-    type: File
+    type: File[]
     outputBinding:
       glob: "*"
 
