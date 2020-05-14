@@ -1,7 +1,7 @@
 genomeFastaFiles:
   - class: File
-    path: "/data/internal/ClaireMoore/cmoore_006.updatedYeastTxome/by4741ipa1d1rep1samp4_R1_001.fastq.gz"
+    path: "/data/transformed/RSEM-v1.3.0/ensembl/release-93/danio_rerio-genome/rsem-ensembl-genome.transcripts.fa"
 sjdbGTFfile:
   class: File
-  path: "/data/scratch/reference/ensembl/release-93/saccharomyces_cerevisiae-gtf/Saccharomyces_cerevisiae.R64-1-1.93.gtf"
+  path: "/data/external/ensembl/release-93/danio_rerio/gtf/Danio_rerio.GRCz11.93.gtf.gz"
 nthreads: 8
