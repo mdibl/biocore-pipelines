@@ -1,9 +1,0 @@
-bam:
-  class: File
-  path: /path/to/result/"ID".bam
-output: "ID".mod.bam
-rgid: sample
-rglb: sample
-rgpl: Illumina
-rgpu: run_barcode
-rgsm: sample

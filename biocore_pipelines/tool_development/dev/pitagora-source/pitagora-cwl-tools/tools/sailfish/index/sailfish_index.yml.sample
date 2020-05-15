@@ -1,4 +1,0 @@
-transcript_fasta:
-  - class: File
-    path: _PATH_TO_FASTA_
-index_name: _SAILFISH_INDEX_NAME_
