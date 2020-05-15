@@ -4,12 +4,7 @@ class: CommandLineTool
 
 hints:
 - class: DockerRequirement
-  dockerPull: biowardrobe2/sratoolkit:v2.8.2-1
-- class:  SoftwareRequirement
-  packages:
-    sra-tools:
-      specs: [ "http://identifiers.org/biotools/sra-tools" ]
-      version: [ "2.8.2" ]
+  dockerPull: inutano/sra-toolkit
 
 inputs:
 
@@ -272,6 +267,14 @@ outputs:
     format: edam:format_1931 # FASTQ
     outputBinding:
       glob: $(inputs.sra_file.nameroot)*.fastq
+
+  console_log:
+    type: stdout
+  error_log:
+    type: stderr
+
+stdout: fastq_dump_console.txt
+stderr: fastq_dump_error.txt
 
 baseCommand: [fastq-dump]
 

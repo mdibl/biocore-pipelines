@@ -1,32 +1,29 @@
 #!/usr/bin/env cwl-runner
 cwlVersion: v1.0
 class: CommandLineTool
+label: "Tool runs prefetch from NCBI SRA toolkit"
+doc: "The SRA Toolkit and SDK from NCBI is a collection of tools and libraries for using data in the INSDC Sequence Read Archives"
 
 hints:
   DockerRequirement:
-    dockerPull: quay.io/biocontainers/sra-tools:2.10.3--pl526haddd2b5_0
-  SoftwareRequirement:
-    packages:
-      sra-tools:
-        specs: [ "http://identifiers.org/biotools/sra-tools" ]
-        version: [ "2.10.3" ]
+    dockerPull: inutano/sra-toolkit
+
+baseCommand: [prefetch]
+
+arguments: ["-O", '.']
 
 inputs:
   accession:
+    label: "SRA read accession"
     type: string
     inputBinding:
       position: 4
-    doc: |
-      SRA read accession
   transport:
+    label: "Transport protocol to use, 'fasp', 'http', or 'both'"
     type: string?
     inputBinding:
       position: 3
       prefix: '-t'
-    doc: |
-      Transport protocol to use 'fasp', 'http' or 'both'
-
-arguments: ["-O", '.']
 
 outputs:
   sra_file:
@@ -34,8 +31,13 @@ outputs:
     outputBinding:
       glob: $(inputs.accession)/$(inputs.accession).sra
 
-baseCommand: [prefetch]
+  console_log:
+    type: stdout
+  error_log:
+    type: stderr
 
+stdout: prefetch_console.txt
+stderr: prefetch_error.txt
 $namespaces:
   s: http://schema.org/
 
@@ -74,6 +76,8 @@ s:creator:
         s:email: mailto:misha.kotliar@gmail.com
         s:sameAs:
         - id: http://orcid.org/0000-0002-6486-3898
-
-doc: |
-  Tool runs prefetch from NCBI SRA toolkit
+s:author:
+  - class: s:Person
+    s:identifier: https://orcid.org/0000-0001-9120-8365
+    s:email: mailto:nmaki@mdibl.org
+    s:name: Nathaniel Maki
