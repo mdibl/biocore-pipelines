@@ -52,8 +52,8 @@ outputs:
   error_log:
     type: stderr
 
-stdout: $(inputs.index_name.basename + "_kallisto-index_console.txt")
-stderr: $(inputs.index_name.basename + "_kallisto-index_error.txt")
+stdout: kallisto-index_console.txt
+stderr: kallisto-index_error.txt
 
 $namespaces:
   s: https://schema.org/
