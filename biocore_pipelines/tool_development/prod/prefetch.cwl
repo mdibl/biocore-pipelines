@@ -6,7 +6,7 @@ doc: "The SRA Toolkit and SDK from NCBI is a collection of tools and libraries f
 
 hints:
   DockerRequirement:
-    dockerPull: inutano/sra-toolkit
+    dockerPull: quay.io/biocontainers/sra-tools:2.10.3--pl526haddd2b5_0
 
 baseCommand: [prefetch]
 

@@ -1,10 +1,10 @@
 #!/usr/bin/env cwl-runner
 cwlVersion: v1.0
 class: CommandLineTool
-
+i
 hints:
-- class: DockerRequirement
-  dockerPull: inutano/sra-toolkit
+  DockerRequirement:
+    dockerPull: quay.io/biocontainers/sra-tools:2.10.3--pl526haddd2b5_0
 
 inputs:
 
