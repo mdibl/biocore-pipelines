@@ -9,18 +9,23 @@ requirements:
 hints:
   DockerRequirement:
     dockerPull: quay.io/biocontainers/kallisto:0.44.0--h7d86c95_2
+  ResourceRequirement:
+    ramMin: 4096
+    coresMin: 4
 
 baseCommand: [kallisto, index]
 
-arguments:
-  - prefix: -i
-    valueFrom: $(runtime.ourdir)/$(inputs.index_name)
+#arguments:
+  #- prefix: -i
+    #valueFrom: $(runtime.ourdir)/$(inputs.index_name)
 
 inputs:
   index_name:
     label: "Filename for the kallisto index to be constructed"
     doc: "Filename for the kallisto index to be constructed"
     type: string
+    inputBinding:
+      prefix: -i
   kmer_size:
     label: "k-mer (odd) length (default: 31, max value: 31)"
     doc: "k-mer (odd) length (default: 31, max value: 31)"
@@ -47,13 +52,13 @@ outputs:
     type: File
     outputBinding:
       glob: $(inputs.index_name)
-  console_log:
-    type: stdout
-  error_log:
-    type: stderr
+  #console_log:
+    #type: stdout
+  #error_log:
+    #type: stderr
 
-stdout: kallisto-index_console.txt
-stderr: kallisto-index_error.txt
+#stdout: kallisto-index_console.txt
+#stderr: kallisto-index_error.txt
 
 $namespaces:
   s: https://schema.org/
