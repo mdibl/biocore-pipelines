@@ -1,0 +1,8 @@
+# SRA accession ID to be accessed by prefetch
+accession: "SRR1013512"
+# Transport protocol to use 'fasp', 'http', or 'both'
+transport: "both"
+
+sra_file:
+  class: File
+  path: "/data/scratch/nmaki/cwl_testing/sra-toolkit_workflow_test/SRR1013512.sra"
