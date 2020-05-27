@@ -8,6 +8,9 @@ hints:
     dockerPull: quay.io/biocontainers/kallisto:0.44.0--h7d86c95_2
 baseCommand: ["kallisto", "quant", "--single"]
 
+requirements:
+  - class: InlineJavascriptRequirement
+
 arguments:
   - prefix: -o
     valueFrom: $(runtime.outdir)/$(inputs.out_dir_name)
