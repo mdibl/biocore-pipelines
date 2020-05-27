@@ -1,0 +1,9 @@
+index_file:
+  - class: File
+    path: "/data/scratch/nmaki/cwl_testing/kallisto_test/danio_rerio_93-transcriptome_joined.idx"
+
+fasta_file:
+  - class: File
+    path: "/data/internal/JimCoffman/jcoffman_006.abOnly_cortisol_2018/0AB1_S1_LALL_R1_001.fastq.gz"
+
+nthreads: 8

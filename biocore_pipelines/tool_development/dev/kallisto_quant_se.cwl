@@ -124,7 +124,7 @@ inputs:
     type: File?
     inputBinding:
       prefix: --chromosome
-  fq:
+  fasta_file:
     label: "Input FASTQ file(s)"
     doc: "Input FASTQ file(s)"
     type: File[]
