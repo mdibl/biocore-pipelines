@@ -15,17 +15,15 @@ hints:
 
 baseCommand: [kallisto, index]
 
-#arguments:
-  #- prefix: -i
-    #valueFrom: $(runtime.outdir)/$(inputs.index_name)
+arguments:
+  - prefix: -i
+    valueFrom: $(runtime.outdir)/$(inputs.index_name)
 
 inputs:
   index_name:
     label: "Filename for the kallisto index to be constructed"
     doc: "Filename for the kallisto index to be constructed"
     type: string
-    inputBinding:
-      prefix: -i
   kmer_size:
     label: "k-mer (odd) length (default: 31, max value: 31)"
     doc: "k-mer (odd) length (default: 31, max value: 31)"

@@ -6,11 +6,12 @@ doc: >
      It provides a modular set of analyses which you can use to give a quick impression of whether your data has any problems of which you should 
      be aware before doing any further analysis. Documenation can be found here: http://www.bioinformatics.babraham.ac.uk/projects/fastqc/"
 
-requirements:
-  - class: InlineJavascriptRequirement
 hints:
   DockerRequirement:
     dockerPull: quay.io/biocontainers/fastqc:0.11.7--pl5.22.0_2
+
+requirements:
+  - class: InlineJavascriptRequirement
 
 baseCommand: [fastqc]
 
