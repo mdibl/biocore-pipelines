@@ -52,13 +52,13 @@ outputs:
     type: File
     outputBinding:
       glob: $(inputs.index_name)
-  #console_log:
-    #type: stdout
-  #error_log:
-    #type: stderr
+  console_log:
+    type: stdout
+  error_log:
+    type: stderr
 
-#stdout: kallisto-index_console.txt
-#stderr: kallisto-index_error.txt
+stdout: kallisto-index_console.txt
+stderr: kallisto-index_error.txt
 
 $namespaces:
   s: https://schema.org/
