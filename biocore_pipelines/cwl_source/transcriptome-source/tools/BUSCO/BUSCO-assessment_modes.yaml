@@ -1,3 +1,0 @@
-type: enum
-name: assessment_modes
-symbols: [ geno, prot, tran ]

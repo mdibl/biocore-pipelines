@@ -1,4 +1,0 @@
-# output_filename: _OUTPUT_FILENAME_
-input_sam:
-  class: File
-  path: _INPUT_SAM_

@@ -1,4 +1,0 @@
-reference_fasta:
-  class: File
-  path: _PATH_TO_FASTA_
-index_basename: _INDEX_NAME_

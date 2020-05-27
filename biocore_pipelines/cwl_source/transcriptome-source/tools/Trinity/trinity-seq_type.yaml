@@ -1,3 +1,0 @@
-type: enum
-name: seq_type
-symbols: [ fa, fq ]
