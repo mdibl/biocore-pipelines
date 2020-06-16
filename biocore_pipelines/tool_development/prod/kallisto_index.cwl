@@ -44,6 +44,12 @@ inputs:
     type: File[]
     inputBinding:
       position: 10
+  output_prefix:
+    label: "prefix to be added to output files"
+    doc: "creates a tag to be added to output file names"
+    type: string?
+    default: ""
+    inputBinding: null
 
 outputs:
   index_file:
