@@ -1,0 +1,12 @@
+fastq1:
+    class: File
+    path: "/data/internal/JimCoffman/jcoffman_006.abOnly_cortisol_2018/0AB1_S1_LALL_R1_001.fastq.gz"
+
+adapter1: illumina
+
+fastq2:
+    class: File
+    path: "/data/internal/JimCoffman/jcoffman_006.abOnly_cortisol_2018/0AB1_S1_LALL_R2_001.fastq.gz"
+
+adapter2: illumina
+nthreads: 8
