@@ -251,6 +251,14 @@
               return inputs.input_read2_fastq_file.path.replace(/^.*[\\\/]/, '').replace(/\.[^/.]+$/, '') + '.unpaired.trimmed.fastq';
             return null;
           }
+    console_log:
+      type: stdout
+    error_log:
+      type: stderr
+
+stdout: $(inputs.seqfile[0].basename + "_trimmomatic_console.txt")
+stderr: $(inputs.seqfile[0].basename + "_trimmomatic_error.txt")
+
  baseCommand: java
  arguments:
   - valueFrom: $("-Djava.io.tmpdir="+runtime.tmpdir)
