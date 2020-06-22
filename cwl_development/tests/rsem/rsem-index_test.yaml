@@ -6,4 +6,4 @@ reference_fasta_dir:
   class: Directory
   path: "/data/scratch/reference/ensembl/release-93/danio_rerio-genome"
 
-reference_name: "danio_rerio_rsem_index"
+reference_name: "danio_rerio"
