@@ -12,9 +12,9 @@ baseCommand: [rsem-prepare-reference]
 requirements:
   - class: InlineJavascriptRequirement
 
-arguments:
-  - valueFrom: $(runtime.outdir)/$(inputs.reference_name)
-    position: 50
+#arguments:
+  #- valueFrom: $(runtime.outdir)/$(inputs.reference_name)
+    #position: 50
 
 inputs:
   gtf:
@@ -46,8 +46,8 @@ outputs:
   error_log:
     type: stderr
 
-stdout: $(inputs.reference_name.basename + "_rsem-index_console.txt")
-stderr: $(inputs.reference_name.basename + "_rsem-index_error.txt")
+stdout: rsem-index_console.txt
+stderr: rsem-index_error.txt
 
 $namespaces:
   s: https://schema.org/
