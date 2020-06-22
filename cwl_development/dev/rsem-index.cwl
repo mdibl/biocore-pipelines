@@ -9,12 +9,9 @@ hints:
 
 baseCommand: [rsem-prepare-reference]
 
-requirements:
-  - class: InlineJavascriptRequirement
-
-#arguments:
-  #- valueFrom: $(runtime.outdir)/$(inputs.reference_name)
-    #position: 50
+arguments:
+  - valueFrom: $(runtime.outdir)/$(inputs.reference_name)
+    position: 50
 
 inputs:
   gtf:
@@ -36,35 +33,21 @@ inputs:
 
 outputs:
   rsem_index:
-    type:
-      type: array
-      items: File
+    type: Directory
     outputBinding:
-      glob: "*"
-  console_log:
-    type: stdout
-  error_log:
-    type: stderr
-
-stdout: rsem-index_console.txt
-stderr: rsem-index_error.txt
+      glob: $(inputs.reference_name)
 
 $namespaces:
   s: https://schema.org/
   edam: http://edamontology.org/
-s:copyrightHolder: "MDI Biological Laboratory, 2020"
-s:license: "https://www.apache.org/licenses/LICENSE-2.0"
-s:codeRepository: https://github.com/mdibl/biocore_analysis
+
+s:license: https://spdx.org/licenses/Apache-2.0
+s:codeRepository: https://github.com/pitagora-network/pitagora-cwl
 s:author:
   - class: s:Person
     s:identifier: https://orcid.org/0000-0003-3777-5945
     s:email: mailto:inutano@gmail.com
     s:name: Tazro Ohta
-s:author:
-  - class: s:Person
-    s:identifier: https://orcid.org/0000-0001-9120-8365
-    s:email: mailto:nmaki@mdibl.org
-    s:name: Nathaniel Maki
 
 $schemas:
   - https://schema.org/docs/schema_org_rdfa.html
