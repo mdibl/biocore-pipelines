@@ -9,12 +9,12 @@ hints:
     
 baseCommand: ["kallisto", "quant"]
 
+requirements:
+  - class: InlineJavascriptRequirement
+
 arguments:
   - prefix: -o
     valueFrom: $(runtime.outdir)/$(inputs.out_dir_name)
-
-requirements:
-  - class: InlineJavascriptRequirement
 
 inputs:
   index_file:

@@ -9,6 +9,9 @@ hints:
 
 baseCommand: [rsem-prepare-reference]
 
+requirements:
+  - class: InlineJavascriptRequirement
+
 arguments:
   - valueFrom: $(runtime.outdir)/$(inputs.reference_name)
     position: 50

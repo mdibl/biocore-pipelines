@@ -6,6 +6,7 @@ doc: "kallisto is a program for quantifying abundances of transcripts from RNA-S
 hints:
   DockerRequirement:
     dockerPull: quay.io/biocontainers/kallisto:0.44.0--h7d86c95_2
+    
 baseCommand: ["kallisto", "quant", "--single"]
 
 requirements:
