@@ -1,7 +1,7 @@
 gtf:
-  - class: File
-    path:
+  class: File
+  path: "/data/external/ensembl/release-93/danio_rerio/gtf/Danio_rerio.GRCz11.93.gtf.gz"
 reference_fasta_dir:
   - class: Directory
-    path:
-reference_name:
+    path: "/data/scratch/reference/ensembl/release-93"
+reference_name: "danio_rerio.genome.fa"
