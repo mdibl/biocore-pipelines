@@ -142,8 +142,8 @@ outputs:
   error_log:
     type: stderr
 
-stdout: $(inputs.seqfile[0].basename + "_fastqc_console.txt")
-stderr: $(inputs.seqfile[0].basename + "_fastqc_error.txt")
+stdout: $(inputs.seqfile[0].nameroot + "_fastqc_console.txt")
+stderr: $(inputs.seqfile[0].nameroot + "_fastqc_error.txt")
 
 $namespaces:
   s: https://schema.org/
