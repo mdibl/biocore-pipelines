@@ -1,7 +1,9 @@
 seqfile:
   - class: File
-    path: "/data/scratch/nmaki/cwl_testing/0AB1_S1_LALL_R1_001.fastq"
+    path: "/compbio/data/test_fastq/KO_cort1.fastq"
+
 default_adapters_file:
   - class: File
     path: "/opt/software/external/ggr-cwl/GGR-cwl-v1.0.0/v1.0/default_adapters_fromfastqc_30aug2018.fa"
+    
 nthreads: 8

@@ -7,19 +7,17 @@ hints:
   DockerRequirement:
     dockerPull: quay.io/biocontainers/star:2.6.0c--0
 
-requirements:
-  - class: InlineJavascriptRequirement
-
 baseCommand: [STAR, --runMode, genomeGenerate]
 
-arguments:
-  - prefix: "--genomeDir"
-    valueFrom: $(runtime.outdir)
+#arguments:
+  #- prefix: "--genomeDir"
+    #valueFrom: $(runtime.outdir)
 
 inputs:
   nthreads:
     label: "Number of threads"
-    doc: "defines the number of threads to be used for genome generation, it has to be set to the number of available cores on the server node."
+    doc: "defines the number of threads to be used for genome generation, it has
+to be set to the number of available cores on the server node."
     type: int
     inputBinding:
       prefix: --runThreadN
@@ -42,26 +40,25 @@ inputs:
     default: 100
     inputBinding:
       prefix: --sjdbOverhang
-  output_prefix:
-    label: "prefix to be added to output files"
-    doc: "creates a tag to be added to output file names"
-    type: string?
-    default: ""
-    inputBinding: null
+  genomeDir:
+    label: "Path to genome directory"
+    type: Directory
+    inputBinding:
+      prefix: --genomeDir
 
 outputs:
-  starIndex:
-    type: File[]
-    outputBinding:
-      glob: "*"
-
   console_log:
     type: stdout
   error_log:
     type: stderr
+    
+  starIndex:
+    type: File
+    outputBinding:
+      glob: "*"
   
-stdout: $(inputs.output_prefix + inputs.genomeFastaFiles[0].basename + ".STAR-index.console.txt")
-stderr: $(inputs.output_prefix + inputs.genomeFastaFiles[0].basename + ".STAR-index.err.txt")
+stdout: STAR-index.console.txt
+stderr: STAR-index.err.txt
 $namespaces:
   s: https://schema.org/
   edam: http://edamontology.org/

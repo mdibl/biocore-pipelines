@@ -2,4 +2,4 @@ fasta_files:
   - class: File
     path: "/compbio/reference/ensembl/release-100/danio_rerio/cdna/Danio_rerio.GRCz11.cdna.all.fa.gz"
 
-index_name: "danio_rerio_93-transcriptome_joined"
+index_name: "kallisto-ensembl-transcriptome_joined.idx"

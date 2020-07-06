@@ -8,7 +8,7 @@ requirements:
 
 hints:
   DockerRequirement:
-    dockerPull: quay.io/biocontainers/kallisto:0.44.0--h7d86c95_2
+    dockerPull: quay.io/biocontainers/kallisto:0.46.2--h4f7b962_1
   ResourceRequirement:
     ramMin: 4096
     coresMin: 4
