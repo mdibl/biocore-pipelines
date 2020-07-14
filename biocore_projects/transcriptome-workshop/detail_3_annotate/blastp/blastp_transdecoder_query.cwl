@@ -69,7 +69,7 @@ doc: >
   "Blast+ CLO: https://www.ncbi.nlm.nih.gov/books/NBK279684/"
   $schemas:
   - 'http://edamontology.org/EDAM_1.16.owl'
-  - 'https://schema.org/docs/schema_org_rdfa.html'
+  - 'https://schema.org/version/latest/schema.rdf'
 s:license: "https://www.apache.org/licenses/LICENSE-2.0"
 s:copyrightHolder: "MDI Biological Laboratory, 2019"
 s:author: "Nathaniel Maki"

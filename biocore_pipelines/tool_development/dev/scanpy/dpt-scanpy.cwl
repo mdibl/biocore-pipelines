@@ -83,7 +83,7 @@ outputs:
 
 $schemas:
   - 'http://edamontology.org/EDAM_1.16.owl'
-  - 'https://schema.org/docs/schema_org_rdfa.html'
+  - 'https://schema.org/version/latest/schema.rdf'
 s:license: "https://www.gnu.org/licenses/gpl-3.0.en.html"
 s:copyrightHolder: "MDIBL - MDI Biological Laboratory, 2020"
 s:author: "Nathaniel Maki"
