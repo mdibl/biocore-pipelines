@@ -64,7 +64,7 @@ outputs:
 
 baseCommand: [python, /usr/local/bin/ROSE_main.py]
 $schemas:
-- https://schema.org/version/latest/schema.rdf
+- http://schema.org/docs/schema_org_rdfa.html
 
 $namespaces:
   s: http://schema.org/
